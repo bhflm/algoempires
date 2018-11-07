@@ -1,8 +1,10 @@
+package fiuba.algo3.algoempires;
+
 public class Aldeano extends Unidad{
 
     public Aldeano(){
-        this.Vida=150;
-        this.Costo=200;
+        this.Vida=100;
+        this.Costo=50;
     }
 
 
