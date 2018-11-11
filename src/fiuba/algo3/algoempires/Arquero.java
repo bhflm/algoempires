@@ -1,11 +1,13 @@
 package fiuba.algo3.algoempires;
 
-public class Arquero extends Unidad {
+public class Arquero extends Unidad{
+
+    public Arquero() {
+        vida = 75;
+        costo = 75;
+        origen = "Cuartel";
+    }
 
 
-public Arquero(){
-    this.Vida=75;
-    this.Costo=75;
-}
 
 }
