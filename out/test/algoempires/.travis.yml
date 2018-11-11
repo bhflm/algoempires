@@ -1,0 +1,11 @@
+language: java
+
+
+notifications:
+  email:
+    recipients:
+    - germanbonin@gmail.com
+    - felicoper44@hotmail.com
+    - nico.univ46@gmail.com
+    on_success: always # default: change
+    on_failure: always # default: always
