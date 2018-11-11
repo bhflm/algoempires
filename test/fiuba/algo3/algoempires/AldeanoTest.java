@@ -1,9 +1,8 @@
 package fiuba.algo3.algoempires;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class AldeanoTest {
-
     @Test
     public void test01AldeanoRecienCreadoTiene150PuntosDeVida() {
         Aldeano MiAldeano = new Aldeano();
