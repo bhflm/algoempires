@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bcd7f54-1762-4b92-b91d-d5ed8abd2a53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Cuartel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/PlazaCentral.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fiuba/algo3/algoempires/CuartelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fiuba/algo3/algoempires/PlazaCentralTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Aldeano.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Aldeano.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Arquero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Arquero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Unidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Unidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/algoempires/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/.idea/libraries/analysis.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/.idea/libraries/libs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/algoempires/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/algoempires/Aldeano.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/algoempires/AldeanoTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/algoempires/Arquero.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/algoempires/ArqueroTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/algoempires/DimensionInvalidaMapa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/algoempires/Mapa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/algoempires/MapaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/algoempires/Unidad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/ejemplo1/Foo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/algoempires/fiuba/algo3/ejemplo1/FooTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,6 +24,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="gitignore" value="1" />
           <entry key="groovy" value="1" />
           <entry key="java" value="22" />
         </counts>
@@ -53,16 +33,19 @@
         <counts>
           <entry key="Groovy" value="1" />
           <entry key="JAVA" value="22" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="gitignore" value="64" />
           <entry key="java" value="1814" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1814" />
+          <entry key="PLAIN_TEXT" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -118,7 +101,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/CuartelTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -126,6 +109,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -199,6 +191,7 @@
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java" />
         <option value="$PROJECT_DIR$/test/fiuba/algo3/algoempires/PlazaCentral.java" />
         <option value="$PROJECT_DIR$/test/fiuba/algo3/algoempires/CuartelTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -223,28 +216,6 @@
               <item name="algoempires" type="b2602c69:ProjectViewProjectNode" />
               <item name="algoempires" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="algoempires" type="b2602c69:ProjectViewProjectNode" />
-              <item name="algoempires" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="algoempires" type="b2602c69:ProjectViewProjectNode" />
-              <item name="algoempires" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="algoempires" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="algoempires" type="b2602c69:ProjectViewProjectNode" />
-              <item name="algoempires" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="algoempires" type="b2602c69:ProjectViewProjectNode" />
-              <item name="algoempires" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="algoempires" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -254,7 +225,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541953020647" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541953180908" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/test/fiuba/algo3/algoempires" />
@@ -302,7 +273,7 @@
     <frame x="-3" y="23" width="1280" height="710" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24151857" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24151857" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -317,7 +288,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32847896" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32847896" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -470,6 +441,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>
     </entry>
