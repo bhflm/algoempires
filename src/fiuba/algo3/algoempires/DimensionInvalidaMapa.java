@@ -1,4 +1,4 @@
 package fiuba.algo3.algoempires;
 
-public class DimensionInvalidaMapa {
+public class DimensionInvalidaMapa extends RuntimeException {
 }
