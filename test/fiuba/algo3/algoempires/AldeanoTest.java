@@ -19,8 +19,10 @@ public class AldeanoTest {
         assertEquals("Plaza central", MiAldeano.getOrigen());
     }
 
+    @Test
+    public void test04AldeanoRecienCreadoOrigenOk() {
+        Aldeano MiAldeano = new Aldeano();
+        assertEquals("Cuartel", MiAldeano.getOrigen());
+    }
 
 }
-
-
-
