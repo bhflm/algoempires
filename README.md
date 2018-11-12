@@ -14,12 +14,10 @@ Trabajo practico 2 de la materia algoritmos y programacion 3 FIUBA
 ### No se usar git auxilio
 
 te paras en el directorio donde queres que este la carpeta del tp
-
-sos un tipo feliz y tiras
+aca se te bajo el repositorio entero
 
 `git clone https://github.com/bhflm/algo3.git`
 
-aca se te bajo el repositorio entero
 
 
 ### Para desarrollar mi feature
