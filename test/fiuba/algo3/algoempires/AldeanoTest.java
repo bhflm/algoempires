@@ -4,15 +4,22 @@ import static org.junit.Assert.*;
 
 public class AldeanoTest {
     @Test
-    public void test01AldeanoRecienCreadoTiene150PuntosDeVida() {
+    public void test01AldeanoRecienCreadoPuntosDeVidaOk() {
         Aldeano MiAldeano = new Aldeano();
-        assertEquals(100, MiAldeano.getVida());
+        assertEquals(50, MiAldeano.getVida());
     }
     @Test
-    public void test02AldeanoRecienCreadoTiene200DeCosto() {
+    public void test02AldeanoRecienCreadoCostoOk() {
         Aldeano MiAldeano = new Aldeano();
-        assertEquals(50, MiAldeano.getCosto());
+        assertEquals(25, MiAldeano.getCosto());
     }
+    @Test
+    public void test03AldeanoRecienCreadoOrigenOk() {
+        Aldeano MiAldeano = new Aldeano();
+        assertEquals("Plaza central", MiAldeano.getOrigen());
+    }
+
+
 }
 
 
