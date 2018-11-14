@@ -29,11 +29,9 @@ private void GenerarPosiciones(){
    }
 }
 
-public void UbicarUnidadEnMapa(Posicion PosicionUnidad,Ubicable Unidad){
-    Unidad.UbicarEn(PosicionUnidad,this.Ubicaciones);
-
-}
-
+    public void UbicarUnidadEnMapa(Posicion PosicionUnidad,Ubicable Unidad){
+        Unidad.UbicarEn(PosicionUnidad,this.Ubicaciones);
+    }
 
     public int getLargoHorizontal() {
         return this.LargoHorizontal;

@@ -11,12 +11,9 @@ public class Aldeano extends Unidad implements Ubicable{
     }
 
 
-   // public void construir(Edificio unEdificio) {
-        // plaza central o un cuartel ? a
-   // };
-    public void UbicarEn(Posicion PosicionAldeano, HashMap<Posicion, Ubicable> Ubicaciones){
-    Ubicaciones.put(PosicionAldeano,this);
-
+    public void UbicarEn(Posicion pos, HashMap<Posicion, Ubicable> Ubicaciones){
+    Ubicaciones.put(pos,this);
     }
+
 }
 
