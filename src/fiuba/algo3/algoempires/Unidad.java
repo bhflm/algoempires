@@ -1,6 +1,7 @@
 package fiuba.algo3.algoempires;
 
-public abstract class Unidad {
+
+public abstract class Unidad{
     protected int vida;
     protected int costo;
     protected String origen;
