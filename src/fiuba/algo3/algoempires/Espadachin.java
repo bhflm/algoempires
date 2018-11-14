@@ -1,11 +1,17 @@
 package fiuba.algo3.algoempires;
 
-public class Espadachin extends Unidad {
+import java.util.HashMap;
+
+public class Espadachin extends Unidad implements Ubicable {
 
     public Espadachin() {
         vida = 100;
         costo = 50;
         origen = "Cuartel";
+    }
+
+    public void UbicarEn(Posicion pos, HashMap<Posicion, Ubicable> Ubicaciones){
+        Ubicaciones.put(pos,this);
     }
 
 }
