@@ -7,10 +7,12 @@ public class Aldeano extends Unidad{
         costo = 25;
         origen = "Plaza central";
     }
-
-
+    public void reparar(Edificio unEdificio){
+        unEdificio.reparar();
+    }
    // public void construir(Edificio unEdificio) {
         // plaza central o un cuartel ? a
+
    // };
 
 
