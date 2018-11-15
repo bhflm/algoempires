@@ -19,12 +19,10 @@ public class Juego {
         this.actual = this.primero;
     }
 
-    public String getActual() {
+    public String getNombreActual() {
         return this.actual.getNombre();
     }
-    public String getEsperando(){
-        return this.esperando.getNombre();
-    }
+    public Jugador getActual() { return this.actual; }
 
     public void cambiarTurno(){
         Jugador aux = this.actual;

@@ -49,6 +49,13 @@ private void GenerarPosiciones(){
     }
 
     public void MoverUnidad(Posicion nuevaPosicion,Movible unidadAMover){
+
+    try{
+        nuevaPosicion.ValidarPosicion(LargoHorizontal,LargoVertical);
+    }
+    catch(MovimientoFueraDelMapa e){
+        throw new MovimientoFueraDelMapa();
+    }
     Posicion posicionPrevia= unidadAMover.getPosicion();
     Ubicable ubicacionLiberada=new EspacioLibre();
     this.Ubicaciones.put(nuevaPosicion,unidadAMover);

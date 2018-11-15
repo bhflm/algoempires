@@ -28,7 +28,8 @@ public class AldeanoTest{
         MiAldeano.RealizarMovimiento(nuevaPosicion);
         Posicion PosicionDespuesDeMoverse =MiAldeano.getPosicion();
         assertEquals(nuevaPosicion,PosicionDespuesDeMoverse);
-
     }
+
+
 
 }
