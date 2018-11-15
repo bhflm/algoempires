@@ -8,6 +8,7 @@ public class Espadachin extends Unidad implements Movible {
         vida = 100;
         costo = 50;
         origen = "Cuartel";
+        this.estado=new EstadoEspadachinDisponible();
         this.PosicionUnidad=new Posicion(0,0);
     }
 

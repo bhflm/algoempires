@@ -1,6 +1,6 @@
 package fiuba.algo3.algoempires;
 
-public class EstadoAldeanoConstruyendo implements EstadoUnidad {
+public class EstadoAldeanoConstruyendo extends EstadoUnidad {
 
     public void reparar(Edificio unEdificio, Aldeano unAldeano){
         throw new AldeanoOcupadoException();
@@ -12,4 +12,8 @@ public class EstadoAldeanoConstruyendo implements EstadoUnidad {
 
     public void construirCuartel (Aldeano unAldeano, Mapa mapa, Posicion posicion){
         throw new AldeanoOcupadoException();
-    }}
+    }
+
+
+
+}

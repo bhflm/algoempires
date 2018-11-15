@@ -16,4 +16,7 @@ public abstract class Unidad{
     public String getOrigen() {return this.origen; }
     public Posicion getPosicion(){return this.PosicionUnidad;};
     public int getDimension() {return this.dimension;}
+    public int recaudarOro(){
+        int oroRecaudado=this.estado.generarOro();
+        return oroRecaudado;}
 }
