@@ -47,4 +47,13 @@ private void GenerarPosiciones(){
 
     return Ubicaciones.get(posicionAldeano);
     }
+
+    public void MoverUnidad(Posicion nuevaPosicion,Movible unidadAMover){
+    Posicion posicionPrevia= unidadAMover.getPosicion();
+    Ubicable ubicacionLiberada=new EspacioLibre();
+    this.Ubicaciones.put(nuevaPosicion,unidadAMover);
+    unidadAMover.RealizarMovimiento(nuevaPosicion);
+    this.Ubicaciones.put(posicionPrevia,ubicacionLiberada);
+    }
+
 }

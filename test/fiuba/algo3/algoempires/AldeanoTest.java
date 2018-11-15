@@ -21,5 +21,14 @@ public class AldeanoTest{
         assertEquals("Plaza central", MiAldeano.getOrigen());
     }
 
+    @Test
+    public void test04AldeanoSeDesplazaHaciaUnaNuevaPosicion(){
+        Aldeano MiAldeano = new Aldeano();
+        Posicion nuevaPosicion= new Posicion(2,5);
+        MiAldeano.RealizarMovimiento(nuevaPosicion);
+        Posicion PosicionDespuesDeMoverse =MiAldeano.getPosicion();
+        assertEquals(nuevaPosicion,PosicionDespuesDeMoverse);
+
+    }
 
 }
