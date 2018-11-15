@@ -14,6 +14,9 @@ public class PlazaCentralTest {
         PlazaCentral unaPlazaCentral = new PlazaCentral();
         assertEquals(1000, unaPlazaCentral.getCosto());
     }
+
+
+
 }
 
 

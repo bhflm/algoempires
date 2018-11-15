@@ -2,7 +2,7 @@ package fiuba.algo3.algoempires;
 
 import java.util.HashMap;
 
-public class ArmaDeAsedio extends Unidad implements Ubicable{
+public class ArmaDeAsedio extends Unidad implements Movible{
 
     public ArmaDeAsedio() {
         vida = 150;
@@ -13,6 +13,7 @@ public class ArmaDeAsedio extends Unidad implements Ubicable{
     public void UbicarEn(Posicion pos, HashMap<Posicion, Ubicable> Ubicaciones){
         Ubicaciones.put(pos,this);
     }
+
     public void RealizarMovimiento(Posicion nuevaPosicion){
         this.PosicionUnidad=nuevaPosicion;
     }

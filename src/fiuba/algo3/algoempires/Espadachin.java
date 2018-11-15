@@ -2,7 +2,7 @@ package fiuba.algo3.algoempires;
 
 import java.util.HashMap;
 
-public class Espadachin extends Unidad implements Ubicable {
+public class Espadachin extends Unidad implements Movible {
 
     public Espadachin() {
         vida = 100;
@@ -17,6 +17,5 @@ public class Espadachin extends Unidad implements Ubicable {
     public void RealizarMovimiento(Posicion nuevaPosicion){
         this.PosicionUnidad=nuevaPosicion;
     }
-
 
 }
