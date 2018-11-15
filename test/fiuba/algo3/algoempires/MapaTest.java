@@ -124,7 +124,6 @@ public class MapaTest {
         Posicion nuevaPosicionAldeano = new Posicion(2, 5);
         MiMapa.MoverUnidad(nuevaPosicionAldeano, MiAldeano);
         assertEquals(MiAldeano.getPosicion(), nuevaPosicionAldeano);
-
     }
 
     @Test
@@ -143,6 +142,9 @@ public class MapaTest {
         }
         assertTrue(seLanzoError);
     }
+
+
+
 }
 
 

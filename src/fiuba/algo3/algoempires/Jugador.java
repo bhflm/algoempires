@@ -29,4 +29,11 @@ public class Jugador {
         return (this.unidadesJugador.contains(unaUnidad));
     }
 
+
+    public void moverUnidad(Juego unJuego, Mapa unMapa,Movible unaUnidad, Direccion unaDireccion){
+        Posicion posicionMover = unaDireccion.ObtenerPosicion(unaUnidad);
+        unMapa.MoverUnidad(posicionMover,unaUnidad);
+        unJuego.cambiarTurno();
+    }
+
 }
