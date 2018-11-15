@@ -9,7 +9,7 @@ public class Aldeano extends Unidad implements Movible{
         this.costo = 25;
         this.origen = "Plaza central";
         this.estado = new EstadoAldeanoDisponible();
-        this.PosicionUnidad=new Posicion(0,0);
+        this.PosicionUnidad = new Posicion(0,0);
     }
 
     public void desocupar() {

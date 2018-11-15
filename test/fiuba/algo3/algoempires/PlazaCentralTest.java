@@ -10,13 +10,16 @@ public class PlazaCentralTest {
     }
 
     @Test
-    public void test02PlazaCentralRecienCreadCostoOk() {
+    public void test02PlazaCentralRecienCreadaCostoOk() {
         PlazaCentral unaPlazaCentral = new PlazaCentral();
         assertEquals(1000, unaPlazaCentral.getCosto());
     }
 
-
-
+    @Test
+    public void test03PlazaCentralRecienCreadaDimensionOk() {
+        PlazaCentral unaPlazaCentral = new PlazaCentral();
+        assertEquals(2, unaPlazaCentral.getDimension());
+    }
 }
 
 

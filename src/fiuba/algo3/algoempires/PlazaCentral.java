@@ -1,5 +1,7 @@
 package fiuba.algo3.algoempires;
 
+import java.util.HashMap;
+
 public class PlazaCentral extends Edificio {
 
     public PlazaCentral(){
@@ -13,5 +15,6 @@ public class PlazaCentral extends Edificio {
     public void reparar(Aldeano unAldeano){
         estado.reparar(this, 25, unAldeano);
     }
-    //Metodo tipo estado en pikachu pero que se vaya restando turnos.
+
+
 }

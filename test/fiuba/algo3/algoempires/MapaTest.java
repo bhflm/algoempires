@@ -127,28 +127,89 @@ public class MapaTest {
     }
 
     @Test
-    public void test11CreoElMapaConUnAldeanoYloDesplazoFueraDelMapa(){
-        boolean seLanzoError=false;
-        Movible MiAldeano=new Aldeano();
-        Posicion posicionAldeano =new Posicion(1,5);
+    public void test11CreoElMapaConUnAldeanoYloDesplazoFueraDelMapa() {
+        boolean seLanzoError = false;
+        Movible MiAldeano = new Aldeano();
+        Posicion posicionAldeano = new Posicion(1, 5);
         Mapa MiMapa = new Mapa(5, 5);
-        MiMapa.UbicarUnidadEnMapa(posicionAldeano,MiAldeano);
-        Posicion nuevaPosicionAldeano=new Posicion(-1,5);
+        MiMapa.UbicarUnidadEnMapa(posicionAldeano, MiAldeano);
+        Posicion nuevaPosicionAldeano = new Posicion(-1, 5);
         try {
-            MiMapa.MoverUnidad(nuevaPosicionAldeano,MiAldeano);
-        }
-        catch(MovimientoFueraDelMapa e) {
-            seLanzoError=true;
+            MiMapa.MoverUnidad(nuevaPosicionAldeano, MiAldeano);
+        } catch (MovimientoFueraDelMapa e) {
+            seLanzoError = true;
         }
         assertTrue(seLanzoError);
     }
 
+    public void test12CreoElMapaYUbicoUnaPlazaCentralEnPosicionValida() {
+        Ubicable unaPlazaCentral = new PlazaCentral();
+        Posicion posicionPlazaCentral1 = new Posicion(1, 1);
+        Posicion posicionPlazaCentral2 = new Posicion(1, 2);
+        Posicion posicionPlazaCentral3 = new Posicion(2, 1);
+        Posicion posicionPlazaCentral4 = new Posicion(2, 2);
 
+        Mapa MiMapa = new Mapa(5, 5);
+        MiMapa.UbicarUnidadEnMapa(posicionPlazaCentral1, unaPlazaCentral);
+        Ubicable plazaEnMapa1 = MiMapa.GetUbicableEn(posicionPlazaCentral1);
+        Ubicable plazaEnMapa2 = MiMapa.GetUbicableEn(posicionPlazaCentral2);
+        Ubicable plazaEnMapa3 = MiMapa.GetUbicableEn(posicionPlazaCentral3);
+        Ubicable plazaEnMapa4 = MiMapa.GetUbicableEn(posicionPlazaCentral4);
 
+        assertEquals(plazaEnMapa1, unaPlazaCentral);
+        assertEquals(plazaEnMapa2, unaPlazaCentral);
+        assertEquals(plazaEnMapa3, unaPlazaCentral);
+        assertEquals(plazaEnMapa4, unaPlazaCentral);
+    }
+
+    @Test
+    public void test13CreoElMapaYUbicoUnCuartelEnPosicionValida() {
+        Ubicable unCuartel = new Cuartel();
+        Posicion posicionCuartel1 = new Posicion(2, 1);
+        Posicion posicionCuartel2 = new Posicion(2, 2);
+        Posicion posicionCuartel3 = new Posicion(3, 1);
+        Posicion posicionCuartel4 = new Posicion(3, 2);
+
+        Mapa MiMapa = new Mapa(5, 5);
+        MiMapa.UbicarUnidadEnMapa(posicionCuartel1, unCuartel);
+        Ubicable cuartelEnMapa1 = MiMapa.GetUbicableEn(posicionCuartel1);
+        Ubicable cuartelEnMapa2 = MiMapa.GetUbicableEn(posicionCuartel2);
+        Ubicable cuartelEnMapa3 = MiMapa.GetUbicableEn(posicionCuartel3);
+        Ubicable cuartelEnMapa4 = MiMapa.GetUbicableEn(posicionCuartel4);
+
+        assertEquals(cuartelEnMapa1, unCuartel);
+        assertEquals(cuartelEnMapa2, unCuartel);
+        assertEquals(cuartelEnMapa3, unCuartel);
+        assertEquals(cuartelEnMapa4, unCuartel);
+    }
+
+    @Test
+    public void test14CreoElMapaYUbicoUnaPlazaCentralEnPosicionInvalida() {
+        boolean seLanzoError = false;
+        Ubicable unaPlazaCentral = new PlazaCentral();
+        Posicion posicionPlazaCentral1 = new Posicion(5, 4);
+
+        Mapa MiMapa = new Mapa(5, 5);
+        try {
+            MiMapa.UbicarUnidadEnMapa(posicionPlazaCentral1, unaPlazaCentral);
+        } catch (UbicacionFueraDelMapaException e) {
+            seLanzoError = true;
+        }
+        assertTrue(seLanzoError);
+    }
+
+    @Test
+    public void test15CreoElMapaYUbicoUnaPlazaCentralEnPosicionBordeValida() {
+        boolean seLanzoError = false;
+        Ubicable unaPlazaCentral = new PlazaCentral();
+        Posicion posicionPlazaCentral1 = new Posicion(4, 4);
+
+        Mapa MiMapa = new Mapa(5, 5);
+        try {
+            MiMapa.UbicarUnidadEnMapa(posicionPlazaCentral1, unaPlazaCentral);
+        } catch (UbicacionFueraDelMapaException e) {
+            seLanzoError = true;
+        }
+        assertFalse(seLanzoError);
+    }
 }
-
-
-
-
-
-

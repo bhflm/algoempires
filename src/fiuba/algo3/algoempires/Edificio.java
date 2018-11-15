@@ -1,5 +1,7 @@
 package fiuba.algo3.algoempires;
 
+import java.util.HashMap;
+
 public abstract class Edificio implements Ubicable {
     protected int vidaMaxima;
     protected int vida;
@@ -31,5 +33,17 @@ public abstract class Edificio implements Ubicable {
 
     public void asignarReparacion(){
         estado = new EstadoEdificioReparandose();
+    }
+
+    @Override
+    public void UbicarEn(Posicion posicion, HashMap<Posicion,Ubicable> Ubicaciones){
+        int CoordHorizontal = posicion.getCoordenadaHorizontal();
+        int CoordVertical = posicion.getCoordenadaVertical();
+        for (int i = 0; i < dimension; i++){
+            for (int j = 0; j < dimension; j++){
+                Posicion posicionActual = new Posicion(CoordHorizontal+i, CoordVertical+j);
+                Ubicaciones.put(posicionActual, this);
+            }
+        }
     }
 }

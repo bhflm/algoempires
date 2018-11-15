@@ -36,5 +36,4 @@ public class Jugador {
         unMapa.MoverUnidad(posicionMover,unaUnidad);
         unJuego.cambiarTurno();
     }
-
 }

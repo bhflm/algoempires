@@ -14,6 +14,12 @@ public class CuartelTest {
         Cuartel unCuartel = new Cuartel();
         assertEquals(50, unCuartel.getCosto());
     }
+
+    @Test
+    public void test03CuartelRecienCreadoDimensionOk() {
+        Cuartel unCuartel = new Cuartel();
+        assertEquals(2, unCuartel.getDimension());
+    }
 }
 
 

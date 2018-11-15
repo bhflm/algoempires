@@ -1,21 +1,25 @@
 package fiuba.algo3.algoempires;
 
+import java.util.HashMap;
+
 public class EstadoAldeanoDisponible implements EstadoUnidad {
-    @Override
+
     public void reparar(Edificio unEdificio, Aldeano unAldeano){
         unAldeano.empezarReparacion();
         unEdificio.reparar(unAldeano);
     }
 
-    @Override
     public void construirPlazaCentral(Aldeano unAldeano, Mapa mapa, Posicion posicion){
         unAldeano.empezarConstruccion();
-        //Construir
+        PlazaCentral plazaCentral = new PlazaCentral();
+        HashMap<Posicion,Ubicable> Ubicaciones = mapa.getUbicaciones();
+        plazaCentral.UbicarEn(posicion, Ubicaciones);
     }
 
-    @Override
     public void construirCuartel (Aldeano unAldeano, Mapa mapa, Posicion posicion){
         unAldeano.empezarConstruccion();
-        //Construir
+        Cuartel cuartel = new Cuartel();
+        HashMap<Posicion,Ubicable> Ubicaciones = mapa.getUbicaciones();
+        cuartel.UbicarEn(posicion, Ubicaciones);
     }
 }
