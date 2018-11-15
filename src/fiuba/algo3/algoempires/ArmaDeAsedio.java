@@ -17,5 +17,4 @@ public class ArmaDeAsedio extends Unidad implements Movible{
     public void RealizarMovimiento(Posicion nuevaPosicion){
         this.PosicionUnidad=nuevaPosicion;
     }
-
 }
