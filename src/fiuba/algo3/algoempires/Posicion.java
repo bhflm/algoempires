@@ -40,4 +40,9 @@ public class Posicion {
     public int getCoordenadaVertical() {
         return this.y;
     }
+
+    public void ValidarPosicion(int largoHorizontal, int largoVertical) {
+        if(x>largoHorizontal || x<1 || y>largoVertical || y<1)
+            throw new MovimientoFueraDelMapa();
+    }
 }
