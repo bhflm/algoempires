@@ -53,7 +53,7 @@ private void GenerarPosiciones(){
         nuevaPosicion.ValidarPosicion(LargoHorizontal,LargoVertical);
     }
     catch(MovimientoFueraDelMapa e){
-       throw new MovimientoFueraDelMapa();
+        throw new MovimientoFueraDelMapa();
     }
     Posicion posicionPrevia= unidadAMover.getPosicion();
     Ubicable ubicacionLiberada=new EspacioLibre();
