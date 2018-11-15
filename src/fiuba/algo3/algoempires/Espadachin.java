@@ -14,4 +14,9 @@ public class Espadachin extends Unidad implements Ubicable {
         Ubicaciones.put(pos,this);
     }
 
+    public void RealizarMovimiento(Posicion nuevaPosicion){
+        this.PosicionUnidad=nuevaPosicion;
+    }
+
+
 }
