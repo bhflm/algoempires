@@ -6,10 +6,12 @@ public class PlazaCentral extends Edificio {
         vidaMaxima = 450;
         vida = 450;
         costo = 1000;
+        dimension = 2;
         //TurnosRestantes = ... ??;
     }
-    public void reparar(){
-        estado.reparar(this, 25);
+    @Override
+    public void reparar(Aldeano unAldeano){
+        estado.reparar(this, 25, unAldeano);
     }
     //Metodo tipo estado en pikachu pero que se vaya restando turnos.
 }

@@ -1,19 +1,41 @@
 package fiuba.algo3.algoempires;
 
-public class Aldeano extends Unidad{
+import java.util.HashMap;
+
+public class Aldeano extends Unidad implements Ubicable{
 
     public Aldeano() {
-        vida = 50;
-        costo = 25;
-        origen = "Plaza central";
+        this.vida = 50;
+        this.costo = 25;
+        this.origen = "Plaza central";
+        this.estado = new EstadoAldeanoDisponible();
     }
+
+    public void desocupar() {
+        this.estado = new EstadoAldeanoDisponible();
+    }
+
     public void reparar(Edificio unEdificio){
-        unEdificio.reparar();
+        this.estado.reparar(unEdificio, this);
     }
-   // public void construir(Edificio unEdificio) {
-        // plaza central o un cuartel ? a
 
-   // };
+    public void empezarReparacion(){
+        this.estado = new EstadoAldeanoReparando();
+    }
 
+    public void construirCuartel(Mapa mapa, Posicion posicion) {
+        this.estado.construirCuartel(this, mapa, posicion);
+    }
 
+    public void construirPlazaCentral(Mapa mapa, Posicion posicion) {
+        this.estado.construirPlazaCentral(this, mapa, posicion);
+    }
+
+    public void empezarConstruccion(){
+        this.estado = new EstadoAldeanoConstruyendo();
+    }
+
+    public void UbicarEn(Posicion pos, HashMap<Posicion, Ubicable> Ubicaciones){
+    Ubicaciones.put(pos,this);
+    }
 }
