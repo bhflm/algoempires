@@ -8,9 +8,11 @@ public class ArmaDeAsedio extends Unidad implements Movible{
         vida = 150;
         costo = 200;
         origen = "Castillo";
+        this.PosicionUnidad=new Posicion(0,0);
     }
 
     public void UbicarEn(Posicion pos, HashMap<Posicion, Ubicable> Ubicaciones){
+        this.PosicionUnidad=pos;
         Ubicaciones.put(pos,this);
     }
 

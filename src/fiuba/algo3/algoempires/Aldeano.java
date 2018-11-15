@@ -12,7 +12,9 @@ public class Aldeano extends Unidad implements Movible{
     }
 
 
+
     public void UbicarEn(Posicion pos, HashMap<Posicion, Ubicable> Ubicaciones){
+        this.PosicionUnidad=pos;
         Ubicaciones.put(pos,this);
     }
     public void RealizarMovimiento(Posicion nuevaPosicion){

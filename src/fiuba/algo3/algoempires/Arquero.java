@@ -8,9 +8,11 @@ public class Arquero extends Unidad implements Movible{
         vida = 75;
         costo = 75;
         origen = "Cuartel";
+        this.PosicionUnidad=new Posicion(0,0);
     }
 
     public void UbicarEn(Posicion pos, HashMap<Posicion, Ubicable> Ubicaciones){
+        this.PosicionUnidad=pos;
         Ubicaciones.put(pos,this);
     }
 
