@@ -13,7 +13,7 @@ public class JuegoTest {
     public void test01CreoJuegoConDosJugadoresDevuelveJugadorOk() {
         Juego unJuego = new Juego();
         unJuego.iniciarJuego("Foo","Bar");
-        assertEquals("Foo",unJuego.getActual());
+        assertEquals("Foo",unJuego.getNombreActual());
     }
 
     @Test
@@ -21,7 +21,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         unJuego.iniciarJuego("Foo","Bar");
         unJuego.cambiarTurno();
-        assertEquals("Bar",unJuego.getActual());
+        assertEquals("Bar",unJuego.getNombreActual());
     }
 
     @Test
@@ -30,9 +30,28 @@ public class JuegoTest {
         unJuego.iniciarJuego("Foo","Bar");
         unJuego.cambiarTurno();
         unJuego.cambiarTurno();
-        assertEquals("Foo",unJuego.getActual());
+        assertEquals("Foo",unJuego.getNombreActual());
     }
 
+    @Test
+    public void test04CreoJuegoConDosJugadoresMueveAldeanoMismoTurnoOk() {
+        Juego unJuego = new Juego();
+        unJuego.iniciarJuego("Foo","Bar");
+        Aldeano unAldeano = new Aldeano();
+        Mapa unMapa = new Mapa(4,3);
+        Posicion unaPos = new Posicion(2,2);
+
+        unJuego.getActual().agregarUnidad(unAldeano);
+        unMapa.UbicarUnidadEnMapa(unaPos,unAldeano);
+
+        Direccion moverDerecha = new DireccionDerechaHorizontal();
+        Posicion nuevaPos = new Posicion(1,2);
+
+
+        unJuego.getActual().moverUnidad(unJuego,unMapa,unAldeano,moverDerecha);
+
+        assertEquals(nuevaPos,unAldeano.getPosicion());
+    }
 
 
 
