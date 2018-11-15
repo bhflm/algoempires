@@ -9,6 +9,7 @@ public class Posicion {
         y=CoordenadaY;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -34,5 +35,9 @@ public class Posicion {
 
     public int getCoordenadaHorizontal() {
         return this.x;
+    }
+
+    public int getCoordenadaVertical() {
+        return this.y;
     }
 }
