@@ -58,11 +58,12 @@ public class AldeanoTest{
     public void test08AldeanoReparaCuartel(){
         Aldeano MiAldeano = new Aldeano();
         Cuartel MiCuartel = new Cuartel();
-        MiCuartel.Recibirdanio(40);
+        MiCuartel.Recibirdanio(60);
         MiAldeano.reparar(MiCuartel);
         int vidaPosRecuperacion= MiCuartel.getVida();
-        assertEquals(vidaPosRecuperacion,250);
-
+        assertEquals(vidaPosRecuperacion,240);
+        int oroObtenido=MiAldeano.recaudarOro();
+        System.out.println(oroObtenido);
     }
 
 

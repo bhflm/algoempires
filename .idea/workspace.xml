@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15e2d2c4-a688-415c-b97a-4b914a79ae9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,18 +31,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1006" />
+          <entry key="java" value="1090" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1006" />
+          <entry key="JAVA" value="1090" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5552178">
+    <splitter split-orientation="horizontal" split-proportion="0.31610942">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="false">
@@ -68,7 +67,7 @@
             <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Cuartel.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="51">
-                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
                 </state>
               </provider>
             </entry>
@@ -86,7 +85,7 @@
             <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoEdificioNormal.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="153">
-                  <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+                  <caret line="9" selection-start-line="9" selection-end-line="9" />
                 </state>
               </provider>
             </entry>
@@ -107,8 +106,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="107">
-                  <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+                <state relative-caret-position="192">
+                  <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -142,8 +141,8 @@
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/ArmaDeAsedio.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoEspadachinDisponible.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Arquero.java" />
-        <option value="$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java" />
+        <option value="$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java" />
       </list>
     </option>
   </component>
@@ -204,7 +203,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542311475479" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542312152030" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -272,20 +271,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542305686390</updated>
-      <workItem from="1542305687897" duration="5470000" />
+      <workItem from="1542305687897" duration="6146000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="fiuba_algo3_algoempires_in_algoempires - 2018.11.15 at 15h 51m 57s.xml">
-      <configuration name="fiuba.algo3.algoempires in algoempires" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="fiuba_algo3_algoempires_in_algoempires - 2018.11.15 at 15h 52m 35s.xml">
-      <configuration name="fiuba.algo3.algoempires in algoempires" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="fiuba_algo3_algoempires_in_algoempires - 2018.11.15 at 16h 39m 14s.xml">
-      <configuration name="fiuba.algo3.algoempires in algoempires" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 16h 41m 23s.xml">
       <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
     </history-entry>
@@ -307,9 +297,18 @@
     <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 16h 50m 15s.xml">
       <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 16h 51m 17s.xml">
+      <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 17h 00m 55s.xml">
+      <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 17h 01m 00s.xml">
+      <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5470000" />
+    <option name="totallyTimeSpent" value="6146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
@@ -320,7 +319,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -329,7 +328,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -522,24 +521,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="53" column="34" lean-forward="true" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Cuartel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoEdificioNormal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -547,6 +539,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
         </state>
       </provider>
     </entry>
