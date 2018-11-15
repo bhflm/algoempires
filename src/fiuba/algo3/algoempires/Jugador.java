@@ -6,37 +6,13 @@ public class Jugador {
     private int poblacion;
     private String nombre;
 
-
-
-
-
     Jugador(String nombreJugador) {
         this.oro = 50;
         this.poblacion = 3;
         this.nombre = nombreJugador;
     }
 
-
-    public void Juega(){
-        this.jugando = Boolean.TRUE;
+    public String getNombre() {
+        return nombre;
     }
-
-    public void NoJuega(){
-        this.jugando = Boolean.FALSE;
-    }
-
-    public boolean estaJugando(){
-        return this.jugando;
-    }
-
-
-    public void termino(Juego unJuego){
-        unJuego.cambiarTurno();
-    }
-
-
-    public void moverUnidad(Unidad unaUnidad, )
-
-
-
 }

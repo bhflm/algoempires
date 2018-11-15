@@ -6,24 +6,30 @@ public class Juego {
     protected Jugador segundo;
 
     protected Jugador actual;
+    protected Jugador esperando;
 
     protected Mapa mapa;
 
 
-    public iniciarJuego() {
-        this.primero = new Jugador('A');
-        this.segundo = new Jugador('B');
+    public void iniciarJuego(String unJugador, String otroJugador) {
+        this.primero = new Jugador(unJugador);
+        this.segundo = new Jugador(otroJugador);
 
+        this.esperando = this.segundo;
         this.actual = this.primero;
     }
 
-    public cambiarTurno() {
-        Jugador aux = this.actual;
-        this.actual = this.segundo;
-        aux.NoJuega();
-        this.actual.Juega();
+    public String getActual() {
+        return this.actual.getNombre();
+    }
+    public String getEsperando(){
+        return this.esperando.getNombre();
     }
 
-
+    public void cambiarTurno(){
+        Jugador aux = this.actual;
+        this.actual = this.esperando;
+        this.esperando = aux;
+    }
 
 }
