@@ -30,8 +30,15 @@ private void GenerarPosiciones(){
 }
 
     public void UbicarUnidadEnMapa(Posicion PosicionUnidad,Ubicable Unidad){
+    int dimension = Unidad.getDimension() - 1;
+    int CoordHorizontal = PosicionUnidad.getCoordenadaHorizontal();
+    int CoordVertical = PosicionUnidad.getCoordenadaVertical();
+    if (CoordHorizontal + dimension > this.LargoHorizontal || CoordVertical + dimension > this.LargoVertical){
+            throw new UbicacionFueraDelMapaException();
+        }
         Unidad.UbicarEn(PosicionUnidad,this.Ubicaciones);
     }
+
 
     public int getLargoHorizontal() {
         return this.LargoHorizontal;
@@ -41,6 +48,7 @@ private void GenerarPosiciones(){
         return LargoVertical;
     }
 
+    public HashMap<Posicion, Ubicable> getUbicaciones(){return Ubicaciones;}
 
     public Ubicable GetUbicableEn(Posicion posicionAldeano) {
 
@@ -48,7 +56,6 @@ private void GenerarPosiciones(){
     }
 
     public void MoverUnidad(Posicion nuevaPosicion,Movible unidadAMover){
-
     try{
         nuevaPosicion.ValidarPosicion(LargoHorizontal,LargoVertical);
     }

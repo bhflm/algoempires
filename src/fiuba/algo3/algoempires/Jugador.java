@@ -4,6 +4,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class Jugador {
+
     private Boolean jugando;
     private int oro;
     private int poblacion;
@@ -21,6 +22,7 @@ public class Jugador {
         return nombre;
     }
 
+
     public void agregarUnidad(Unidad unaUnidad){
         this.unidadesJugador.add((unaUnidad));
     }
@@ -29,11 +31,9 @@ public class Jugador {
         return (this.unidadesJugador.contains(unaUnidad));
     }
 
-
     public void moverUnidad(Juego unJuego, Mapa unMapa,Movible unaUnidad, Direccion unaDireccion){
         Posicion posicionMover = unaDireccion.ObtenerPosicion(unaUnidad);
         unMapa.MoverUnidad(posicionMover,unaUnidad);
         unJuego.cambiarTurno();
     }
-
 }
