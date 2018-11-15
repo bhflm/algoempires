@@ -15,5 +15,7 @@ public class Aldeano extends Unidad implements Ubicable{
     Ubicaciones.put(pos,this);
     }
 
+
+
 }
 
