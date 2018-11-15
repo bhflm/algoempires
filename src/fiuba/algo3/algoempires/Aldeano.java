@@ -44,4 +44,9 @@ public class Aldeano extends Unidad implements Movible{
     public void RealizarMovimiento(Posicion nuevaPosicion){
         this.PosicionUnidad=nuevaPosicion;
     }
+
+    public int recaudarOro(){
+        return this.estado.generarOro();
+    }
+
 }

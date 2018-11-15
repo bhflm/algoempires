@@ -30,6 +30,32 @@ public class AldeanoTest{
         assertEquals(nuevaPosicion,PosicionDespuesDeMoverse);
     }
 
+    @Test
+    public void test05AldeanoDisponibleGeneraOro(){
+        Aldeano MiAldeano = new Aldeano();
+        int oroRecaudado=MiAldeano.recaudarOro();
+        assertEquals(oroRecaudado,20);
+
+    }
+    @Test
+    public void test06AldeanoConstruyendoNoGeneraOro(){
+        Aldeano MiAldeano = new Aldeano();
+        MiAldeano.estado=new EstadoAldeanoConstruyendo();
+        int oroRecaudado=MiAldeano.recaudarOro();
+        assertEquals(oroRecaudado,0);
+
+    }
+
+    @Test
+    public void test07AldeanoReparandoNoGeneraOro(){
+        Aldeano MiAldeano = new Aldeano();
+        MiAldeano.estado=new EstadoAldeanoReparando();
+        int oroRecaudado=MiAldeano.recaudarOro();
+        assertEquals(oroRecaudado,0);
+
+    }
+
+
 
 
 }

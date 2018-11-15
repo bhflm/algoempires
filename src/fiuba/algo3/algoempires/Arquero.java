@@ -8,6 +8,7 @@ public class Arquero extends Unidad implements Movible{
         vida = 75;
         costo = 75;
         origen = "Cuartel";
+        this.estado=new EstadoArqueroDisponible();
         this.PosicionUnidad=new Posicion(0,0);
     }
 

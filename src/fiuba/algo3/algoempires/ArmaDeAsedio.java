@@ -8,6 +8,7 @@ public class ArmaDeAsedio extends Unidad implements Movible{
         vida = 150;
         costo = 200;
         origen = "Castillo";
+        this.estado=new EstadoArmaDeAsedioDisponible();
         this.PosicionUnidad=new Posicion(0,0);
     }
 

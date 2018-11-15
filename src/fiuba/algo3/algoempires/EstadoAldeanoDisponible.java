@@ -2,7 +2,7 @@ package fiuba.algo3.algoempires;
 
 import java.util.HashMap;
 
-public class EstadoAldeanoDisponible implements EstadoUnidad {
+public class EstadoAldeanoDisponible extends EstadoUnidad {
 
     public void reparar(Edificio unEdificio, Aldeano unAldeano){
         unAldeano.empezarReparacion();
@@ -22,4 +22,8 @@ public class EstadoAldeanoDisponible implements EstadoUnidad {
         HashMap<Posicion,Ubicable> Ubicaciones = mapa.getUbicaciones();
         cuartel.UbicarEn(posicion, Ubicaciones);
     }
+    public int generarOro(){
+        return 20;
+    };
+
 }
