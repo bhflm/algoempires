@@ -54,7 +54,17 @@ public class AldeanoTest{
         assertEquals(oroRecaudado,0);
 
     }
-
+    @Test
+    public void test08AldeanoReparaCuartel(){
+        Aldeano MiAldeano = new Aldeano();
+        Cuartel MiCuartel = new Cuartel();
+        MiCuartel.Recibirdanio(60);
+        MiAldeano.reparar(MiCuartel);
+        int vidaPosRecuperacion= MiCuartel.getVida();
+        assertEquals(vidaPosRecuperacion,240);
+        int oroObtenido=MiAldeano.recaudarOro();
+        System.out.println(oroObtenido);
+    }
 
 
 

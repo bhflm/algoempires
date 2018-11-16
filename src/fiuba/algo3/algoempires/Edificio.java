@@ -22,7 +22,7 @@ public abstract class Edificio implements Ubicable {
 
     public void sumarVida(int vidaReparada){
         this.vida += vidaReparada;
-        if (this.vida == this.vidaMaxima){
+        if (this.vida >= this.vidaMaxima){
             this.vida = this.vidaMaxima;
         }
     }
@@ -45,5 +45,9 @@ public abstract class Edificio implements Ubicable {
                 Ubicaciones.put(posicionActual, this);
             }
         }
+    }
+
+    public void Recibirdanio(int i){
+        this.vida=this.vida-i;
     }
 }
