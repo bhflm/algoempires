@@ -36,9 +36,17 @@ private void GenerarPosiciones(){
     if (CoordHorizontal + dimension > this.LargoHorizontal || CoordVertical + dimension > this.LargoVertical){
             throw new UbicacionFueraDelMapaException();
         }
-        Unidad.UbicarEn(PosicionUnidad,this.Ubicaciones);
-    }
+        for (int i = 0; i < dimension+1; i++){
+            for (int j = 0; j < dimension+1; j++){
+                Posicion posicionActual = new Posicion(CoordHorizontal+i, CoordVertical+j);
+                Ubicaciones.put(posicionActual, Unidad);
+            }
+        }
 
+        Ubicaciones.put(PosicionUnidad,Unidad);
+        Unidad.actualizarUbicacion(PosicionUnidad);
+
+    }
 
     public int getLargoHorizontal() {
         return this.LargoHorizontal;
