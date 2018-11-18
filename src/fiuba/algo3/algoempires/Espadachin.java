@@ -12,9 +12,8 @@ public class Espadachin extends Unidad implements Movible {
         this.PosicionUnidad=new Posicion(0,0);
     }
 
-    public void UbicarEn(Posicion pos, HashMap<Posicion, Ubicable> Ubicaciones){
+    public void actualizarUbicacion(Posicion pos){
         this.PosicionUnidad=pos;
-        Ubicaciones.put(pos,this);
     }
 
     public void RealizarMovimiento(Posicion nuevaPosicion){

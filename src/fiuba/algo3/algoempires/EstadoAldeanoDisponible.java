@@ -13,14 +13,14 @@ public class EstadoAldeanoDisponible extends EstadoUnidad {
         unAldeano.empezarConstruccion();
         PlazaCentral plazaCentral = new PlazaCentral();
         HashMap<Posicion,Ubicable> Ubicaciones = mapa.getUbicaciones();
-        plazaCentral.UbicarEn(posicion, Ubicaciones);
+        plazaCentral.actualizarUbicacion(posicion);
     }
 
     public void construirCuartel (Aldeano unAldeano, Mapa mapa, Posicion posicion){
         unAldeano.empezarConstruccion();
         Cuartel cuartel = new Cuartel();
         HashMap<Posicion,Ubicable> Ubicaciones = mapa.getUbicaciones();
-        cuartel.UbicarEn(posicion, Ubicaciones);
+        cuartel.actualizarUbicacion(posicion);
     }
     public int generarOro(){
         return 20;

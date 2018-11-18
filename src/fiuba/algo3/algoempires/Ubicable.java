@@ -4,7 +4,8 @@ import java.util.HashMap;
 
 public interface Ubicable {
 
- void UbicarEn(Posicion pos, HashMap<Posicion, Ubicable> Ubicaciones);
+ void actualizarUbicacion(Posicion pos);
 
  int getDimension();
+
 }
