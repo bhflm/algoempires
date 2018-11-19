@@ -7,6 +7,7 @@ public abstract class Edificio implements Ubicable {
     protected int vida;
     protected int costo;
     protected int dimension;
+    protected int turnosRestantes;
     protected Posicion PosicionEdificio;
     protected EstadoEdificio estado = new EstadoEdificioNormal();
     protected boolean PisableEnElMapa=false;
@@ -59,4 +60,5 @@ public abstract class Edificio implements Ubicable {
         return this.dimension;
     }
 
+    public void empezarConstruccion(){ this.estado = new EstadoEdificioConstruyendose();}
 }

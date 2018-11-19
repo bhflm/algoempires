@@ -1,14 +1,12 @@
 package fiuba.algo3.algoempires;
 
-import java.util.HashMap;
+    public class Castillo extends Edificio {
 
-public class Castillo extends Edificio {
-
-    public Castillo() {
-        vidaMaxima = 1000;
-        vida = 1000;
-        dimension = 4;
-    }
+        public Castillo() {
+            vidaMaxima = 1000;
+            vida = 1000;
+            dimension = 4;
+        }
 
     public ArmaDeAsedio crearArmaDeAsedio(){
         return new ArmaDeAsedio();
@@ -19,5 +17,6 @@ public class Castillo extends Edificio {
         estado.reparar(this, 15, unAldeano);
     }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
+
 
 }

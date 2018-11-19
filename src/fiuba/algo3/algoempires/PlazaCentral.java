@@ -1,7 +1,5 @@
 package fiuba.algo3.algoempires;
 
-import java.util.HashMap;
-
 public class PlazaCentral extends Edificio {
 
     public PlazaCentral(){
@@ -9,7 +7,7 @@ public class PlazaCentral extends Edificio {
         vida = 450;
         costo = 1000;
         dimension = 2;
-        //TurnosRestantes = ... ??;
+        turnosRestantes = 3;
     }
 
     public Aldeano crearAldeano(){
@@ -21,6 +19,5 @@ public class PlazaCentral extends Edificio {
         estado.reparar(this, 25, unAldeano);
     }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
-
 
 }

@@ -9,7 +9,7 @@ public class Cuartel extends Edificio {
         vida = 250;
         costo = 50;
         dimension = 2;
-        //TurnosRestantes = ... ??;
+        turnosRestantes = 3;
     }
 
     public Espadachin crearEspadachin() {
@@ -25,7 +25,7 @@ public class Cuartel extends Edificio {
         estado.reparar(this, 50, unAldeano);
     }
 
-    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
+    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
 }

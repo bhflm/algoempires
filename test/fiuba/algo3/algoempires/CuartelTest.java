@@ -1,6 +1,7 @@
 import fiuba.algo3.algoempires.Arquero;
 import fiuba.algo3.algoempires.Cuartel;
 import fiuba.algo3.algoempires.Espadachin;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
