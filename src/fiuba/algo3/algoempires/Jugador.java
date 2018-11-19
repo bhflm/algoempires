@@ -13,8 +13,8 @@ public class Jugador {
     private Set<Edificio> edificiosJugador = new HashSet<Edificio>();
 
     Jugador(String nombreJugador) {
-        this.oro = 50;
-        this.poblacion = 3;
+        this.oro = 0;
+        this.poblacion = 0;
         this.nombre = nombreJugador;
     }
 
@@ -25,6 +25,7 @@ public class Jugador {
 
     public void agregarUnidad(Unidad unaUnidad){
         this.unidadesJugador.add((unaUnidad));
+        this.poblacion++;
     }
 
     public boolean perteneceUnidad(Unidad unaUnidad){
@@ -46,5 +47,13 @@ public class Jugador {
 
     public void agregarOro(int oroAAgregar) {
         this.oro=oroAAgregar;
+    }
+
+    public int getPoblacion() {
+        return this.poblacion;
+    }
+
+    public int getOro() {
+        return this.oro;
     }
 }
