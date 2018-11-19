@@ -66,6 +66,9 @@ public class AldeanoTest{
         System.out.println(oroObtenido);
     }
 
+    @Test
+    public void test09AldeanoConstruyeCuartel(){
 
+    }
 
 }
