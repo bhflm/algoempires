@@ -18,6 +18,9 @@ public class PlazaCentral extends Edificio {
     public void reparar(Aldeano unAldeano){
         estado.reparar(this, 25, unAldeano);
     }
+    public void continuarRepararacion(Aldeano unAldeano){
+        estado.continuarReparacion(this, 25, unAldeano);
+    }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
 }

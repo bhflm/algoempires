@@ -16,21 +16,17 @@ public abstract class Edificio implements Ubicable {
     public int getVida() {
         return this.vida;
     }
-
+    public void setVida(int vidaNueva) {this.vida = vidaNueva;}
     public int getCosto() {
         return this.costo;
     }
-
     public int getDimension() {
         return this.dimension;
     }
+    public int getVidaMaxima() {return this.vidaMaxima;}
 
     public abstract void reparar(Aldeano unAldeano);
 
-    //public void UbicarEn(Posicion posicion, ){
-    public void terminarReparacion() {
-        this.estado = new EstadoEdificioNormal();
-    }
 
     public void sumarVida(int vidaReparada) {
         this.vida += vidaReparada;
@@ -46,7 +42,9 @@ public abstract class Edificio implements Ubicable {
     public void asignarReparacion() {
         estado = new EstadoEdificioReparandose();
     }
-
+    public void terminarReparacion() {
+        this.estado = new EstadoEdificioNormal();
+    }
 
     public void actualizarUbicacion(Posicion NuevaPosicion) {
         this.PosicionEdificio=NuevaPosicion;
@@ -56,9 +54,16 @@ public abstract class Edificio implements Ubicable {
         this.vida = this.vida - i;
     }
 
-    public int getDimensionEdificio(){
-        return this.dimension;
+    public void empezarConstruccion(){ this.estado = new EstadoEdificioConstruyendose();}
+
+    public void construir(Aldeano unAldeano){
+        turnosRestantes -= 1;
+        if (turnosRestantes == 0){
+            unAldeano.desocupar();
+            this.estado = new EstadoEdificioNormal();
+        }
     }
 
-    public void empezarConstruccion(){ this.estado = new EstadoEdificioConstruyendose();}
+    public void continuarRepararacion(Aldeano unAldeano){}
+
 }

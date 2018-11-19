@@ -16,6 +16,9 @@ package fiuba.algo3.algoempires;
     public void reparar(Aldeano unAldeano) {
         estado.reparar(this, 15, unAldeano);
     }
+    public void continuarRepararacion(Aldeano unAldeano){
+            estado.continuarReparacion(this, 15, unAldeano);
+    }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
 

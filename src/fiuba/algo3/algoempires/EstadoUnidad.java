@@ -5,4 +5,5 @@ public abstract class EstadoUnidad {
     void construirPlazaCentral (Aldeano unAldeano, Mapa mapa, Posicion posicion){};
     void construirCuartel (Aldeano unAldeano, Mapa mapa, Posicion posicion){};
     int generarOro(){return 0;};
+    void trabajar(Edificio unEdificio, Aldeano unAldeano){};
 }

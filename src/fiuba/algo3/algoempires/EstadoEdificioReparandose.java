@@ -6,4 +6,13 @@ public class EstadoEdificioReparandose implements EstadoEdificio{
         unAldeano.desocupar();
         throw new EdificioReparandoseException();
     }
+    public void continuarReparacion(Edificio unEdificio, int vidaReparada, Aldeano unAldeano){
+        unEdificio.sumarVida(vidaReparada);
+        if (unEdificio.getVida() >= unEdificio.getVidaMaxima()){
+            unEdificio.setVida(unEdificio.getVidaMaxima());
+            unAldeano.desocupar();
+            unEdificio.terminarReparacion();
+        }
+    }
+
 }

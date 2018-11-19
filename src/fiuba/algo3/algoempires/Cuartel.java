@@ -15,6 +15,9 @@ public class Cuartel extends Edificio {
     public Espadachin crearEspadachin() {
         return new Espadachin();
     }
+    public void continuarRepararacion(Aldeano unAldeano){
+        estado.continuarReparacion(this, 50, unAldeano);
+    }
 
     public Arquero crearArquero(){
         return new Arquero();

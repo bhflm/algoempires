@@ -7,7 +7,7 @@ public class Aldeano extends Unidad implements Movible{
     public Aldeano() {
         this.vida = 50;
         this.costo = 25;
-        this.origen = "Plaza central";
+        this.edificioActual = null;
         this.estado = new EstadoAldeanoDisponible();
         this.PosicionUnidad = new Posicion(0,0);
     }
@@ -20,8 +20,9 @@ public class Aldeano extends Unidad implements Movible{
         this.estado.reparar(unEdificio, this);
     }
 
-    public void empezarReparacion(){
+    public void empezarReparacion(Edificio unEdificio){
         this.estado = new EstadoAldeanoReparando();
+        this.edificioActual = unEdificio;
     }
 
     public void construirCuartel(Mapa mapa, Posicion posicion) {
@@ -32,8 +33,9 @@ public class Aldeano extends Unidad implements Movible{
         this.estado.construirPlazaCentral(this, mapa, posicion);
     }
 
-    public void empezarConstruccion(){
+    public void empezarConstruccion(Edificio unEdificio){
         this.estado = new EstadoAldeanoConstruyendo();
+        this.edificioActual = unEdificio;
     }
 
 
@@ -47,6 +49,6 @@ public class Aldeano extends Unidad implements Movible{
     public int recaudarOro(){
         return this.estado.generarOro();
     }
-    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
-
+    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;}
+    public void trabajar(){estado.trabajar(edificioActual,this);}
 }

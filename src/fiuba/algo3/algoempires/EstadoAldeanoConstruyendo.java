@@ -2,6 +2,9 @@ package fiuba.algo3.algoempires;
 
 public class EstadoAldeanoConstruyendo extends EstadoUnidad {
 
+    public void trabajar(Edificio unEdificio, Aldeano unAldeano){
+        unEdificio.construir(unAldeano);
+    }
     public void reparar(Edificio unEdificio, Aldeano unAldeano){
         throw new AldeanoOcupadoException();
     }
