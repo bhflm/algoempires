@@ -60,4 +60,6 @@ public abstract class Edificio implements Ubicable {
     }
 
     public void empezarConstruccion(){ this.estado = new EstadoEdificioConstruyendose();}
+
+
 }

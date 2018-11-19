@@ -12,15 +12,17 @@ public class EstadoAldeanoDisponible extends EstadoUnidad {
     public void construirPlazaCentral(Aldeano unAldeano, Mapa mapa, Posicion posicion){
         unAldeano.empezarConstruccion();
         PlazaCentral plazaCentral = new PlazaCentral();
-        mapa.UbicarUnidadEnMapa(posicion,plazaCentral);
-        plazaCentral.actualizarUbicacion(posicion);
+        plazaCentral.empezarConstruccion();
+        //mapa.UbicarUnidadEnMapa(posicion,plazaCentral);
+        //plazaCentral.actualizarUbicacion(posicion);
     }
 
     public void construirCuartel (Aldeano unAldeano, Mapa mapa, Posicion posicion){
         unAldeano.empezarConstruccion();
         Cuartel cuartel = new Cuartel();
-        mapa.UbicarUnidadEnMapa(posicion,cuartel);
-        cuartel.actualizarUbicacion(posicion);
+        cuartel.empezarConstruccion();
+        //mapa.UbicarUnidadEnMapa(posicion,cuartel);
+        //cuartel.actualizarUbicacion(posicion);
     }
     public int generarOro(){
         return 20;
