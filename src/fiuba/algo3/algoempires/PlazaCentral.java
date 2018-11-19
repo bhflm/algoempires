@@ -1,7 +1,5 @@
 package fiuba.algo3.algoempires;
 
-import java.util.HashMap;
-
 public class PlazaCentral extends Edificio {
 
     public PlazaCentral(){
@@ -12,16 +10,14 @@ public class PlazaCentral extends Edificio {
         turnosRestantes = 3;
     }
 
+    public Aldeano crearAldeano(){
+        return new Aldeano();
+    }
+
     @Override
     public void reparar(Aldeano unAldeano){
         estado.reparar(this, 25, unAldeano);
     }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
-    public void crearAldeano(){
-        Aldeano aldeano = new Aldeano();
-        Posicion posicionUnidad = new Posicion(this.dimension,this.dimension);
-        posicionUnidad.add(PosicionEdificio);
-        aldeano.actualizarUbicacion(posicionUnidad);
-    }
 }
