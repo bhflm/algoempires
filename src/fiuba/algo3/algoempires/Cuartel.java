@@ -15,6 +15,9 @@ public class Cuartel extends Edificio {
     public void reparar(Aldeano unAldeano){
         estado.reparar(this, 50, unAldeano);
     }
+    public void continuarRepararacion(Aldeano unAldeano){
+        estado.continuarReparacion(this, 50, unAldeano);
+    }
 
     public void crearEspadachin(){
         Espadachin espadachin = new Espadachin();
@@ -29,5 +32,7 @@ public class Cuartel extends Edificio {
         posicionUnidad.add(PosicionEdificio);
         arquero.actualizarUbicacion(posicionUnidad);
     }
+
+    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
 }

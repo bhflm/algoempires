@@ -15,11 +15,6 @@ public class AldeanoTest{
         assertEquals(25, MiAldeano.getCosto());
     }
 
-    @Test
-    public void test03AldeanoRecienCreadoOrigenOk() {
-        Aldeano MiAldeano = new Aldeano();
-        assertEquals("Plaza central", MiAldeano.getOrigen());
-    }
 
     @Test
     public void test04AldeanoSeDesplazaHaciaUnaNuevaPosicion(){
@@ -62,13 +57,98 @@ public class AldeanoTest{
         MiAldeano.reparar(MiCuartel);
         int vidaPosRecuperacion= MiCuartel.getVida();
         assertEquals(vidaPosRecuperacion,240);
-        int oroObtenido=MiAldeano.recaudarOro();
-        System.out.println(oroObtenido);
     }
 
     @Test
-    public void test09AldeanoConstruyeCuartel(){
+    public void test09AldeanoReparaDosVecesLanzaExcepcionDeAldeanoOcupado(){
+        Aldeano MiAldeano = new Aldeano();
+        Cuartel MiCuartel = new Cuartel();
+        MiCuartel.Recibirdanio(60);
+        MiAldeano.reparar(MiCuartel);
 
+        boolean seLanzoError = false;
+        try {
+            MiAldeano.reparar(MiCuartel);;
+        } catch (AldeanoOcupadoException e) {
+            seLanzoError = true;
+        }
+        assertTrue(seLanzoError);
     }
+
+    @Test
+    public void test11DosAldeanosReparandoMismoEdificioLanzaExcepcionDeEdificioReparandose(){
+        Aldeano MiAldeano1 = new Aldeano();
+        Aldeano MIAldeano2 = new Aldeano();
+        Cuartel MiCuartel = new Cuartel();
+        MiCuartel.Recibirdanio(60);
+
+        MiAldeano1.reparar(MiCuartel);
+
+        boolean seLanzoError = false;
+        try {
+            MIAldeano2.reparar(MiCuartel);;
+        } catch (EdificioReparandoseException e) {
+            seLanzoError = true;
+        }
+        assertTrue(seLanzoError);
+    }
+
+    @Test
+    public void test12AldeanoReparaEnTurnosConsecutivos(){
+        Aldeano MiAldeano = new Aldeano();
+        PlazaCentral miPlazaCentral = new PlazaCentral();
+        miPlazaCentral.Recibirdanio(60);
+
+        int vidaInicial = miPlazaCentral.getVida();
+        MiAldeano.reparar(miPlazaCentral);
+        MiAldeano.trabajar();
+        int VidaFinal = miPlazaCentral.getVida();
+
+        assertTrue(VidaFinal == (vidaInicial + 50));
+    }
+
+    @Test
+    public void test13AldeanoReparaMasVecesNoExcedeVidaMaxima(){
+        Aldeano MiAldeano = new Aldeano();
+        PlazaCentral miPlazaCentral = new PlazaCentral();
+        miPlazaCentral.Recibirdanio(60);
+
+        MiAldeano.reparar(miPlazaCentral);
+        MiAldeano.trabajar();
+        MiAldeano.trabajar();
+        MiAldeano.trabajar();
+        int VidaFinal = miPlazaCentral.getVida();
+        int VidaMaxima = miPlazaCentral.getVidaMaxima();
+        assertTrue(VidaFinal == VidaMaxima);
+    }
+
+    @Test
+    public void test14AldeanoRepararEdificioConVidaMaximaLanzaExcepcionVidaMaxima(){
+        Aldeano MiAldeano = new Aldeano();
+        PlazaCentral miPlazaCentral = new PlazaCentral();
+
+        boolean seLanzoError = false;
+        try {
+            MiAldeano.reparar(miPlazaCentral);
+        } catch (EdificioVidaMaximaException e) {
+            seLanzoError = true;
+        }
+        assertTrue(seLanzoError);
+    }
+
+    public void test15AldeanoGeneraOroFinalizadaLaReparacion(){
+        Aldeano MiAldeano = new Aldeano();
+        PlazaCentral miPlazaCentral = new PlazaCentral();
+        miPlazaCentral.Recibirdanio(20);
+
+        MiAldeano.reparar(miPlazaCentral);
+        int oroRecaudado1 = MiAldeano.recaudarOro();
+
+        MiAldeano.trabajar();
+        int oroRecaudado2 = MiAldeano.recaudarOro();
+
+        assertTrue(oroRecaudado1 == 0 & oroRecaudado2 == 20);
+    }
+
 
 }

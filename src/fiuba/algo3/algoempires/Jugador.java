@@ -34,6 +34,12 @@ public class Jugador {
     public void moverUnidad(Juego unJuego, Mapa unMapa,Movible unaUnidad, Direccion unaDireccion){
         Posicion posicionMover = unaDireccion.ObtenerPosicion(unaUnidad);
         unMapa.MoverUnidad(posicionMover,unaUnidad);
+        if (unJuego.getNombreActual() != this.nombre ){
+            throw new JugadaInvalidaException();
+        }
         unJuego.cambiarTurno();
     }
+
+
+
 }

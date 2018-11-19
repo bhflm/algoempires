@@ -6,4 +6,5 @@ public class EstadoEdificioConstruyendose implements EstadoEdificio {
     public void reparar(Edificio unEdificio, int vida, Aldeano unAldeano) {
         throw new EdificioConstruyendoseException();
     }
+    public void continuarReparacion (Edificio e, int i, Aldeano a){};
 }
