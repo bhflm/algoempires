@@ -12,7 +12,5 @@ public class EstadoAldeanoReparando extends EstadoUnidad {
     public void construirCuartel (Aldeano unAldeano, Mapa mapa, Posicion posicion){
         throw new AldeanoOcupadoException();
     }
-
-
 }
 

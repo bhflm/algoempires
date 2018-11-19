@@ -9,14 +9,27 @@ public class Cuartel extends Edificio {
         vida = 250;
         costo = 50;
         dimension = 2;
-        //TurnosRestantes = ... ??;
+        turnosRestantes = 3;
     }
     @Override
     public void reparar(Aldeano unAldeano){
         estado.reparar(this, 50, unAldeano);
     }
 
-    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
+    public void crearEspadachin(){
+        Espadachin espadachin = new Espadachin();
+        Posicion posicionUnidad = new Posicion(this.dimension,this.dimension);
+        posicionUnidad.add(PosicionEdificio);
+        espadachin.actualizarUbicacion(posicionUnidad);
+    }
 
+    public void crearArquero(){
+        Arquero arquero = new Arquero();
+        Posicion posicionUnidad = new Posicion(this.dimension,this.dimension);
+        posicionUnidad.add(PosicionEdificio);
+        arquero.actualizarUbicacion(posicionUnidad);
+    }
+
+    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
 }
