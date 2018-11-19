@@ -23,6 +23,11 @@ public class Posicion {
         return true;
 
     }
+    public Posicion add(Posicion o){
+        this.x += o.x;
+        this.y += o.y;
+        return this;
+    }
 
     @Override
     public int hashCode() {

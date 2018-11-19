@@ -1,4 +1,5 @@
 import fiuba.algo3.algoempires.Cuartel;
+import fiuba.algo3.algoempires.Posicion;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

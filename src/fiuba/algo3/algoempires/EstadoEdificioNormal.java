@@ -13,5 +13,4 @@ public class EstadoEdificioNormal implements EstadoEdificio{
         unEdificio.terminarReparacion();
         unAldeano.desocupar();
     }
-
 }
