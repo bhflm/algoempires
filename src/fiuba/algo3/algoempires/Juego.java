@@ -42,16 +42,11 @@ public class Juego {
         Posicion posicionAldeano3UnJugador=new Posicion((dimensionMapa/2),3);
         agregarAldeano(unJugador, miMapa, dimensionMapa,posicionAldeano3UnJugador);
         Posicion posicionAldeano1OtroJugador=new Posicion((dimensionMapa/2)-1,dimensionMapa);
-        agregarAldeano(unJugador, miMapa, dimensionMapa,posicionAldeano1OtroJugador);
+        agregarAldeano(otroJugador, miMapa, dimensionMapa,posicionAldeano1OtroJugador);
         Posicion posicionAldeano2OtroJugador=new Posicion((dimensionMapa/2)+2,dimensionMapa);
-        agregarAldeano(unJugador, miMapa, dimensionMapa,posicionAldeano2OtroJugador);
+        agregarAldeano(otroJugador, miMapa, dimensionMapa,posicionAldeano2OtroJugador);
         Posicion posicionAldeano3OtroJugador=new Posicion((dimensionMapa/2),dimensionMapa-2);
-        agregarAldeano(unJugador, miMapa, dimensionMapa,posicionAldeano3OtroJugador);
-
-
-
-
-
+        agregarAldeano(otroJugador, miMapa, dimensionMapa,posicionAldeano3OtroJugador);
     }
 
     private void agregarAldeano(Jugador unJugador, Mapa miMapa, int dimensionMapa,Posicion posicionAldeano) {

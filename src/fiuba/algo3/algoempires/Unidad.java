@@ -9,6 +9,8 @@ public abstract class Unidad{
     protected Posicion PosicionUnidad;
     protected int dimension = 1;
     protected boolean PisableEnElMapa=false;
+    protected int rangoDeAtaque=0;
+    protected int puntosDeAtaque=0;
 
     public int getVida(){ return this.vida; }
     public int getCosto(){
