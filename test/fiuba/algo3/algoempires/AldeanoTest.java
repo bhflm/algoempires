@@ -149,6 +149,4 @@ public class AldeanoTest{
 
         assertTrue(oroRecaudado1 == 0 & oroRecaudado2 == 20);
     }
-
-
 }
