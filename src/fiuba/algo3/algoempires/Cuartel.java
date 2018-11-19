@@ -30,4 +30,6 @@ public class Cuartel extends Edificio {
         arquero.actualizarUbicacion(posicionUnidad);
     }
 
+    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
+
 }

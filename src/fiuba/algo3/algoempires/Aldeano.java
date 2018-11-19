@@ -47,5 +47,6 @@ public class Aldeano extends Unidad implements Movible{
     public int recaudarOro(){
         return this.estado.generarOro();
     }
+    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
 }

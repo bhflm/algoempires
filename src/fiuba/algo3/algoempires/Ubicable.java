@@ -5,7 +5,7 @@ import java.util.HashMap;
 public interface Ubicable {
 
  void actualizarUbicacion(Posicion pos);
-
+ boolean esPisableEnElMapa();
  int getDimension();
 
 }

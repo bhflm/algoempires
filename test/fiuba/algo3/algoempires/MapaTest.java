@@ -212,4 +212,48 @@ public class MapaTest {
         }
         assertFalse(seLanzoError);
     }
+
+    @Test
+    public void test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano() {
+        Ubicable Juan = new Aldeano();
+        Ubicable Pedro = new Aldeano();
+        boolean seLanzoError=false;
+        Posicion posicionAldeano = new Posicion(1, 5);
+        Mapa miMapa = new Mapa(5, 5);
+        miMapa.UbicarUnidadEnMapa(posicionAldeano, Juan);
+        try{
+            miMapa.UbicarUnidadEnMapa(posicionAldeano,Pedro);
+        }
+        catch(UbicacionOcupadaPorOtraUnidad e){
+            seLanzoError=true;
+        }
+        assertTrue(seLanzoError);
+    }
+
+    @Test
+    public void test17CreoElMapaYMuevoAldeanoEnUnaPosicionDondeYaTengoUnAldeano() {
+        Movible Juan = new Aldeano();
+        Movible Pedro = new Aldeano();
+        boolean seLanzoError=false;
+        Posicion posicionAldeanoJuan = new Posicion(1, 5);
+        Posicion posicionAldeanoPedro=new Posicion(2,5);
+        Mapa miMapa = new Mapa(5, 5);
+        miMapa.UbicarUnidadEnMapa(posicionAldeanoJuan, Juan);
+        miMapa.UbicarUnidadEnMapa(posicionAldeanoPedro, Pedro);
+        try{
+            miMapa.MoverUnidad(posicionAldeanoJuan,Pedro);
+        }
+        catch(UbicacionOcupadaPorOtraUnidad e){
+            seLanzoError=true;
+        }
+        assertTrue(seLanzoError);
+    }
+
+
+
+
+
+
+
+
 }

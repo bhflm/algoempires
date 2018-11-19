@@ -34,8 +34,13 @@ private void GenerarPosiciones(){
     int CoordHorizontal = PosicionUnidad.getCoordenadaHorizontal();
     int CoordVertical = PosicionUnidad.getCoordenadaVertical();
     if (CoordHorizontal + dimension > this.LargoHorizontal || CoordVertical + dimension > this.LargoVertical){
-            throw new UbicacionFueraDelMapaException();
-        }
+            throw new UbicacionFueraDelMapaException();}
+
+
+        Ubicable UbicableEnLaNuevaPosicion=this.Ubicaciones.get(PosicionUnidad);
+        if(UbicableEnLaNuevaPosicion.esPisableEnElMapa()==false){
+            throw new UbicacionOcupadaPorOtraUnidad();}
+
         for (int i = 0; i < dimension+1; i++){
             for (int j = 0; j < dimension+1; j++){
                 Posicion posicionActual = new Posicion(CoordHorizontal+i, CoordVertical+j);
@@ -70,6 +75,9 @@ private void GenerarPosiciones(){
     catch(MovimientoFueraDelMapa e){
         throw new MovimientoFueraDelMapa();
     }
+    Ubicable UbicableEnLaNuevaPosicion=this.Ubicaciones.get(nuevaPosicion);
+    if(UbicableEnLaNuevaPosicion.esPisableEnElMapa()==false){
+        throw new UbicacionOcupadaPorOtraUnidad();}
     Posicion posicionPrevia= unidadAMover.getPosicion();
     Ubicable ubicacionLiberada=new EspacioLibre();
     this.Ubicaciones.put(nuevaPosicion,unidadAMover);

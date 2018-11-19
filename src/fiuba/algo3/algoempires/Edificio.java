@@ -10,6 +10,7 @@ public abstract class Edificio implements Ubicable {
     protected int turnosRestantes;
     protected Posicion PosicionEdificio;
     protected EstadoEdificio estado = new EstadoEdificioNormal();
+    protected boolean PisableEnElMapa=false;
 
 
     public int getVida() {
