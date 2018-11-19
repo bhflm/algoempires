@@ -62,10 +62,18 @@ public class AldeanoTest{
         MiAldeano.reparar(MiCuartel);
         int vidaPosRecuperacion= MiCuartel.getVida();
         assertEquals(vidaPosRecuperacion,240);
-        int oroObtenido=MiAldeano.recaudarOro();
-        System.out.println(oroObtenido);
     }
 
-
+    @Test
+    public void test09AldeanoReparaCuartelCompletamenteYSumaOro(){
+        Aldeano MiAldeano = new Aldeano();
+        Cuartel MiCuartel = new Cuartel();
+        MiCuartel.Recibirdanio(60);
+        MiAldeano.reparar(MiCuartel);
+        MiAldeano.reparar(MiCuartel);
+        int vidaPosRecuperacion= MiCuartel.getVida();
+        int oroRecaudado=MiAldeano.recaudarOro();
+        assertEquals(oroRecaudado,20);
+    }
 
 }

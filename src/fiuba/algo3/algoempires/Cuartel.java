@@ -16,4 +16,7 @@ public class Cuartel extends Edificio {
         estado.reparar(this, 50, unAldeano);
     }
 
+    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
+
+
 }

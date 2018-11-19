@@ -9,6 +9,7 @@ public abstract class Edificio implements Ubicable {
     protected int dimension;
     protected Posicion PosicionEdificio;
     protected EstadoEdificio estado = new EstadoEdificioNormal();
+    protected boolean PisableEnElMapa=false;
 
 
     public int getVida() {
@@ -57,4 +58,5 @@ public abstract class Edificio implements Ubicable {
     public int getDimensionEdificio(){
         return this.dimension;
     }
+
 }

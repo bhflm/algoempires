@@ -8,6 +8,7 @@ public abstract class Unidad{
     protected EstadoUnidad estado;
     protected Posicion PosicionUnidad;
     protected int dimension = 1;
+    protected boolean PisableEnElMapa=false;
 
     public int getVida(){ return this.vida; }
     public int getCosto(){
@@ -19,4 +20,6 @@ public abstract class Unidad{
     public int recaudarOro(){
         int oroRecaudado=this.estado.generarOro();
         return oroRecaudado;}
+
+
 }
