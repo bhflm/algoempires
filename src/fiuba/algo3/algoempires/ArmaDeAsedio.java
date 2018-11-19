@@ -19,4 +19,6 @@ public class ArmaDeAsedio extends Unidad implements Movible{
     public void RealizarMovimiento(Posicion nuevaPosicion){
         this.PosicionUnidad=nuevaPosicion;
     }
+    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
+
 }

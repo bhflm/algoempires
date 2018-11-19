@@ -14,5 +14,6 @@ public class Castillo extends Edificio {
     public void reparar(Aldeano unAldeano) {
         estado.reparar(this, 15, unAldeano);
     }
+    public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
 }

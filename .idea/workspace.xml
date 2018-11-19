@@ -2,19 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15e2d2c4-a688-415c-b97a-4b914a79ae9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/UbicacionOcupadaPorOtraUnidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Aldeano.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Aldeano.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Arquero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Arquero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Mapa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Mapa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Unidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algoempires/fiuba/algo3/algoempires/Unidad.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Aldeano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Aldeano.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/ArmaDeAsedio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/ArmaDeAsedio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Arquero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Arquero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Castillo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Castillo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Cuartel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Cuartel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EspacioLibre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EspacioLibre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Espadachin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Espadachin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoAldeanoDisponible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoAldeanoDisponible.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Mapa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/PlazaCentral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/PlazaCentral.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Ubicable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Ubicable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Unidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Unidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fiuba/algo3/algoempires/MapaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fiuba/algo3/algoempires/MapaTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,145 +41,70 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="55" />
+          <entry key="java" value="70" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="55" />
+          <entry key="JAVA" value="70" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1701" />
+          <entry key="java" value="2361" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1701" />
+          <entry key="JAVA" value="2361" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="53" column="34" lean-forward="true" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-              <folding>
-                <element signature="e#369#370#0" expanded="true" />
-                <element signature="e#401#402#0" expanded="true" />
-                <element signature="e#430#431#0" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#496#497#0" expanded="true" />
-                <element signature="e#533#534#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
-                <element signature="e#957#958#0" expanded="true" />
-                <element signature="e#998#999#0" expanded="true" />
-                <element signature="e#1037#1038#0" expanded="true" />
-                <element signature="e#1093#1094#0" expanded="true" />
-                <element signature="e#1157#1158#0" expanded="true" />
-                <element signature="e#1208#1209#0" expanded="true" />
-                <element signature="e#1639#1640#0" expanded="true" />
-                <element signature="e#1680#1681#0" expanded="true" />
-                <element signature="e#1720#1721#0" expanded="true" />
-                <element signature="e#1741#1742#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Aldeano.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Mapa.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-              <folding>
-                <element signature="e#2094#2095#0" expanded="true" />
-                <element signature="e#2137#2138#0" expanded="true" />
-                <element signature="e#2174#2175#0" expanded="true" />
-                <element signature="e#2210#2211#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/EspacioLibre.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/MapaTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="180" selection-start-line="180" selection-end-line="180" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoAldeanoDisponible.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Ubicable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Movible.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Unidad.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="16" selection-start-line="8" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6625">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/MapaTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="341">
+                  <caret line="250" lean-forward="true" selection-start-line="250" selection-end-line="250" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/UbicacionOcupadaPorOtraUnidad.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Mapa.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="198">
+                  <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
+                  <folding>
+                    <element signature="e#1922#1923#0" expanded="true" />
+                    <element signature="e#1965#1966#0" expanded="true" />
+                    <element signature="e#2002#2003#0" expanded="true" />
+                    <element signature="e#2038#2039#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -187,24 +119,29 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Unidad.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoUnidad.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoAldeanoReparando.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoAldeanoConstruyendo.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoArqueroDisponible.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoArmaDeAsedioDisponible.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoEspadachinDisponible.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/UbicableMultiPosicion.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoAldeanoDisponible.java" />
         <option value="$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Ubicable.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EspacioLibre.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Unidad.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Aldeano.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Cuartel.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/PlazaCentral.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Castillo.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/ArmaDeAsedio.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Arquero.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Espadachin.java" />
-        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Ubicable.java" />
-        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/UbicableMultiPosicion.java" />
-        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoAldeanoDisponible.java" />
-        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java" />
-        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/EspacioLibre.java" />
+        <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/UbicacionOcupadaPorOtraUnidad.java" />
         <option value="$PROJECT_DIR$/src/fiuba/algo3/algoempires/Mapa.java" />
+        <option value="$PROJECT_DIR$/test/fiuba/algo3/algoempires/MapaTest.java" />
       </list>
     </option>
   </component>
@@ -225,7 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -259,15 +195,21 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542442133856" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542586934412" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="fiuba.algo3.algoempires" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -281,8 +223,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.fiuba.algo3.algoempires in algoempires">
-    <configuration name="AldeanoTest.test08AldeanoReparaCuartel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MapaTest.test17CreoElMapaYMuevoAldeanoEnUnaPosicionDondeYaTengoUnAldeano">
+    <configuration name="AldeanoTest.test09AldeanoReparaCuartelCompletamenteYSumaOro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algoempires" />
       <extension name="coverage">
         <pattern>
@@ -292,7 +234,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="fiuba.algo3.algoempires" />
       <option name="MAIN_CLASS_NAME" value="fiuba.algo3.algoempires.AldeanoTest" />
-      <option name="METHOD_NAME" value="test08AldeanoReparaCuartel" />
+      <option name="METHOD_NAME" value="test09AldeanoReparaCuartelCompletamenteYSumaOro" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AldeanoTest.test09AldeanoReparaCuartelCompletamenteYnoSumaOro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algoempires" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fiuba.algo3.algoempires.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fiuba.algo3.algoempires" />
+      <option name="MAIN_CLASS_NAME" value="fiuba.algo3.algoempires.AldeanoTest" />
+      <option name="METHOD_NAME" value="test09AldeanoReparaCuartelCompletamenteYnoSumaOro" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapaTest.test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algoempires" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fiuba.algo3.algoempires.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fiuba.algo3.algoempires" />
+      <option name="MAIN_CLASS_NAME" value="fiuba.algo3.algoempires.MapaTest" />
+      <option name="METHOD_NAME" value="test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapaTest.test17CreoElMapaYMuevoAldeanoEnUnaPosicionDondeYaTengoUnAldeano" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algoempires" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fiuba.algo3.algoempires.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fiuba.algo3.algoempires" />
+      <option name="MAIN_CLASS_NAME" value="fiuba.algo3.algoempires.MapaTest" />
+      <option name="METHOD_NAME" value="test17CreoElMapaYMuevoAldeanoEnUnaPosicionDondeYaTengoUnAldeano" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -314,12 +304,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.fiuba.algo3.algoempires in algoempires" />
-      <item itemvalue="JUnit.AldeanoTest.test08AldeanoReparaCuartel" />
+      <item itemvalue="JUnit.AldeanoTest.test09AldeanoReparaCuartelCompletamenteYnoSumaOro" />
+      <item itemvalue="JUnit.AldeanoTest.test09AldeanoReparaCuartelCompletamenteYSumaOro" />
+      <item itemvalue="JUnit.MapaTest.test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano" />
+      <item itemvalue="JUnit.MapaTest.test17CreoElMapaYMuevoAldeanoEnUnaPosicionDondeYaTengoUnAldeano" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MapaTest.test17CreoElMapaYMuevoAldeanoEnUnaPosicionDondeYaTengoUnAldeano" />
+        <item itemvalue="JUnit.MapaTest.test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano" />
+        <item itemvalue="JUnit.AldeanoTest.test09AldeanoReparaCuartelCompletamenteYSumaOro" />
+        <item itemvalue="JUnit.AldeanoTest.test09AldeanoReparaCuartelCompletamenteYnoSumaOro" />
         <item itemvalue="JUnit.fiuba.algo3.algoempires in algoempires" />
-        <item itemvalue="JUnit.AldeanoTest.test08AldeanoReparaCuartel" />
       </list>
     </recent_temporary>
   </component>
@@ -334,49 +330,50 @@
       <option name="presentableId" value="Default" />
       <updated>1542305686390</updated>
       <workItem from="1542305687897" duration="6146000" />
+      <workItem from="1542583055369" duration="3870000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 16h 50m 08s.xml">
-      <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 16h 50m 15s.xml">
-      <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 16h 51m 17s.xml">
-      <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 17h 00m 55s.xml">
-      <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AldeanoTest_test08AldeanoReparaCuartel - 2018.11.15 at 17h 01m 00s.xml">
-      <configuration name="AldeanoTest.test08AldeanoReparaCuartel" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="fiuba_algo3_algoempires_in_algoempires - 2018.11.17 at 04h 15m 34s.xml">
-      <configuration name="fiuba.algo3.algoempires in algoempires" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="fiuba_algo3_algoempires_in_algoempires - 2018.11.17 at 05h 00m 45s.xml">
-      <configuration name="fiuba.algo3.algoempires in algoempires" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="fiuba_algo3_algoempires_in_algoempires - 2018.11.17 at 05h 01m 12s.xml">
-      <configuration name="fiuba.algo3.algoempires in algoempires" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="fiuba_algo3_algoempires_in_algoempires - 2018.11.17 at 05h 06m 50s.xml">
-      <configuration name="fiuba.algo3.algoempires in algoempires" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="fiuba_algo3_algoempires_in_algoempires - 2018.11.17 at 05h 07m 17s.xml">
       <configuration name="fiuba.algo3.algoempires in algoempires" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AldeanoTest_test09AldeanoReparaCuartelCompletamenteYnoSumaOro - 2018.11.18 at 20h 24m 30s.xml">
+      <configuration name="AldeanoTest.test09AldeanoReparaCuartelCompletamenteYnoSumaOro" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AldeanoTest_test09AldeanoReparaCuartelCompletamenteYSumaOro - 2018.11.18 at 20h 26m 00s.xml">
+      <configuration name="AldeanoTest.test09AldeanoReparaCuartelCompletamenteYSumaOro" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AldeanoTest_test09AldeanoReparaCuartelCompletamenteYSumaOro - 2018.11.18 at 20h 44m 16s.xml">
+      <configuration name="AldeanoTest.test09AldeanoReparaCuartelCompletamenteYSumaOro" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AldeanoTest_test09AldeanoReparaCuartelCompletamenteYSumaOro - 2018.11.18 at 20h 44m 41s.xml">
+      <configuration name="AldeanoTest.test09AldeanoReparaCuartelCompletamenteYSumaOro" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AldeanoTest_test09AldeanoReparaCuartelCompletamenteYSumaOro - 2018.11.18 at 20h 52m 21s.xml">
+      <configuration name="AldeanoTest.test09AldeanoReparaCuartelCompletamenteYSumaOro" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MapaTest_test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano - 2018.11.18 at 21h 02m 12s.xml">
+      <configuration name="MapaTest.test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MapaTest_test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano - 2018.11.18 at 21h 06m 41s.xml">
+      <configuration name="MapaTest.test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MapaTest_test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano - 2018.11.18 at 21h 10m 20s.xml">
+      <configuration name="MapaTest.test16CreoElMapaYUbicoAldeanoEnPosicionDondeYaTengoUnAldeano" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MapaTest_test17CreoElMapaYMuevoAldeanoEnUnaPosicionDondeYaTengoUnAldeano - 2018.11.18 at 21h 20m 43s.xml">
+      <configuration name="MapaTest.test17CreoElMapaYMuevoAldeanoEnUnaPosicionDondeYaTengoUnAldeano" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9368000" />
+    <option name="totallyTimeSpent" value="13234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25379938" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20972644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -385,7 +382,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.55482817" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.15711948" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -406,34 +403,34 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.3289689" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20972644" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.15711948" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,13 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Castillo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoEdificio.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -541,71 +531,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Cuartel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/EstadoEdificioNormal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/ArmaDeAsedio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Arquero.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding>
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Espadachin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="53" column="34" lean-forward="true" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Aldeano.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Movible.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -616,78 +545,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Unidad.java">
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/UbicableMultiPosicion.java" />
+    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/AldeanoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Movible.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="16" selection-start-line="8" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/UbicableMultiPosicion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-          <folding>
-            <element signature="e#369#370#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1037#1038#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="e#1157#1158#0" expanded="true" />
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1639#1640#0" expanded="true" />
-            <element signature="e#1680#1681#0" expanded="true" />
-            <element signature="e#1720#1721#0" expanded="true" />
-            <element signature="e#1741#1742#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/EspacioLibre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Ubicable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="119">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/MapaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Aldeano.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="180" selection-start-line="180" selection-end-line="180" />
+        <state relative-caret-position="212">
+          <caret line="49" column="23" selection-start-line="49" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Edificio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/EspacioLibre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/PlazaCentral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Cuartel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Unidad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Castillo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/ArmaDeAsedio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-end-line="22" />
+          <folding>
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Arquero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Espadachin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/EdificioVidaMaximaException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/UbicacionOcupadaPorOtraUnidad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/algoempires/Mapa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        <state relative-caret-position="198">
+          <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
           <folding>
-            <element signature="e#2094#2095#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2174#2175#0" expanded="true" />
-            <element signature="e#2210#2211#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="e#1965#1966#0" expanded="true" />
+            <element signature="e#2002#2003#0" expanded="true" />
+            <element signature="e#2038#2039#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/algoempires/MapaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="250" lean-forward="true" selection-start-line="250" selection-end-line="250" />
         </state>
       </provider>
     </entry>
