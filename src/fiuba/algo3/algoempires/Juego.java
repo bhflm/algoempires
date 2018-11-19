@@ -16,9 +16,9 @@ public class Juego {
         iniciarJuego(unJugador,otroJugador);
         Mapa miMapa=new Mapa(dimensionMapa,dimensionMapa);
         this.agregarOroInicial(unJugador,otroJugador);
- //       this.agregarPlazasCentralesIniciales(unJugador,otroJugador,miMapa,dimensionMapa);
+        this.agregarPlazasCentralesIniciales(unJugador,otroJugador,miMapa,dimensionMapa);
         this.agregarAldeanosIniciales(unJugador,otroJugador,miMapa,dimensionMapa);
- //       this.agregarCastillosIniciales(unJugador,otroJugador,miMapa,dimensionMapa);
+        this.agregarCastillosIniciales(unJugador,otroJugador,miMapa,dimensionMapa);
     }
 
     private void agregarCastillosIniciales(Jugador unJugador, Jugador otroJugador, Mapa miMapa, int dimensionMapa) {
@@ -27,7 +27,7 @@ public class Juego {
         unJugador.agregarEdificio(castilloUnJugador);
         miMapa.UbicarUnidadEnMapa(posicionCastilloUnJugador,castilloUnJugador);
         Castillo castilloOtroJugador=new Castillo();
-        Posicion posicionCastilloOtroJugador=new Posicion((dimensionMapa/2+3),1);
+        Posicion posicionCastilloOtroJugador=new Posicion((dimensionMapa/2+3),dimensionMapa-3);
         unJugador.agregarEdificio(castilloOtroJugador);
         miMapa.UbicarUnidadEnMapa(posicionCastilloOtroJugador,castilloOtroJugador);
 
@@ -66,7 +66,7 @@ public class Juego {
         unJugador.agregarEdificio(plazaCentralunJugador);
         miMapa.UbicarUnidadEnMapa(posicionPlazaCentralunJugador,plazaCentralunJugador);
         PlazaCentral plazaCentralotroJugador=new PlazaCentral();
-        Posicion posicionPlazaCentralOtroJugador=new Posicion((dimensionMapa/2),dimensionMapa);
+        Posicion posicionPlazaCentralOtroJugador=new Posicion((dimensionMapa/2),dimensionMapa-1);
         otroJugador.agregarEdificio(plazaCentralotroJugador);
         miMapa.UbicarUnidadEnMapa(posicionPlazaCentralOtroJugador,plazaCentralotroJugador);
     }
