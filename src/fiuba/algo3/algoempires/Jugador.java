@@ -31,6 +31,9 @@ public class Jugador {
         return (this.unidadesJugador.contains(unaUnidad));
     }
 
+
+    public void agregarEdificio(Edificio unEdificio){this.edificiosJugador.add(unEdificio);}
+
     public void moverUnidad(Juego unJuego, Mapa unMapa,Movible unaUnidad, Direccion unaDireccion){
         Posicion posicionMover = unaDireccion.ObtenerPosicion(unaUnidad);
         unMapa.MoverUnidad(posicionMover,unaUnidad);
@@ -41,5 +44,7 @@ public class Jugador {
     }
 
 
-
+    public void agregarOro(int oroAAgregar) {
+        this.oro=oroAAgregar;
+    }
 }
