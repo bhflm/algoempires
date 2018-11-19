@@ -251,12 +251,12 @@ public class JuegoTest {
 
     }
 
-
-
-
-
-
-
-
-
+    @Test
+    public void test13AsignoLasUnidadesInicialesALosJugadores(){
+        Juego unJuego = new Juego();
+        Jugador unJugador = new Jugador("Foo");
+        Jugador otroJugador = new Jugador("Bar");
+        int dimensionMapa=25;
+        unJuego.comenzarJuego(unJugador,otroJugador,dimensionMapa);
+    }
 }
