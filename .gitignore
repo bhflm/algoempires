@@ -1,0 +1,22 @@
+*.sw*
+#Relleno
+build/
+libs/
+
+
+#Mas relleno
+out/
+tmp/
+bin/
+
+
+.classpath
+.project
+.settings/
+build.xml.old
+*.jar
+.idea/
+
+
+##chau mac
+.DS_STORE
