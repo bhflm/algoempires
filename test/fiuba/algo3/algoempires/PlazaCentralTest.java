@@ -1,4 +1,5 @@
 import fiuba.algo3.algoempires.PlazaCentral;
+import fiuba.algo3.algoempires.Aldeano;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -20,6 +21,15 @@ public class PlazaCentralTest {
         PlazaCentral unaPlazaCentral = new PlazaCentral();
         assertEquals(2, unaPlazaCentral.getDimension());
     }
+
+    @Test
+    public void test04PlazaCentralCreaAldeanoOk(){
+        PlazaCentral unaPlazaCentral = new PlazaCentral();
+        Aldeano unAldeano = unaPlazaCentral.crearAldeano();
+        assert(unAldeano instanceof Aldeano);
+    }
+
+
 }
 
 
