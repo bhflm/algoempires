@@ -11,6 +11,15 @@ public class Cuartel extends Edificio {
         dimension = 2;
         //TurnosRestantes = ... ??;
     }
+
+    public Espadachin crearEspadachin() {
+        return new Espadachin();
+    }
+
+    public Arquero crearArquero(){
+        return new Arquero();
+    }
+
     @Override
     public void reparar(Aldeano unAldeano){
         estado.reparar(this, 50, unAldeano);

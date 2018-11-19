@@ -10,6 +10,10 @@ public class Castillo extends Edificio {
         dimension = 4;
     }
 
+    public ArmaDeAsedio crearArmaDeAsedio(){
+        return new ArmaDeAsedio();
+    }
+    
     @Override
     public void reparar(Aldeano unAldeano) {
         estado.reparar(this, 15, unAldeano);

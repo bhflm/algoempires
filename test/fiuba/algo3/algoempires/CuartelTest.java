@@ -1,4 +1,6 @@
+import fiuba.algo3.algoempires.Arquero;
 import fiuba.algo3.algoempires.Cuartel;
+import fiuba.algo3.algoempires.Espadachin;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -20,6 +22,21 @@ public class CuartelTest {
         Cuartel unCuartel = new Cuartel();
         assertEquals(2, unCuartel.getDimension());
     }
+
+    @Test
+    public void test04CuartelCreaEspadachin() {
+        Cuartel unCuartel = new Cuartel();
+        Espadachin unEspadachin = unCuartel.crearEspadachin();
+        assert(unEspadachin instanceof Espadachin);
+    }
+
+    @Test
+    public void test05CuartelCreaArquero() {
+        Cuartel unCuartel = new Cuartel();
+        Arquero unArquero = unCuartel.crearArquero();
+        assert(unArquero instanceof Arquero);
+    }
+
 }
 
 

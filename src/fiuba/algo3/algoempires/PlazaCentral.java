@@ -11,6 +11,11 @@ public class PlazaCentral extends Edificio {
         dimension = 2;
         //TurnosRestantes = ... ??;
     }
+
+    public Aldeano crearAldeano(){
+        return new Aldeano();
+    }
+
     @Override
     public void reparar(Aldeano unAldeano){
         estado.reparar(this, 25, unAldeano);
