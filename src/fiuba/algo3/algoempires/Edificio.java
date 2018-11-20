@@ -11,7 +11,7 @@ public abstract class Edificio implements Ubicable {
     protected Posicion PosicionEdificio;
     protected EstadoEdificio estado = new EstadoEdificioNormal();
     protected boolean PisableEnElMapa=false;
-
+    protected int danioProducidoPorArquero=10;
 
     public int getVida() {
         return this.vida;
@@ -65,5 +65,7 @@ public abstract class Edificio implements Ubicable {
     }
 
     public void continuarRepararacion(Aldeano unAldeano){}
-
+    public void recibirDanio(Arquero arquero){
+        this.vida=this.vida-danioProducidoPorArquero;
+    }
 }
