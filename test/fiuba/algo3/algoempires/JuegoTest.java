@@ -260,6 +260,7 @@ public class JuegoTest {
         unJuego.comenzarJuego(unJugador,otroJugador,dimensionMapa);
         assertEquals(3,unJugador.getPoblacion());
     }
+
     @Test
     public void test14AsignoLasUnidadesInicialesALosJugadoresYVerificoQueLaPoblacionSea3EnOtroJugador(){
         Juego unJuego = new Juego();
@@ -272,6 +273,16 @@ public class JuegoTest {
 
     @Test
     public void test15AsignoLasUnidadesInicialesALosJugadoresYVerificoQueTengaElOroCorrecto(){
+        Juego unJuego = new Juego();
+        Jugador unJugador = new Jugador("Foo");
+        Jugador otroJugador = new Jugador("Bar");
+        int dimensionMapa=25;
+        unJuego.comenzarJuego(unJugador,otroJugador,dimensionMapa);
+        assertEquals(100,otroJugador.getOro());
+    }
+
+    @Test
+    public void test16InicioJuegoVerificoQueJugadorInicieCon3UnidadesTipoAldeanos(){
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
