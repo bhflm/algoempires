@@ -24,5 +24,36 @@ public class JugadorTest {
     }
 
 
+    @Test
+    public void test03JugadorCreaUnidadesSubePoblacionOk(){
+        Jugador unJugador = new Jugador("Foo");
+        Aldeano unAldeano;
+
+        for(int i=0; i<10; i++){
+            unAldeano = new Aldeano();
+            unJugador.agregarUnidad(unAldeano);
+        }
+
+        int POBLACION_TEST = unJugador.getPoblacion();
+
+        assertEquals(10,POBLACION_TEST);
+    }
+
+    @Test
+    public void test04JugadorNoPuedeCrearMasDe50Unidades() {
+        Jugador unJugador = new Jugador("Foo");
+        Aldeano unAldeano;
+        Boolean seLanzoError = false;
+        try{
+            for(int i=0; i<=51; i++){
+                unAldeano = new Aldeano();
+                unJugador.agregarUnidad(unAldeano);
+            }
+        }catch(TopePoblacionException e){
+            seLanzoError = true;
+        }
+        assertTrue(seLanzoError);
+    }
+
 
 }

@@ -22,8 +22,8 @@ public class Jugador {
         return nombre;
     }
 
-
     public void agregarUnidad(Unidad unaUnidad){
+        if(this.poblacion >= 50) throw new TopePoblacionException();
         this.unidadesJugador.add((unaUnidad));
         this.poblacion++;
     }
@@ -43,6 +43,7 @@ public class Jugador {
         }
         unJuego.cambiarTurno();
     }
+
 
 
     public void agregarOro(int oroAAgregar) {
