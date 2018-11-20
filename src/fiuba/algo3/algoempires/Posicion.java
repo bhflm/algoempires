@@ -76,4 +76,9 @@ public class Posicion {
         distanciaEntrePosiciones=distanciaEntrePosiciones+distanciaHorizontal+distanciaVertical;
         return distanciaEntrePosiciones;
     }
+
+    public Posicion PosicionCorridaA(int i, int j) {
+        Posicion posicionDesplazada=new Posicion(this.x+i,this.y+j);
+        return posicionDesplazada;
+    }
 }

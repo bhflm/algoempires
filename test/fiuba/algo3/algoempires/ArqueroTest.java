@@ -58,6 +58,10 @@ public class ArqueroTest {
     public void test06ArqueroAtacaAUnCuartel(){
         Arquero unArquero = new Arquero();
         Cuartel unCuartel = new Cuartel();
+        Posicion posicionArquero=new Posicion(1,1);
+        Posicion posicionCuartel=new Posicion(3,3);
+        unArquero.modificarPosicion(posicionArquero);
+        unCuartel.modificarPosicion(posicionCuartel);
         int vidaPreviaCuartel=unCuartel.getVida();
         unArquero.atacarA(unCuartel);
         assertEquals(vidaPreviaCuartel-unCuartel.danioProducidoPorArquero,unCuartel.getVida());

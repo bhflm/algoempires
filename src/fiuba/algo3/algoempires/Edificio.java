@@ -66,6 +66,24 @@ public abstract class Edificio implements Ubicable {
 
     public void continuarRepararacion(Aldeano unAldeano){}
     public void recibirDanio(Arquero arquero){
-        this.vida=this.vida-danioProducidoPorArquero;
+        Posicion posicionAtacable=this.PosicionEdificio;
+        Posicion posicionAtacante=arquero.PosicionUnidad;
+        boolean esAtacable=false;
+       boolean esAtacableDesde=false;
+
+        for(int i=0;i<this.dimension;i++){
+            for (int j=0;j<this.dimension;j++){
+                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
+               esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,arquero.rangoDeAtaque);
+                if(esAtacableDesde){
+                    esAtacable=true;}}}
+        if(esAtacable)
+            this.vida=this.vida-danioProducidoPorArquero;
+        else throw new AtaqueFueraDeRango();
+    }
+
+    public void modificarPosicion(Posicion posicionEd){
+        this.PosicionEdificio=posicionEd;
+
     }
 }
