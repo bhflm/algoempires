@@ -12,6 +12,7 @@ public abstract class Unidad{
     protected boolean PisableEnElMapa=false;
     protected int rangoDeAtaque=0;
     protected int puntosDeAtaque=0;
+    protected int danioProducidoPorArquero=15;
 
     public int getVida(){ return this.vida; }
     public int getCosto(){
@@ -24,5 +25,17 @@ public abstract class Unidad{
         int oroRecaudado=this.estado.generarOro();
         return oroRecaudado;}
 
+    public void recibirDanio(Arquero arquero){
+        Posicion posicionAtacable=this.PosicionUnidad;
+        Posicion posicionAtacante=arquero.PosicionUnidad;
+        boolean esAtacable=posicionAtacante.estaAlAlcance(posicionAtacable,arquero.rangoDeAtaque);
+        if(esAtacable)
+            this.vida=this.vida-danioProducidoPorArquero;
+        else throw new AtaqueFueraDeRango();
+    }
+
+    public void modificarPosicion(Posicion posicionUnidad){
+        this.PosicionUnidad=posicionUnidad;
+    }
 
 }

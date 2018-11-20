@@ -1,5 +1,8 @@
 package fiuba.algo3.algoempires;
 
+import static java.lang.Math.abs;
+import static java.lang.Math.sqrt;
+
 public class Posicion {
     private int x;
     private int y;
@@ -49,5 +52,33 @@ public class Posicion {
     public void ValidarPosicion(int largoHorizontal, int largoVertical) {
         if(x>largoHorizontal || x<1 || y>largoVertical || y<1)
             throw new MovimientoFueraDelMapa();
+    }
+
+    public boolean estaAlAlcance(Posicion posicionAtacable, int rangoDeAtaque) {
+        int distancia=calcularDistanciaEntrePosiciones(posicionAtacable,this);
+        boolean estaEnRango=false;
+        if(distancia<=rangoDeAtaque)
+            estaEnRango=true;
+        return estaEnRango;
+
+    }
+
+    private int calcularDistanciaEntrePosiciones(Posicion posicion1, Posicion posicion2) {
+        int distanciaHorizontal=abs(posicion1.x-posicion2.x);
+        int distanciaVertical=abs(posicion1.y-posicion2.y);
+        int distanciaEntrePosiciones=0;
+
+        while(distanciaHorizontal>0 && distanciaVertical>0){
+            distanciaHorizontal--;
+            distanciaVertical--;
+            distanciaEntrePosiciones++;
+        }
+        distanciaEntrePosiciones=distanciaEntrePosiciones+distanciaHorizontal+distanciaVertical;
+        return distanciaEntrePosiciones;
+    }
+
+    public Posicion PosicionCorridaA(int i, int j) {
+        Posicion posicionDesplazada=new Posicion(this.x+i,this.y+j);
+        return posicionDesplazada;
     }
 }

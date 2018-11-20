@@ -7,5 +7,5 @@ public interface Ubicable {
  void actualizarUbicacion(Posicion pos);
  boolean esPisableEnElMapa();
  int getDimension();
-
+ void recibirDanio(Arquero arquero);
 }
