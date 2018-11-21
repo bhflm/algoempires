@@ -137,10 +137,11 @@ public class AldeanoTest{
         assertTrue(seLanzoError);
     }
 
+    @Test
     public void test15AldeanoGeneraOroFinalizadaLaReparacion(){
         Aldeano MiAldeano = new Aldeano();
         PlazaCentral miPlazaCentral = new PlazaCentral();
-        miPlazaCentral.recibirDanio(20);
+        miPlazaCentral.recibirDanio(30);
 
         MiAldeano.reparar(miPlazaCentral);
         int oroRecaudado1 = MiAldeano.recaudarOro();
@@ -151,4 +152,63 @@ public class AldeanoTest{
         assertTrue(oroRecaudado1 == 0 & oroRecaudado2 == 20);
     }
 
+    @Test
+    public void test16AldeanoConstruyendoEstaEnEstadoConstruyendo() {
+        Aldeano MiAldeano = new Aldeano();
+        Mapa mapa = new Mapa(20,20);
+        Posicion pos = new Posicion(1, 2);
+        MiAldeano.construirCuartel(mapa, pos);
+
+        assertTrue(MiAldeano.estado instanceof EstadoAldeanoConstruyendo);
+    }
+
+    @Test
+    public void test17AldeanoConstruyendoNoPuedeConstruirOtroEdificio() {
+        Aldeano MiAldeano = new Aldeano();
+        Mapa mapa = new Mapa(20,20);
+        Posicion pos1 = new Posicion(1, 2);
+        Posicion pos2 = new Posicion(5,5);
+        MiAldeano.construirCuartel(mapa, pos1);
+        boolean seLanzoError=false;
+
+        try{
+            MiAldeano.construirCuartel(mapa, pos1);
+        }
+        catch(AldeanoOcupadoException e){
+            seLanzoError=true;
+        }
+        assertTrue(seLanzoError);
+    }
+
+    @Test
+    public void test17AldeanoConstruyendoNoPuedeRepararOtroEdificio() {
+        Aldeano MiAldeano = new Aldeano();
+        PlazaCentral MiPlaza = new PlazaCentral();
+        Mapa mapa = new Mapa(20,20);
+        Posicion pos1 = new Posicion(1, 2);
+        MiAldeano.construirCuartel(mapa, pos1);
+        MiPlaza.recibirDanio(40);
+        boolean seLanzoError=false;
+
+        try{
+            MiAldeano.reparar(MiPlaza);
+        }
+        catch(AldeanoOcupadoException e){
+            seLanzoError=true;
+        }
+        assertTrue(seLanzoError);
+    }
+
+    @Test
+    public void test18AldeanoConstruyendoSeLiberaUnaVezConstruidoElEdificio() {
+        Aldeano MiAldeano = new Aldeano();
+        Mapa mapa = new Mapa(20,20);
+        Posicion pos = new Posicion(1, 2);
+        MiAldeano.construirCuartel(mapa, pos);
+        MiAldeano.trabajar();
+        MiAldeano.trabajar();
+        MiAldeano.trabajar(); //Pasan 3 turnos
+
+        assertTrue(MiAldeano.estado instanceof EstadoAldeanoDisponible);
+    }
 }

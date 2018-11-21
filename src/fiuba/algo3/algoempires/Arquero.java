@@ -44,9 +44,7 @@ public class Arquero extends Unidad implements Movible,Atacante{
             for (int j=0;j<dim;j++){
                 Posicion posicionDelAtacable = posicionAtacable.PosicionCorridaA(i,j);
                 esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,this.rangoDeAtaque);
-                if(esAtacableDesde){
-                    esAtacable=true;
-                }
+                if(esAtacableDesde){ esAtacable=true;}
             }
         }
         if(esAtacable)

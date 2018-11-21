@@ -1,8 +1,7 @@
-import fiuba.algo3.algoempires.Arquero;
-import fiuba.algo3.algoempires.Cuartel;
-import fiuba.algo3.algoempires.Espadachin;
+import fiuba.algo3.algoempires.*;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class CuartelTest {
@@ -37,7 +36,6 @@ public class CuartelTest {
         Arquero unArquero = unCuartel.crearArquero();
         assert(unArquero instanceof Arquero);
     }
-
 }
 
 
