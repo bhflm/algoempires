@@ -14,6 +14,8 @@ public abstract class Edificio implements Ubicable {
     protected int danioProducidoPorArquero=10;
     protected int rangoDeAtaque=0;
     protected int danioProducidoPorCastillo=20;
+    protected int danioProducidoPorEspadachin=15;
+    protected int danioProducidoPorArmaDeAsedio=75;
 
 
     public int getVida() {
@@ -68,6 +70,7 @@ public abstract class Edificio implements Ubicable {
     }
 
     public void continuarRepararacion(Aldeano unAldeano){}
+
     public void recibirDanio(Arquero arquero){
         Posicion posicionAtacable=this.PosicionEdificio;
         Posicion posicionAtacante=arquero.PosicionUnidad;
@@ -110,7 +113,39 @@ public abstract class Edificio implements Ubicable {
         else throw new AtaqueFueraDeRango();
     }
 
+    public void recibirDanio(Espadachin espadachin){
+        Posicion posicionAtacable=this.PosicionEdificio;
+        Posicion posicionAtacante=espadachin.PosicionUnidad;
+        boolean esAtacable=false;
+        boolean esAtacableDesde=false;
 
+        for(int i=0;i<this.dimension;i++){
+            for (int j=0;j<this.dimension;j++){
+                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
+                esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,espadachin.rangoDeAtaque);
+                if(esAtacableDesde){
+                    esAtacable=true;}}}
+        if(esAtacable)
+            this.vida=this.vida-danioProducidoPorEspadachin;
+        else throw new AtaqueFueraDeRango();
+    }
+
+    public void recibirDanio(ArmaDeAsedio armaDeAsedio){
+        Posicion posicionAtacable=this.PosicionEdificio;
+        Posicion posicionAtacante=armaDeAsedio.PosicionUnidad;
+        boolean esAtacable=false;
+        boolean esAtacableDesde=false;
+
+        for(int i=0;i<this.dimension;i++){
+            for (int j=0;j<this.dimension;j++){
+                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
+                esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,armaDeAsedio.rangoDeAtaque);
+                if(esAtacableDesde){
+                    esAtacable=true;}}}
+        if(esAtacable)
+            this.vida=this.vida-danioProducidoPorArmaDeAsedio;
+        else throw new AtaqueFueraDeRango();
+    }
 
 
 }

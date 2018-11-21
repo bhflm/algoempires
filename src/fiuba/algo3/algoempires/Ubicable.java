@@ -9,4 +9,6 @@ public interface Ubicable {
  int getDimension();
  void recibirDanio(Arquero arquero);
  void recibirDanio(Castillo castillo);
+ void recibirDanio(Espadachin espadachin);
+ void recibirDanio(ArmaDeAsedio armaDeAsedio);
 }

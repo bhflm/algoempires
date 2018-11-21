@@ -14,6 +14,8 @@ public abstract class Unidad{
     protected int puntosDeAtaque=0;
     protected int danioProducidoPorArquero=15;
     protected int danioProducidoPorCastillo=20;
+    protected int getDanioProducidoPorEspadachin=25;
+    protected int getDanioProducidoPorArmaDeAsedio=0;
 
     public int getVida(){ return this.vida; }
     public int getCosto(){
@@ -32,6 +34,23 @@ public abstract class Unidad{
         boolean esAtacable=posicionAtacante.estaAlAlcance(posicionAtacable,arquero.rangoDeAtaque);
         if(esAtacable)
             this.vida=this.vida-danioProducidoPorArquero;
+        else throw new AtaqueFueraDeRango();
+    }
+    public void recibirDanio(Espadachin espadachin){
+        Posicion posicionAtacable=this.PosicionUnidad;
+        Posicion posicionAtacante=espadachin.PosicionUnidad;
+        boolean esAtacable=posicionAtacante.estaAlAlcance(posicionAtacable,espadachin.rangoDeAtaque);
+        if(esAtacable)
+            this.vida=this.vida-getDanioProducidoPorEspadachin;
+        else throw new AtaqueFueraDeRango();
+    }
+
+    public void recibirDanio(ArmaDeAsedio armaDeAsedio){
+        Posicion posicionAtacable=this.PosicionUnidad;
+        Posicion posicionAtacante=armaDeAsedio.PosicionUnidad;
+        boolean esAtacable=posicionAtacante.estaAlAlcance(posicionAtacable,armaDeAsedio.rangoDeAtaque);
+        if(esAtacable)
+            this.vida=this.vida-getDanioProducidoPorArmaDeAsedio;
         else throw new AtaqueFueraDeRango();
     }
 

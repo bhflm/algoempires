@@ -54,7 +54,6 @@ public class CastilloTest {
         Posicion posicionAldeano= new Posicion(1,4+3+1);
         unCastillo.modificarPosicion(posicionCastillo);
         unAldeano.modificarPosicion(posicionAldeano);
-        int vidaPreviaAldeano=unAldeano.getVida();
         try{unCastillo.atacarA(unAldeano);}
         catch(AtaqueFueraDeRango e){seLanzoError=true;}
         assertTrue(seLanzoError);

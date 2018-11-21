@@ -2,7 +2,7 @@ package fiuba.algo3.algoempires;
 
 import java.util.HashMap;
 
-public class ArmaDeAsedio extends Unidad implements Movible{
+public class ArmaDeAsedio extends Unidad implements Movible,Atacante{
 
     public ArmaDeAsedio() {
         vida = 150;
@@ -10,6 +10,7 @@ public class ArmaDeAsedio extends Unidad implements Movible{
         origen = "Castillo";
         this.estado=new EstadoArmaDeAsedioDisponible();
         this.PosicionUnidad=new Posicion(0,0);
+        this.rangoDeAtaque=5;
     }
 
     public void actualizarUbicacion(Posicion pos){
@@ -20,5 +21,8 @@ public class ArmaDeAsedio extends Unidad implements Movible{
         this.PosicionUnidad=nuevaPosicion;
     }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
+    public void atacarA(Ubicable unidadAtacada){
+        unidadAtacada.recibirDanio(this);
 
+    }
 }
