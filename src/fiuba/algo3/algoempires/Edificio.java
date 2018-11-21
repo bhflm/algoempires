@@ -11,7 +11,7 @@ public abstract class Edificio implements Ubicable {
     protected Posicion PosicionEdificio;
     protected EstadoEdificio estado = new EstadoEdificioNormal();
     protected boolean PisableEnElMapa=false;
-    protected int danioProducidoPorArquero=10;
+    protected int rangoDeAtaque = 0;
 
     public int getVida() {
         return this.vida;
