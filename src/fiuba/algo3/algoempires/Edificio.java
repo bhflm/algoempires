@@ -64,7 +64,7 @@ public abstract class Edificio implements Ubicable {
     public void continuarRepararacion(Aldeano unAldeano){}
 
     public void recibirDanio(int danioRecibido){
-        this.vida = this.vida - danioRecibido;
+        this.estado.recibirDanio(this, danioRecibido);
     }
 
     public void modificarPosicion(Posicion posicionEd){

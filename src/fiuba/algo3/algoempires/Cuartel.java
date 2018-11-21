@@ -18,7 +18,7 @@ public class Cuartel extends Edificio {
     public void continuarRepararacion(Aldeano unAldeano){
         estado.continuarReparacion(this, 50, unAldeano);
     }
-
+git
     public Arquero crearArquero(){
         return new Arquero();
     }

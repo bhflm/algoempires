@@ -1,5 +1,7 @@
 package fiuba.algo3.algoempires;
 import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.Assert.*;
 
 public class AldeanoTest{
@@ -149,4 +151,5 @@ public class AldeanoTest{
 
         assertTrue(oroRecaudado1 == 0 & oroRecaudado2 == 20);
     }
+
 }
