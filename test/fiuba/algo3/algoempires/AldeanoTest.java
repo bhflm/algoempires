@@ -53,7 +53,7 @@ public class AldeanoTest{
     public void test08AldeanoReparaCuartel(){
         Aldeano MiAldeano = new Aldeano();
         Cuartel MiCuartel = new Cuartel();
-        MiCuartel.Recibirdanio(60);
+        MiCuartel.recibirDanio(60);
         MiAldeano.reparar(MiCuartel);
         int vidaPosRecuperacion= MiCuartel.getVida();
         assertEquals(vidaPosRecuperacion,240);
@@ -63,7 +63,7 @@ public class AldeanoTest{
     public void test09AldeanoReparaDosVecesLanzaExcepcionDeAldeanoOcupado(){
         Aldeano MiAldeano = new Aldeano();
         Cuartel MiCuartel = new Cuartel();
-        MiCuartel.Recibirdanio(60);
+        MiCuartel.recibirDanio(60);
         MiAldeano.reparar(MiCuartel);
 
         boolean seLanzoError = false;
@@ -80,7 +80,7 @@ public class AldeanoTest{
         Aldeano MiAldeano1 = new Aldeano();
         Aldeano MIAldeano2 = new Aldeano();
         Cuartel MiCuartel = new Cuartel();
-        MiCuartel.Recibirdanio(60);
+        MiCuartel.recibirDanio(60);
 
         MiAldeano1.reparar(MiCuartel);
 
@@ -97,7 +97,7 @@ public class AldeanoTest{
     public void test12AldeanoReparaEnTurnosConsecutivos(){
         Aldeano MiAldeano = new Aldeano();
         PlazaCentral miPlazaCentral = new PlazaCentral();
-        miPlazaCentral.Recibirdanio(60);
+        miPlazaCentral.recibirDanio(60);
 
         int vidaInicial = miPlazaCentral.getVida();
         MiAldeano.reparar(miPlazaCentral);
@@ -111,7 +111,7 @@ public class AldeanoTest{
     public void test13AldeanoReparaMasVecesNoExcedeVidaMaxima(){
         Aldeano MiAldeano = new Aldeano();
         PlazaCentral miPlazaCentral = new PlazaCentral();
-        miPlazaCentral.Recibirdanio(60);
+        miPlazaCentral.recibirDanio(60);
 
         MiAldeano.reparar(miPlazaCentral);
         MiAldeano.trabajar();
@@ -139,7 +139,7 @@ public class AldeanoTest{
     public void test15AldeanoGeneraOroFinalizadaLaReparacion(){
         Aldeano MiAldeano = new Aldeano();
         PlazaCentral miPlazaCentral = new PlazaCentral();
-        miPlazaCentral.Recibirdanio(20);
+        miPlazaCentral.recibirDanio(20);
 
         MiAldeano.reparar(miPlazaCentral);
         int oroRecaudado1 = MiAldeano.recaudarOro();

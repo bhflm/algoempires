@@ -21,5 +21,4 @@ package fiuba.algo3.algoempires;
     }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
-
 }

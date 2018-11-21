@@ -10,6 +10,9 @@ public class ArmaDeAsedio extends Unidad implements Movible{
         origen = "Castillo";
         this.estado=new EstadoArmaDeAsedioDisponible();
         this.PosicionUnidad=new Posicion(0,0);
+        this.rangoDeAtaque = 5;
+        this.puntosDeAtaqueEdificio = 10;
+
     }
 
     public void actualizarUbicacion(Posicion pos){
