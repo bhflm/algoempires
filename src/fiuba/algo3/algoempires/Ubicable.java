@@ -8,4 +8,5 @@ public interface Ubicable {
  boolean esPisableEnElMapa();
  int getDimension();
  void recibirDanio(Arquero arquero);
+ void recibirDanio(Castillo castillo);
 }

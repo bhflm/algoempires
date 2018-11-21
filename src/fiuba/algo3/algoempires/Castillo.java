@@ -1,11 +1,13 @@
 package fiuba.algo3.algoempires;
 
-    public class Castillo extends Edificio {
+    public class Castillo extends Edificio implements Atacante {
 
         public Castillo() {
             vidaMaxima = 1000;
             vida = 1000;
             dimension = 4;
+            rangoDeAtaque=3;
+
         }
 
     public ArmaDeAsedio crearArmaDeAsedio(){
@@ -21,5 +23,7 @@ package fiuba.algo3.algoempires;
     }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
-
+        public void atacarA(Ubicable unidadAtacada){
+            unidadAtacada.recibirDanio(this);
+        }
 }

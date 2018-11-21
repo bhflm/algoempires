@@ -12,6 +12,9 @@ public abstract class Edificio implements Ubicable {
     protected EstadoEdificio estado = new EstadoEdificioNormal();
     protected boolean PisableEnElMapa=false;
     protected int danioProducidoPorArquero=10;
+    protected int rangoDeAtaque=0;
+    protected int danioProducidoPorCastillo=20;
+
 
     public int getVida() {
         return this.vida;
@@ -86,4 +89,28 @@ public abstract class Edificio implements Ubicable {
         this.PosicionEdificio=posicionEd;
 
     }
+
+    public void recibirDanio(Castillo castillo){
+        Posicion posicionAtacable=this.PosicionEdificio;
+        Posicion posicionAtacante=castillo.PosicionEdificio;
+        int dimensionAtacante=castillo.getDimension();
+        boolean esAtacableDesde=false;
+        boolean esAtacable=false;
+        for(int i=0;i<dimensionAtacante;i++){
+            for (int j=0;j<dimensionAtacante;j++){
+                for(int k=0;k<this.dimension;k++){
+                    for(int f=0;f<this.dimension;f++){
+                        Posicion posicionDelAtacante=posicionAtacante.PosicionCorridaA(i,j);
+                        Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(k,f);
+                        esAtacableDesde=posicionDelAtacable.estaAlAlcance(posicionDelAtacante,castillo.rangoDeAtaque);
+                        if(esAtacableDesde){
+                                 esAtacable=true;}}}}}
+        if(esAtacable)
+            this.vida=this.vida-danioProducidoPorCastillo;
+        else throw new AtaqueFueraDeRango();
+    }
+
+
+
+
 }
