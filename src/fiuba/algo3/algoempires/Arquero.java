@@ -47,8 +47,5 @@ public class Arquero extends Unidad implements Movible,Atacante{
                 if(esAtacableDesde){ esAtacable=true;}
             }
         }
-        if(esAtacable)
-            edificio.recibirDanio(this.puntosDeAtaqueEdificio);
-        else throw new AtaqueFueraDeRango();
     }
 }
