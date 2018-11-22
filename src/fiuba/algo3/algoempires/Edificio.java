@@ -148,4 +148,5 @@ public abstract class Edificio implements Ubicable {
     }
 
 
+    public Posicion getPosicion(){return PosicionEdificio;}
 }
