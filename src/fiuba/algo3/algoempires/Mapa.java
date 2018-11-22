@@ -28,6 +28,10 @@ private void GenerarPosiciones(){
         }
    }
 }
+    public void resetearPosicion(Posicion unaPosicion){
+        Ubicable espacioLibre = new EspacioLibre();
+        this.Ubicaciones.put(unaPosicion,espacioLibre);
+    }
 
     public void UbicarUnidadEnMapa(Posicion PosicionUnidad,Ubicable Unidad){
     int dimension = Unidad.getDimension() - 1;
@@ -63,9 +67,8 @@ private void GenerarPosiciones(){
 
     public HashMap<Posicion, Ubicable> getUbicaciones(){return Ubicaciones;}
 
-    public Ubicable GetUbicableEn(Posicion posicionAldeano) {
-
-    return Ubicaciones.get(posicionAldeano);
+    public Ubicable GetUbicableEn(Posicion unaPosicion) {
+    return Ubicaciones.get(unaPosicion);
     }
 
     public void MoverUnidad(Posicion nuevaPosicion,Movible unidadAMover){

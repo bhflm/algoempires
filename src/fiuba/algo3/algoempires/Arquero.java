@@ -24,12 +24,16 @@ public class Arquero extends Unidad implements Movible,Atacante{
     }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
+
+
     public void atacarA(Unidad unidadAtacada){
         Posicion posicionAtacable = unidadAtacada.getPosicion();
         Posicion posicionAtacante = this.PosicionUnidad;
         boolean esAtacable = posicionAtacante.estaAlAlcance(posicionAtacable,this.rangoDeAtaque);
         if(esAtacable)
             unidadAtacada.recibirDanio(this.puntosDeAtaqueUnidad);
+
+
         else throw new AtaqueFueraDeRango();
     }
 
