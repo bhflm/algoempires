@@ -358,6 +358,8 @@ public class JuegoTest {
         int vidaPreviaUnAldeano=unAldeano.getVida();
         otroJugador.CastilloRealizaAtaqueMasivo(unCastillo,unMapa);
         assertEquals(unAldeano.getVida(),vidaPreviaUnAldeano-unAldeano.danioProducidoPorCastillo);
+        assertEquals(otroAldeano.getVida(),vidaPreviaUnAldeano-otroAldeano.danioProducidoPorCastillo);
+
     }
 
 }
