@@ -25,12 +25,14 @@ public class Aldeano extends Unidad implements Movible{
         this.edificioActual = unEdificio;
     }
 
-    public void construirCuartel(Mapa mapa, Posicion posicion) {
-        this.estado.construirCuartel(this, mapa, posicion);
+    public Cuartel construirCuartel(Mapa mapa, Posicion posicion) {
+        Cuartel cuartel = this.estado.construirCuartel(this, mapa, posicion);
+        return cuartel;
     }
 
-    public void construirPlazaCentral(Mapa mapa, Posicion posicion) {
-        this.estado.construirPlazaCentral(this, mapa, posicion);
+    public PlazaCentral construirPlazaCentral(Mapa mapa, Posicion posicion) {
+        PlazaCentral plazaCentral = this.estado.construirPlazaCentral(this, mapa, posicion);
+        return plazaCentral;
     }
 
     public void empezarConstruccion(Edificio unEdificio){

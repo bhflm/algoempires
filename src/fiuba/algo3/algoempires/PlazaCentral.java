@@ -10,8 +10,17 @@ public class PlazaCentral extends Edificio {
         turnosRestantes = 3;
     }
 
-    public Aldeano crearAldeano(){
-        return new Aldeano();
+    public Aldeano crearAldeano(Mapa mapa, Posicion posicion) {
+        Aldeano unAldeano = estado.crearAldeano();
+        //Chequeo que se cree en alrededor de la plaza central
+        int posicionMinima = this.getPosicion().getCoordenadaHorizontal() - 1;
+        int posicionMaxima = this.getPosicion().getCoordenadaHorizontal() + this.dimension;
+
+        if (posicion.getCoordenadaHorizontal() < posicionMinima || posicion.getCoordenadaVertical() > posicionMaxima){
+            throw new PosicionInvalidaException();
+        }
+        mapa.UbicarUnidadEnMapa(posicion, unAldeano);
+        return unAldeano;
     }
 
     @Override
