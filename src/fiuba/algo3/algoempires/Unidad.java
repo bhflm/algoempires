@@ -28,11 +28,17 @@ public abstract class Unidad{
 
     public void recibirDanio(int danioRecibido){
         this.vida = this.vida - danioRecibido;
+        if (this.vida <= 0) {this.vida = 0;}
+    }
+
+    public boolean estaMuerto(){
+        return (this.vida == 0 );
     }
 
     public void modificarPosicion(Posicion posicionUnidad){
         this.PosicionUnidad=posicionUnidad;
     }
+
 
     public int getPuntosDeAtaqueUnidad(){
         return this.puntosDeAtaqueUnidad;
