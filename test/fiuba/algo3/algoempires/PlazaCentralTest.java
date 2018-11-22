@@ -22,16 +22,22 @@ public class PlazaCentralTest {
     }
 
     @Test
-    public void test04PlazaCentralCreaAldeanoOk(){
+    public void test04PlazaCentralCreaAldeanoOk() {
+        Mapa mapa = new Mapa(20, 20);
         PlazaCentral unaPlazaCentral = new PlazaCentral();
-        Aldeano unAldeano = unaPlazaCentral.crearAldeano();
-        assert(unAldeano instanceof Aldeano);
+
+        Posicion pos1 = new Posicion(2, 2);
+        Posicion pos2 = new Posicion(4, 3);
+        mapa.UbicarUnidadEnMapa(pos1, unaPlazaCentral);
+
+        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, pos2);
+        assert (unAldeano instanceof Aldeano);
     }
 
     @Test
     public void test05PlazaCentralConstruyendoseEstaEnEstadoConstruyendose() {
         Aldeano MiAldeano = new Aldeano();
-        Mapa mapa = new Mapa(20,20);
+        Mapa mapa = new Mapa(20, 20);
         Posicion pos = new Posicion(1, 2);
         PlazaCentral plazaCentral = MiAldeano.construirPlazaCentral(mapa, pos);
 
@@ -41,7 +47,7 @@ public class PlazaCentralTest {
     @Test
     public void test06PlazaCentralConstruyendoseEstaEnEstadoNormalUnaVezConstruida() {
         Aldeano MiAldeano = new Aldeano();
-        Mapa mapa = new Mapa(20,20);
+        Mapa mapa = new Mapa(20, 20);
         Posicion pos = new Posicion(1, 2);
         PlazaCentral plazaCentral = MiAldeano.construirPlazaCentral(mapa, pos);
 
@@ -56,26 +62,59 @@ public class PlazaCentralTest {
         Aldeano MiAldeano = new Aldeano();
         Espadachin unEspadachin = new Espadachin();
 
-        Mapa mapa = new Mapa(20,20);
+        Mapa mapa = new Mapa(20, 20);
         Posicion pos1 = new Posicion(1, 2);
-        Posicion pos2 = new Posicion(2,2);
+        Posicion pos2 = new Posicion(2, 2);
 
         PlazaCentral plazaCentral = MiAldeano.construirPlazaCentral(mapa, pos1);
         unEspadachin.modificarPosicion(pos2);
 
         boolean seLanzoError = false;
 
-        try{
+        try {
             unEspadachin.atacarA(plazaCentral);
-        }
-        catch(EdificioConstruyendoseException e){
-            seLanzoError=true;
+        } catch (EdificioConstruyendoseException e) {
+            seLanzoError = true;
         }
         assertTrue(seLanzoError);
     }
 
+    @Test
+    public void test08PlazaCentralCreaAldeanoEnPosicionIndicada() {
+        Mapa mapa = new Mapa(20, 20);
+        PlazaCentral unaPlazaCentral = new PlazaCentral();
+
+        Posicion pos1 = new Posicion(2, 2);
+        Posicion pos2 = new Posicion(4, 3);
+        mapa.UbicarUnidadEnMapa(pos1, unaPlazaCentral);
+
+        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, pos2);
+        assert (mapa.GetUbicableEn(pos2) instanceof Aldeano);
+    }
+
+    @Test
+    public void test09PlazaCentralNoPuedeCrearAldeanoSiLaPosicionOcupada() {
+        Mapa mapa = new Mapa(20,20);
+        PlazaCentral unaPlazaCentral = new PlazaCentral();
+        Espadachin unEspadachin = new Espadachin();
+
+        Posicion pos1 = new Posicion(1,1);
+        Posicion pos2 = new Posicion (3,2);
+
+        mapa.UbicarUnidadEnMapa(pos1, unaPlazaCentral);
+        mapa.UbicarUnidadEnMapa(pos2, unEspadachin);
+        boolean SeLanzoError = false;
+
+        try{
+            Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, pos2);
+        } catch (UbicacionOcupadaPorOtraUnidad e) {
+            SeLanzoError = true;
+        }
+        assertTrue(SeLanzoError);
+    }
 
 }
+
 
 
 

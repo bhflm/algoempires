@@ -71,6 +71,14 @@ public abstract class Edificio implements Ubicable {
 
     public void modificarPosicion(Posicion posicionEd){
         this.PosicionEdificio=posicionEd;
+    }
 
+    public void chequearPosicion(Posicion posicionUbicable, Posicion posicionEdificio, int dimension){
+        int posicionMinima = posicionEdificio.getCoordenadaHorizontal() - 1;
+        int posicionMaxima = posicionEdificio.getCoordenadaHorizontal() + dimension;
+
+        if (posicionUbicable.getCoordenadaHorizontal() < posicionMinima || posicionUbicable.getCoordenadaVertical() > posicionMaxima){
+            throw new PosicionInvalidaException();
+        }
     }
 }

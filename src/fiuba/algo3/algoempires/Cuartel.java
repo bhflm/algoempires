@@ -12,15 +12,31 @@ public class Cuartel extends Edificio {
         turnosRestantes = 3;
     }
 
-    public Espadachin crearEspadachin() {
-        return new Espadachin();
-    }
     public void continuarRepararacion(Aldeano unAldeano){
         estado.continuarReparacion(this, 50, unAldeano);
     }
 
-    public Arquero crearArquero(){
-        return new Arquero();
+    public Arquero crearArquero(Mapa mapa, Posicion posicion) {
+        Arquero unArquero = estado.crearArquero();
+        //Chequeo que se cree en alrededor del cuartel
+        int posicionMinima = this.getPosicion().getCoordenadaHorizontal() - 1;
+        int posicionMaxima = this.getPosicion().getCoordenadaHorizontal() + this.dimension;
+
+        if (posicion.getCoordenadaHorizontal() < posicionMinima || posicion.getCoordenadaVertical() > posicionMaxima){
+                throw new PosicionInvalidaException();
+        }
+        mapa.UbicarUnidadEnMapa(posicion, unArquero);
+        return unArquero;
+    }
+
+    public Espadachin crearEspadachin(Mapa mapa, Posicion posicion) {
+        Espadachin unEspadachin = estado.crearEspadachin();
+
+        //Chequeo que se cree en alrededor del cuartel
+        this.chequearPosicion(posicion, this.getPosicion(), this.dimension);
+
+        mapa.UbicarUnidadEnMapa(posicion, unEspadachin);
+        return unEspadachin;
     }
 
     @Override

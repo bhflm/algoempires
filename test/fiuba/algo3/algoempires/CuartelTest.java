@@ -24,14 +24,28 @@ public class CuartelTest {
     @Test
     public void test04CuartelCreaEspadachin() {
         Cuartel unCuartel = new Cuartel();
-        Espadachin unEspadachin = unCuartel.crearEspadachin();
+        Mapa mapa = new Mapa(20,20);
+
+        Posicion pos1 = new Posicion(2,2);
+        Posicion pos2 = new Posicion (4,3);
+
+        mapa.UbicarUnidadEnMapa(pos1, unCuartel);
+
+        Espadachin unEspadachin = unCuartel.crearEspadachin(mapa, pos2);
+
         assert(unEspadachin instanceof Espadachin);
     }
 
     @Test
     public void test05CuartelCreaArquero() {
+        Mapa mapa = new Mapa(20,20);
         Cuartel unCuartel = new Cuartel();
-        Arquero unArquero = unCuartel.crearArquero();
+
+        Posicion pos1 = new Posicion(2,2);
+        Posicion pos2 = new Posicion (4,3);
+        mapa.UbicarUnidadEnMapa(pos1, unCuartel);
+
+        Arquero unArquero = unCuartel.crearArquero(mapa, pos2);
         assert(unArquero instanceof Arquero);
     }
 
@@ -81,6 +95,74 @@ public class CuartelTest {
         assertTrue(seLanzoError);
     }
 
+    @Test
+    public void test09CuartelNoPuedeCrearArqueroSiLaPosicionOcupada() {
+        Mapa mapa = new Mapa(20,20);
+        Cuartel unCuartel = new Cuartel();
+        Espadachin unEspadachin = new Espadachin();
+
+        Posicion pos1 = new Posicion(1,1);
+        Posicion pos2 = new Posicion (3,3);
+
+        mapa.UbicarUnidadEnMapa(pos1, unCuartel);
+        mapa.UbicarUnidadEnMapa(pos2, unEspadachin);
+        boolean SeLanzoError = false;
+
+        try{
+            Arquero unArquero = unCuartel.crearArquero(mapa, pos2);
+        } catch (UbicacionOcupadaPorOtraUnidad e) {
+            SeLanzoError = true;
+        }
+
+        assertTrue(SeLanzoError);
+    }
+
+    @Test
+    public void test10CuartelNoPuedeCrearEspadachinSiLaPosicionOcupada() {
+        Mapa mapa = new Mapa(20,20);
+        Cuartel unCuartel = new Cuartel();
+        Espadachin unEspadachin = new Espadachin();
+
+        Posicion pos1 = new Posicion(1,1);
+        Posicion pos2 = new Posicion (3,2);
+
+        mapa.UbicarUnidadEnMapa(pos1, unCuartel);
+        mapa.UbicarUnidadEnMapa(pos2, unEspadachin);
+        boolean SeLanzoError = false;
+
+        try{
+            Espadachin otroEspadachin = unCuartel.crearEspadachin(mapa, pos2);
+        } catch (UbicacionOcupadaPorOtraUnidad e) {
+            SeLanzoError = true;
+        }
+        assertTrue(SeLanzoError);
+    }
+
+    @Test
+    public void test11CuartelCreaArqueroEnPosicionIndicada() {
+        Mapa mapa = new Mapa(20,20);
+        Cuartel unCuartel = new Cuartel();
+
+        Posicion pos1 = new Posicion(2,2);
+        Posicion pos2 = new Posicion (4,3);
+        mapa.UbicarUnidadEnMapa(pos1, unCuartel);
+
+        Arquero unArquero = unCuartel.crearArquero(mapa, pos2);
+        assert(mapa.GetUbicableEn(pos2) instanceof Arquero);
+    }
+
+    @Test
+    public void test12CuartelCreaEspadachinEnPosicionIndicada() {
+        Mapa mapa = new Mapa(20,20);
+        Cuartel unCuartel = new Cuartel();
+
+        Posicion pos1 = new Posicion(2,2);
+        Posicion pos2 = new Posicion (1,3);
+        mapa.UbicarUnidadEnMapa(pos1, unCuartel);
+
+        Espadachin unEspadachin = unCuartel.crearEspadachin(mapa, pos2);
+        assert(mapa.GetUbicableEn(pos2) instanceof Espadachin);
+    }
 }
 
 

@@ -8,8 +8,17 @@ package fiuba.algo3.algoempires;
             dimension = 4;
         }
 
-    public ArmaDeAsedio crearArmaDeAsedio(){
-        return new ArmaDeAsedio();
+    public ArmaDeAsedio crearArmaDeAsedio(Mapa mapa, Posicion posicion){
+        ArmaDeAsedio armaDeAsedio = new ArmaDeAsedio();
+        //Chequeo que se cree en alrededor del castillo
+        int posicionMinima = this.getPosicion().getCoordenadaHorizontal() - 1;
+        int posicionMaxima = this.getPosicion().getCoordenadaHorizontal() + this.dimension;
+
+        if (posicion.getCoordenadaHorizontal() < posicionMinima || posicion.getCoordenadaVertical() > posicionMaxima){
+            throw new PosicionInvalidaException();
+        }
+        mapa.UbicarUnidadEnMapa(posicion, armaDeAsedio);
+        return armaDeAsedio;
     }
     
     @Override

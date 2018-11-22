@@ -1,6 +1,6 @@
 package fiuba.algo3.algoempires;
 
-public class EstadoEdificioNormal implements EstadoEdificio{
+public class EstadoEdificioNormal extends EstadoEdificio{
     @Override
     public void reparar(Edificio unEdificio, int vidaReparada, Aldeano unAldeano){
         if (unEdificio.tieneVidaCompleta()){
@@ -9,12 +9,6 @@ public class EstadoEdificioNormal implements EstadoEdificio{
         }
         unEdificio.asignarReparacion();
         unEdificio.sumarVida(vidaReparada);
-    }
-
-    public void continuarReparacion (Edificio e, int i, Aldeano a){};
-
-    public void recibirDanio(Edificio edificio, int danioRecibido){
-        edificio.vida = edificio.vida - danioRecibido;
     }
 
 

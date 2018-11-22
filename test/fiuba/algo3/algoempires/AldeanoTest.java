@@ -69,7 +69,7 @@ public class AldeanoTest{
 
         boolean seLanzoError = false;
         try {
-            MiAldeano.reparar(MiCuartel);;
+            MiAldeano.reparar(MiCuartel);
         } catch (AldeanoOcupadoException e) {
             seLanzoError = true;
         }
