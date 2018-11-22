@@ -62,9 +62,11 @@ public class Jugador {
 
     public void realizarAtaque(Atacante MiAtacante,Unidad MiObjetivo){
         boolean EstaUnidadEsMia=this.perteneceUnidad(MiObjetivo);
-        if(EstaUnidadEsMia==false)
+        if(!EstaUnidadEsMia)
             MiAtacante.atacarA(MiObjetivo);
+        else throw new JugadaInvalidaException();
     }
+
     public void realizarAtaque(Atacante MiAtacante,Edificio MiObjetivo){
         boolean EstaUnidadEsMia=this.perteneceUnidad(MiObjetivo);
         if(EstaUnidadEsMia==false)
