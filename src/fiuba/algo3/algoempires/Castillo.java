@@ -30,4 +30,7 @@ package fiuba.algo3.algoempires;
     }
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;}
 
+
+    public void atacarA(Ubicable unidadAtacada){ unidadAtacada.recibirDanio(this); }
+
 }

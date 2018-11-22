@@ -31,6 +31,11 @@ public abstract class Unidad{
         int oroRecaudado=this.estado.generarOro();
         return oroRecaudado;}
 
+    public void RecibirDanio(int danio){
+        this.vida = this.vida - danio;
+    }
+
+
     public void recibirDanio(Arquero arquero){
         Posicion posicionAtacable=this.PosicionUnidad;
         Posicion posicionAtacante=arquero.PosicionUnidad;
