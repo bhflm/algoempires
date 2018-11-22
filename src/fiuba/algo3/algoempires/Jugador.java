@@ -31,6 +31,7 @@ public class Jugador {
     public boolean perteneceUnidad(Unidad unaUnidad){
         return (this.unidadesJugador.contains(unaUnidad));
     }
+    public boolean perteneceUnidad(Edificio unEdificio){return this.edificiosJugador.contains(unEdificio);};
 
 
     public void agregarEdificio(Edificio unEdificio){this.edificiosJugador.add(unEdificio);}
@@ -45,7 +46,6 @@ public class Jugador {
     }
 
 
-
     public void agregarOro(int oroAAgregar) {
         this.oro=oroAAgregar;
     }
@@ -57,4 +57,19 @@ public class Jugador {
     public int getOro() {
         return this.oro;
     }
+
+
+
+    public void realizarAtaque(Atacante MiAtacante,Unidad MiObjetivo){
+        boolean EstaUnidadEsMia=this.perteneceUnidad(MiObjetivo);
+        if(EstaUnidadEsMia==false)
+            MiAtacante.atacarA(MiObjetivo);
+    }
+    public void realizarAtaque(Atacante MiAtacante,Edificio MiObjetivo){
+        boolean EstaUnidadEsMia=this.perteneceUnidad(MiObjetivo);
+        if(EstaUnidadEsMia==false)
+            MiAtacante.atacarA(MiObjetivo);
+        else throw new JugadaInvalidaException();
+    }
+
 }

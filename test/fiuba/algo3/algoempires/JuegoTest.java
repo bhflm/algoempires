@@ -291,8 +291,51 @@ public class JuegoTest {
         assertEquals(100,otroJugador.getOro());
     }
 
+    @Test
+    public void test17CreoJuegoConDosJugadoresConUnArqueroAtancandoUnAldeano() {
 
+        Juego unJuego = new Juego();
+        Jugador unJugador = new Jugador("Foo");
+        Jugador otroJugador = new Jugador("Bar");
+        unJuego.iniciarJuego(unJugador,otroJugador);
+        Arquero unArquero = new Arquero();
+        Aldeano unAldeano = new Aldeano();
+        Mapa unMapa = new Mapa(4,4);
+        Posicion unaPos = new Posicion(2,2);
+        Posicion otraPos= new Posicion(2,3);
+        unJugador.agregarUnidad(unArquero);
+        otroJugador.agregarUnidad(unAldeano);
+        unMapa.UbicarUnidadEnMapa(unaPos,unArquero);
+        unMapa.UbicarUnidadEnMapa(otraPos,unAldeano);
+        int vidaPrevia=unAldeano.getVida();
+        unJugador.realizarAtaque(unArquero,unAldeano);
+        assertEquals(vidaPrevia-unArquero.puntosDeAtaqueUnidad,unAldeano.getVida());
+    }
 
+    @Test
+    public void test18CreoJuegoConDosJugadoresConUnArqueroAtancandoUnAldeanoDelMismoJugador() {
+        boolean seLanzoError=false;
+        Juego unJuego = new Juego();
+        Jugador unJugador = new Jugador("Foo");
+        Jugador otroJugador = new Jugador("Bar");
+        unJuego.iniciarJuego(unJugador,otroJugador);
+        Arquero unArquero = new Arquero();
+        Aldeano unAldeano = new Aldeano();
+        Mapa unMapa = new Mapa(4,4);
+        Posicion unaPos = new Posicion(2,2);
+        Posicion otraPos= new Posicion(2,3);
+        unJugador.agregarUnidad(unArquero);
+        unJugador.agregarUnidad(unAldeano);
+        unMapa.UbicarUnidadEnMapa(unaPos,unArquero);
+        unMapa.UbicarUnidadEnMapa(otraPos,unAldeano);
+        try {
+            unJugador.realizarAtaque(unArquero, unAldeano);
+        }
+        catch(JugadaInvalidaException e){
+            seLanzoError=true;
+        }
+        assertTrue(seLanzoError);
+    }
 
 
 }
