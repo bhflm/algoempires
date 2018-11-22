@@ -39,7 +39,6 @@ public class Arquero extends Unidad implements Movible,Atacante{
         boolean esAtacable = false;
         boolean esAtacableDesde = false;
         int dim = edificio.getDimension();
-
         for(int i=0;i<dim;i++){
             for (int j=0;j<dim;j++){
                 Posicion posicionDelAtacable = posicionAtacable.PosicionCorridaA(i,j);
