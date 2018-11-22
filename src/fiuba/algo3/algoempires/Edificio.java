@@ -56,8 +56,10 @@ public abstract class Edificio implements Ubicable {
     public void construir(Aldeano unAldeano){
         turnosRestantes -= 1;
         if (turnosRestantes == 0){
-            unAldeano.desocupar();
             this.estado = new EstadoEdificioNormal();
+        }
+        if (turnosRestantes == -1){
+            unAldeano.desocupar();
         }
     }
 

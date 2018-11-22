@@ -7,14 +7,10 @@ public class EstadoEdificioNormal implements EstadoEdificio{
             unAldeano.desocupar();
             throw new EdificioVidaMaximaException();
         }
-
         unEdificio.asignarReparacion();
         unEdificio.sumarVida(vidaReparada);
-        if (unEdificio.getVida() >= unEdificio.getVidaMaxima()){
-                unEdificio.setVida(unEdificio.getVidaMaxima());
-                unAldeano.desocupar();
-        }
     }
+
     public void continuarReparacion (Edificio e, int i, Aldeano a){};
 
     public void recibirDanio(Edificio edificio, int danioRecibido){
