@@ -6,6 +6,8 @@ package fiuba.algo3.algoempires;
             vidaMaxima = 1000;
             vida = 1000;
             dimension = 4;
+            this.rangoDeAtaque=3;
+
         }
 
     public ArmaDeAsedio crearArmaDeAsedio(Mapa mapa, Posicion posicion){
