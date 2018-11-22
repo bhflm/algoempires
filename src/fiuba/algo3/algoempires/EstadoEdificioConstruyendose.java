@@ -7,4 +7,8 @@ public class EstadoEdificioConstruyendose implements EstadoEdificio {
         throw new EdificioConstruyendoseException();
     }
     public void continuarReparacion (Edificio e, int i, Aldeano a){};
+
+    public void recibirDanio(Edificio edificio, int danioRecibido){
+        throw new EdificioConstruyendoseException();
+    }
 }

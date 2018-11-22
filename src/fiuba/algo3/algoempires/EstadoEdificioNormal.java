@@ -17,4 +17,9 @@ public class EstadoEdificioNormal implements EstadoEdificio{
     }
     public void continuarReparacion (Edificio e, int i, Aldeano a){};
 
+    public void recibirDanio(Edificio edificio, int danioRecibido){
+        edificio.vida = edificio.vida - danioRecibido;
+    }
+
+
 }

@@ -15,4 +15,8 @@ public class EstadoEdificioReparandose implements EstadoEdificio{
         }
     }
 
+    public void recibirDanio(Edificio edificio, int danioRecibido){
+        edificio.vida = edificio.vida - danioRecibido;
+    }
+
 }

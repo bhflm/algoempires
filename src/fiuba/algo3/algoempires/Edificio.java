@@ -11,7 +11,7 @@ public abstract class Edificio implements Ubicable {
     protected Posicion PosicionEdificio;
     protected EstadoEdificio estado = new EstadoEdificioNormal();
     protected boolean PisableEnElMapa=false;
-    protected int danioProducidoPorArquero=10;
+    protected int rangoDeAtaque = 0;
 
     public int getVida() {
         return this.vida;
@@ -24,6 +24,7 @@ public abstract class Edificio implements Ubicable {
         return this.dimension;
     }
     public int getVidaMaxima() {return this.vidaMaxima;}
+    public Posicion getPosicion(){return this.PosicionEdificio;}
 
     public abstract void reparar(Aldeano unAldeano);
 
@@ -50,10 +51,6 @@ public abstract class Edificio implements Ubicable {
         this.PosicionEdificio=NuevaPosicion;
     }
 
-    public void Recibirdanio(int i) {
-        this.vida = this.vida - i;
-    }
-
     public void empezarConstruccion(){ this.estado = new EstadoEdificioConstruyendose();}
 
     public void construir(Aldeano unAldeano){
@@ -65,21 +62,9 @@ public abstract class Edificio implements Ubicable {
     }
 
     public void continuarRepararacion(Aldeano unAldeano){}
-    public void recibirDanio(Arquero arquero){
-        Posicion posicionAtacable=this.PosicionEdificio;
-        Posicion posicionAtacante=arquero.PosicionUnidad;
-        boolean esAtacable=false;
-       boolean esAtacableDesde=false;
 
-        for(int i=0;i<this.dimension;i++){
-            for (int j=0;j<this.dimension;j++){
-                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
-               esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,arquero.rangoDeAtaque);
-                if(esAtacableDesde){
-                    esAtacable=true;}}}
-        if(esAtacable)
-            this.vida=this.vida-danioProducidoPorArquero;
-        else throw new AtaqueFueraDeRango();
+    public void recibirDanio(int danioRecibido){
+        this.estado.recibirDanio(this, danioRecibido);
     }
 
     public void modificarPosicion(Posicion posicionEd){
