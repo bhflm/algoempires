@@ -58,4 +58,22 @@ public class CastilloTest {
             SeLanzoError = true;
         }
     }
+
+    @Test
+    public void test05CastilloNoPuedeCrearArmaDeAsedioFueraDeRango() {
+        Mapa mapa = new Mapa(20, 20);
+        Castillo unCastillo = new Castillo();
+
+        Posicion pos1 = new Posicion(1, 1);
+        Posicion pos2 = new Posicion(15, 15);
+
+        mapa.UbicarUnidadEnMapa(pos1, unCastillo);
+        boolean SeLanzoError = false;
+
+        try {
+            ArmaDeAsedio armaDeAsedio1 = unCastillo.crearArmaDeAsedio(mapa, pos2);
+        } catch (PosicionInvalidaException e) {
+            SeLanzoError = true;
+        }
+    }
 }

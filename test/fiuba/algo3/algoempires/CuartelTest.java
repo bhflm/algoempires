@@ -163,6 +163,45 @@ public class CuartelTest {
         Espadachin unEspadachin = unCuartel.crearEspadachin(mapa, pos2);
         assert(mapa.GetUbicableEn(pos2) instanceof Espadachin);
     }
+
+    @Test
+    public void test13CuartelNoPuedeCrearEspadachinFueraDeSuRango() {
+        Mapa mapa = new Mapa(20,20);
+        Cuartel unCuartel = new Cuartel();
+
+        Posicion pos1 = new Posicion(1,1);
+        Posicion pos2 = new Posicion (4,4);
+
+        mapa.UbicarUnidadEnMapa(pos1, unCuartel);
+        boolean SeLanzoError = false;
+
+        try{
+            Espadachin unEspadachin = unCuartel.crearEspadachin(mapa, pos2);
+        } catch (PosicionInvalidaException e) {
+            SeLanzoError = true;
+        }
+        assertTrue(SeLanzoError);
+    }
+
+    @Test
+    public void test14CuartelNoPuedeCrearArqueroFueraDeSuRango() {
+        Mapa mapa = new Mapa(20,20);
+        Cuartel unCuartel = new Cuartel();
+
+        Posicion pos1 = new Posicion(8,3);
+        Posicion pos2 = new Posicion (14,14);
+
+        mapa.UbicarUnidadEnMapa(pos1, unCuartel);
+        boolean SeLanzoError = false;
+
+        try{
+            Arquero unArquero = unCuartel.crearArquero(mapa, pos2);
+        } catch (PosicionInvalidaException e) {
+            SeLanzoError = true;
+        }
+        assertTrue(SeLanzoError);
+    }
+
 }
 
 

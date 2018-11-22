@@ -113,6 +113,25 @@ public class PlazaCentralTest {
         assertTrue(SeLanzoError);
     }
 
+    @Test
+    public void test10PlazaCentralNoPuedeCrearAldeanoFueraDeRango() {
+        Mapa mapa = new Mapa(20,20);
+        PlazaCentral unaPlazaCentral = new PlazaCentral();
+
+        Posicion pos1 = new Posicion(2,3);
+        Posicion pos2 = new Posicion (9,12);
+
+        mapa.UbicarUnidadEnMapa(pos1, unaPlazaCentral);
+        boolean SeLanzoError = false;
+
+        try{
+            Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, pos2);
+        } catch (PosicionInvalidaException e) {
+            SeLanzoError = true;
+        }
+        assertTrue(SeLanzoError);
+    }
+
 }
 
 
