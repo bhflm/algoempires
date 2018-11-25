@@ -291,75 +291,8 @@ public class JuegoTest {
         assertEquals(100,otroJugador.getOro());
     }
 
-    @Test
-    public void test17CreoJuegoConDosJugadoresConUnArqueroAtancandoUnAldeano() {
 
-        Juego unJuego = new Juego();
-        Jugador unJugador = new Jugador("Foo");
-        Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
-        Arquero unArquero = new Arquero();
-        Aldeano unAldeano = new Aldeano();
-        Mapa unMapa = new Mapa(4,4);
-        Posicion unaPos = new Posicion(2,2);
-        Posicion otraPos= new Posicion(2,3);
-        unJugador.agregarUnidad(unArquero);
-        otroJugador.agregarUnidad(unAldeano);
-        unMapa.UbicarUnidadEnMapa(unaPos,unArquero);
-        unMapa.UbicarUnidadEnMapa(otraPos,unAldeano);
-        int vidaPrevia=unAldeano.getVida();
-        unJugador.realizarAtaque(unArquero,unAldeano);
-        assertEquals(vidaPrevia-unAldeano.danioProducidoPorArquero,unAldeano.getVida());
-    }
 
-    @Test
-    public void test18CreoJuegoConDosJugadoresConUnArqueroAtancandoUnAldeanoDelMismoJugador() {
-        boolean seLanzoError=false;
-        Juego unJuego = new Juego();
-        Jugador unJugador = new Jugador("Foo");
-        Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
-        Arquero unArquero = new Arquero();
-        Aldeano unAldeano = new Aldeano();
-        Mapa unMapa = new Mapa(4,4);
-        Posicion unaPos = new Posicion(2,2);
-        Posicion otraPos= new Posicion(2,3);
-        unJugador.agregarUnidad(unArquero);
-        unJugador.agregarUnidad(unAldeano);
-        unMapa.UbicarUnidadEnMapa(unaPos,unArquero);
-        unMapa.UbicarUnidadEnMapa(otraPos,unAldeano);
-        try {
-            unJugador.realizarAtaque(unArquero, unAldeano);
-        }
-        catch(JugadaInvalidaException e){
-            seLanzoError=true;
-        }
-        assertTrue(seLanzoError);
-    }
 
-    @Test
-    public void test19CreoJuegoConDosJugadoresConUnCastilloAtancandoDosAldeanos() {
-        Juego unJuego = new Juego();
-        Jugador unJugador = new Jugador("Foo");
-        Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
-        Aldeano unAldeano = new Aldeano();
-        Aldeano otroAldeano = new Aldeano();
-        Castillo unCastillo=new Castillo();
-        Mapa unMapa = new Mapa(25,25);
-        Posicion unaPos = new Posicion(2,2);
-        Posicion otraPos= new Posicion(2,3);
-        Posicion posicionCastillo=new Posicion(5,5);
-        unJugador.agregarUnidad(otroAldeano);
-        unJugador.agregarUnidad(unAldeano);
-        unMapa.UbicarUnidadEnMapa(unaPos,unAldeano);
-        unMapa.UbicarUnidadEnMapa(otraPos,otroAldeano);
-        unMapa.UbicarUnidadEnMapa(posicionCastillo,unCastillo);
-        int vidaPreviaUnAldeano=unAldeano.getVida();
-        otroJugador.CastilloRealizaAtaqueMasivo(unCastillo,unMapa);
-        assertEquals(unAldeano.getVida(),vidaPreviaUnAldeano-unAldeano.danioProducidoPorCastillo);
-        assertEquals(otroAldeano.getVida(),vidaPreviaUnAldeano-otroAldeano.danioProducidoPorCastillo);
-
-    }
 
 }

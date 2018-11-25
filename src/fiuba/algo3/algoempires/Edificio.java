@@ -13,14 +13,6 @@ public abstract class Edificio implements Ubicable {
     protected boolean PisableEnElMapa=false;
     protected int rangoDeAtaque = 0;
 
-
-    protected int danioProducidoPorArquero=10;
-    protected int danioProducidoPorCastillo=20;
-    protected int danioProducidoPorEspadachin=15;
-    protected int danioProducidoPorArmaDeAsedio=75;
-
-
-
     public int getVida() {
         return this.vida;
     }
@@ -73,6 +65,10 @@ public abstract class Edificio implements Ubicable {
 
     public void continuarRepararacion(Aldeano unAldeano){}
 
+    public void recibirDanio(int danioRecibido){
+        this.estado.recibirDanio(this, danioRecibido);
+    }
+
     public void modificarPosicion(Posicion posicionEd){
         this.PosicionEdificio=posicionEd;
     }
@@ -85,85 +81,4 @@ public abstract class Edificio implements Ubicable {
             throw new PosicionInvalidaException();
         }
     }
-
-    public void RecibirDanio(int danio){
-        this.vida = this.vida - danio;
-    }
-
-    public void recibirDanio(Arquero arquero){
-        Posicion posicionAtacable=this.PosicionEdificio;
-        Posicion posicionAtacante=arquero.PosicionUnidad;
-        boolean esAtacable=false;
-        boolean esAtacableDesde=false;
-
-        for(int i=0;i<this.dimension;i++){
-            for (int j=0;j<this.dimension;j++){
-                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
-                esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,arquero.rangoDeAtaque);
-                if(esAtacableDesde){
-                    esAtacable=true;}}}
-        if(esAtacable)
-            this.vida=this.vida-danioProducidoPorArquero;
-        else throw new AtaqueFueraDeRango();
-    }
-
-    public void recibirDanio(Castillo castillo){
-        Posicion posicionAtacable=this.PosicionEdificio;
-        Posicion posicionAtacante=castillo.PosicionEdificio;
-        int dimensionAtacante=castillo.getDimension();
-        boolean esAtacableDesde=false;
-        boolean esAtacable=false;
-        for(int i=0;i<dimensionAtacante;i++){
-            for (int j=0;j<dimensionAtacante;j++){
-                for(int k=0;k<this.dimension;k++){
-                    for(int f=0;f<this.dimension;f++){
-                        Posicion posicionDelAtacante=posicionAtacante.PosicionCorridaA(i,j);
-                        Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(k,f);
-                        esAtacableDesde=posicionDelAtacable.estaAlAlcance(posicionDelAtacante,castillo.rangoDeAtaque);
-                        if(esAtacableDesde){
-                            esAtacable=true;}}}}}
-        if(esAtacable)
-            this.vida=this.vida-danioProducidoPorCastillo;
-        else throw new AtaqueFueraDeRango();
-    }
-
-    public void recibirDanio(Espadachin espadachin){
-        Posicion posicionAtacable=this.PosicionEdificio;
-        Posicion posicionAtacante=espadachin.PosicionUnidad;
-        boolean esAtacable=false;
-        boolean esAtacableDesde=false;
-
-        for(int i=0;i<this.dimension;i++){
-            for (int j=0;j<this.dimension;j++){
-                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
-                esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,espadachin.rangoDeAtaque);
-                if(esAtacableDesde){
-                    esAtacable=true;}}}
-        if(esAtacable)
-            this.vida=this.vida-danioProducidoPorEspadachin;
-        else throw new AtaqueFueraDeRango();
-    }
-
-    public void recibirDanio(ArmaDeAsedio armaDeAsedio){
-        Posicion posicionAtacable=this.PosicionEdificio;
-        Posicion posicionAtacante=armaDeAsedio.PosicionUnidad;
-        boolean esAtacable=false;
-        boolean esAtacableDesde=false;
-
-        for(int i=0;i<this.dimension;i++){
-            for (int j=0;j<this.dimension;j++){
-                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
-                esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,armaDeAsedio.rangoDeAtaque);
-                if(esAtacableDesde){
-                    esAtacable=true;}}}
-        if(esAtacable)
-            this.vida=this.vida-danioProducidoPorArmaDeAsedio;
-        else throw new AtaqueFueraDeRango();
-    }
-
-
-
-
-
-
 }

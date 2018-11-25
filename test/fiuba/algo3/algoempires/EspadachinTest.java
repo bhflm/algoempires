@@ -31,7 +31,7 @@ public class EspadachinTest {
         unAldeano.modificarPosicion(posicionAldeano);
         int vidaPreviaAldeano=unAldeano.getVida();
         unEspadachin.atacarA(unAldeano);
-        assertEquals(vidaPreviaAldeano-unAldeano.getDanioProducidoPorEspadachin,unAldeano.getVida());
+        assertEquals(vidaPreviaAldeano-unEspadachin.puntosDeAtaqueUnidad,unAldeano.getVida());
     }
 
     @Test
@@ -63,11 +63,10 @@ public class EspadachinTest {
         unCuartel.modificarPosicion(posicionCuartel);
         int vidaPreviaCuartel=unCuartel.getVida();
         unEspadachin.atacarA(unCuartel);
-        assertEquals(vidaPreviaCuartel-unCuartel.danioProducidoPorEspadachin,unCuartel.getVida());
+        assertEquals(vidaPreviaCuartel-unEspadachin.puntosDeAtaqueEdificio,unCuartel.getVida());
 
     }
-
-
-
-
 }
+
+
+
