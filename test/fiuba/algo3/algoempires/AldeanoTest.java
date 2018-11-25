@@ -2,7 +2,6 @@ package fiuba.algo3.algoempires;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
 public class AldeanoTest{
     @Test
     public void test01AldeanoRecienCreadoPuntosDeVidaOk() {
@@ -54,7 +53,7 @@ public class AldeanoTest{
     public void test08AldeanoReparaCuartel(){
         Aldeano MiAldeano = new Aldeano();
         Cuartel MiCuartel = new Cuartel();
-        MiCuartel.recibirDanio(60);
+        MiCuartel.RecibirDanio(60);
         MiAldeano.reparar(MiCuartel);
         int vidaPosRecuperacion= MiCuartel.getVida();
         assertEquals(vidaPosRecuperacion,240);
@@ -64,12 +63,12 @@ public class AldeanoTest{
     public void test09AldeanoReparaDosVecesLanzaExcepcionDeAldeanoOcupado(){
         Aldeano MiAldeano = new Aldeano();
         Cuartel MiCuartel = new Cuartel();
-        MiCuartel.recibirDanio(60);
+        MiCuartel.RecibirDanio(60);
         MiAldeano.reparar(MiCuartel);
 
         boolean seLanzoError = false;
         try {
-            MiAldeano.reparar(MiCuartel);
+            MiAldeano.reparar(MiCuartel);;
         } catch (AldeanoOcupadoException e) {
             seLanzoError = true;
         }
@@ -81,7 +80,7 @@ public class AldeanoTest{
         Aldeano MiAldeano1 = new Aldeano();
         Aldeano MIAldeano2 = new Aldeano();
         Cuartel MiCuartel = new Cuartel();
-        MiCuartel.recibirDanio(60);
+        MiCuartel.RecibirDanio(60);
 
         MiAldeano1.reparar(MiCuartel);
 
@@ -98,7 +97,7 @@ public class AldeanoTest{
     public void test12AldeanoReparaEnTurnosConsecutivos(){
         Aldeano MiAldeano = new Aldeano();
         PlazaCentral miPlazaCentral = new PlazaCentral();
-        miPlazaCentral.recibirDanio(60);
+        miPlazaCentral.RecibirDanio(60);
 
         int vidaInicial = miPlazaCentral.getVida();
         MiAldeano.reparar(miPlazaCentral);
@@ -112,7 +111,7 @@ public class AldeanoTest{
     public void test13AldeanoReparaMasVecesNoExcedeVidaMaxima(){
         Aldeano MiAldeano = new Aldeano();
         PlazaCentral miPlazaCentral = new PlazaCentral();
-        miPlazaCentral.recibirDanio(60);
+        miPlazaCentral.RecibirDanio(60);
 
         MiAldeano.reparar(miPlazaCentral);
         MiAldeano.trabajar();
@@ -137,81 +136,17 @@ public class AldeanoTest{
         assertTrue(seLanzoError);
     }
 
-    @Test
     public void test15AldeanoGeneraOroFinalizadaLaReparacion(){
         Aldeano MiAldeano = new Aldeano();
         PlazaCentral miPlazaCentral = new PlazaCentral();
-        miPlazaCentral.recibirDanio(20);
+        miPlazaCentral.RecibirDanio(20);
 
-        MiAldeano.reparar(miPlazaCentral);  //El edificio ya esta reparado
+        MiAldeano.reparar(miPlazaCentral);
         int oroRecaudado1 = MiAldeano.recaudarOro();
 
         MiAldeano.trabajar();
         int oroRecaudado2 = MiAldeano.recaudarOro();
 
         assertTrue(oroRecaudado1 == 0 & oroRecaudado2 == 20);
-    }
-
-    @Test
-    public void test16AldeanoConstruyendoEstaEnEstadoConstruyendo() {
-        Aldeano MiAldeano = new Aldeano();
-        Mapa mapa = new Mapa(20,20);
-        Posicion pos = new Posicion(1, 2);
-        MiAldeano.construirCuartel(mapa, pos);
-
-        assertTrue(MiAldeano.estado instanceof EstadoAldeanoConstruyendo);
-    }
-
-    @Test
-    public void test17AldeanoConstruyendoNoPuedeConstruirOtroEdificio() {
-        Aldeano MiAldeano = new Aldeano();
-        Mapa mapa = new Mapa(20,20);
-        Posicion pos1 = new Posicion(1, 2);
-        Posicion pos2 = new Posicion(5,5);
-        MiAldeano.construirCuartel(mapa, pos1);
-        boolean seLanzoError=false;
-
-        try{
-            MiAldeano.construirCuartel(mapa, pos1);
-        }
-        catch(AldeanoOcupadoException e){
-            seLanzoError=true;
-        }
-        assertTrue(seLanzoError);
-    }
-
-    @Test
-    public void test18AldeanoConstruyendoNoPuedeRepararOtroEdificio() {
-        Aldeano MiAldeano = new Aldeano();
-        PlazaCentral MiPlaza = new PlazaCentral();
-        Mapa mapa = new Mapa(20,20);
-        Posicion pos1 = new Posicion(1, 2);
-        MiAldeano.construirCuartel(mapa, pos1);
-        MiPlaza.recibirDanio(40);
-        boolean seLanzoError=false;
-
-        try{
-            MiAldeano.reparar(MiPlaza);
-        }
-        catch(AldeanoOcupadoException e){
-            seLanzoError=true;
-        }
-        assertTrue(seLanzoError);
-    }
-
-    @Test
-    public void test19AldeanoConstruyendoSeLiberaUnaVezConstruidoElEdificio() {
-        Aldeano MiAldeano = new Aldeano();
-        Mapa mapa = new Mapa(20,20);
-        Posicion pos = new Posicion(1, 2);
-
-        MiAldeano.construirCuartel(mapa, pos);
-        MiAldeano.trabajar();
-        MiAldeano.trabajar();//Pasan 3 turnos
-
-        MiAldeano.trabajar();
-        MiAldeano.trabajar();
-
-        assertTrue(MiAldeano.estado instanceof EstadoAldeanoDisponible);
     }
 }
