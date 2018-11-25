@@ -10,6 +10,8 @@ public class PlazaCentral extends Edificio {
         turnosRestantes = 3;
     }
 
+
+
     public Aldeano crearAldeano(Mapa mapa, Posicion posicion) {
         Aldeano unAldeano = estado.crearAldeano();
         //Chequeo que se cree en alrededor de la plaza central
@@ -22,6 +24,8 @@ public class PlazaCentral extends Edificio {
         mapa.UbicarUnidadEnMapa(posicion, unAldeano);
         return unAldeano;
     }
+
+
 
     @Override
     public void reparar(Aldeano unAldeano){

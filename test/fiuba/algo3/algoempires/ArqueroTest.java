@@ -31,7 +31,7 @@ public class ArqueroTest {
         unAldeano.modificarPosicion(posicionAldeano);
         int vidaPreviaAldeano=unAldeano.getVida();
         unArquero.atacarA(unAldeano);
-        assertEquals(vidaPreviaAldeano-unArquero.puntosDeAtaqueUnidad,unAldeano.getVida());
+        assertEquals(vidaPreviaAldeano-unAldeano.danioProducidoPorArquero,unAldeano.getVida());
     }
 
     @Test
@@ -64,13 +64,11 @@ public class ArqueroTest {
         unCuartel.modificarPosicion(posicionCuartel);
         int vidaPreviaCuartel=unCuartel.getVida();
         unArquero.atacarA(unCuartel);
-        assertEquals(vidaPreviaCuartel-unArquero.puntosDeAtaqueEdificio,unCuartel.getVida());
+        assertEquals(vidaPreviaCuartel-unCuartel.danioProducidoPorArquero,unCuartel.getVida());
 
     }
 
 
 
 }
-
-
 
