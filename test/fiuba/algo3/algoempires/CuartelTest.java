@@ -72,28 +72,28 @@ public class CuartelTest {
         assertTrue(cuartel.estado instanceof EstadoEdificioNormal);
     }
 
-    @Test
-    public void test08CuartelConstruyendoseNoPuedeSerAtacado() {
-        Aldeano MiAldeano = new Aldeano();
-        Espadachin unEspadachin = new Espadachin();
-
-        Mapa mapa = new Mapa(20,20);
-        Posicion pos1 = new Posicion(1, 2);
-        Posicion pos2 = new Posicion(2,2);
-
-        Cuartel cuartel = MiAldeano.construirCuartel(mapa, pos1);
-        unEspadachin.modificarPosicion(pos2);
-
-        boolean seLanzoError = false;
-
-        try{
-            unEspadachin.atacarA(cuartel);
-        }
-        catch(EdificioConstruyendoseException e){
-            seLanzoError=true;
-        }
-        assertTrue(seLanzoError);
-    }
+//    @Test
+//    public void test08CuartelConstruyendoseNoPuedeSerAtacado() {
+//        Aldeano MiAldeano = new Aldeano();
+//        Espadachin unEspadachin = new Espadachin();
+//
+//        Mapa mapa = new Mapa(20,20);
+//        Posicion pos1 = new Posicion(1, 2);
+//        Posicion pos2 = new Posicion(2,2);
+//
+//        Cuartel cuartel = MiAldeano.construirCuartel(mapa, pos1);
+//        unEspadachin.modificarPosicion(pos2);
+//
+//        boolean seLanzoError = false;
+//
+//        try{
+//            unEspadachin.atacarA(cuartel);
+//        }
+//        catch(EdificioConstruyendoseException e){
+//            seLanzoError=true;
+//        }
+//        assertTrue(seLanzoError);
+//    }
 
     @Test
     public void test09CuartelNoPuedeCrearArqueroSiLaPosicionOcupada() {
