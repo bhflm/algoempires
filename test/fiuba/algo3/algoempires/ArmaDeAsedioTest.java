@@ -21,15 +21,15 @@ public class ArmaDeAsedioTest {
 
     @Test
     public void test04ArmaDeAsedioAtacaAUnCuartel(){
-        ArmaDeAsedio unArquero = new ArmaDeAsedio();
+        ArmaDeAsedio unArmaDeAsedio = new ArmaDeAsedio();
         Cuartel unCuartel = new Cuartel();
         Posicion posicionArmaDeAsedio=new Posicion(1,1);
         Posicion posicionCuartel=new Posicion(3,3);
-        unArquero.modificarPosicion(posicionArmaDeAsedio);
+        unArmaDeAsedio.modificarPosicion(posicionArmaDeAsedio);
         unCuartel.modificarPosicion(posicionCuartel);
         int vidaPreviaCuartel=unCuartel.getVida();
-        unArquero.atacarA(unCuartel);
-        assertEquals(vidaPreviaCuartel-unCuartel.danioProducidoPorArmaDeAsedio,unCuartel.getVida());
+        unArmaDeAsedio.atacarA(unCuartel);
+        assertEquals(vidaPreviaCuartel-unArmaDeAsedio.puntosDeAtaqueEdificio,unCuartel.getVida());
 
     }
 
@@ -53,3 +53,6 @@ public class ArmaDeAsedioTest {
     }
 
 }
+
+
+

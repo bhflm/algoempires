@@ -49,12 +49,9 @@ public class Posicion {
         return this.y;
     }
 
-    public boolean ValidarPosicion(int largoHorizontal, int largoVertical) {
-        boolean esValida=false;
-        if(x>largoHorizontal || x<1 || y>largoVertical || y<1){
-            throw new MovimientoFueraDelMapa();}
-            else esValida=true;
-            return esValida;
+    public void ValidarPosicion(int largoHorizontal, int largoVertical) {
+        if(x>largoHorizontal || x<1 || y>largoVertical || y<1)
+            throw new MovimientoFueraDelMapa();
     }
 
     public boolean estaAlAlcance(Posicion posicionAtacable, int rangoDeAtaque) {
