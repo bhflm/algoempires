@@ -1,5 +1,10 @@
 package fiuba.algo3.algoempires;
 
+import fiuba.algo3.algoempires.Direcciones.Direccion;
+import fiuba.algo3.algoempires.Entidades.Castillo;
+import fiuba.algo3.algoempires.Entidades.Edificio;
+import fiuba.algo3.algoempires.Entidades.Unidad;
+
 import java.util.Set;
 import java.util.HashSet;
 
@@ -66,12 +71,12 @@ public class Jugador {
     }
 
 
-    public void CastilloRealizaAtaqueMasivo(Castillo miCastillo,Mapa miMapa){
+    public void CastilloRealizaAtaqueMasivo(Castillo miCastillo, Mapa miMapa){
         Posicion posicionCastillo=miCastillo.getPosicion();
         boolean esDelJugador=false;
         boolean esValidaLaUbicacionDeAtaque=false;
-        for (int i=-3;i<(3+miCastillo.dimension);i++)
-            for (int j=-3;j<(3+miCastillo.dimension);j++){
+        for (int i=-3;i<(3+miCastillo.getDimension());i++)
+            for (int j=-3;j<(3+miCastillo.getDimension());j++){
                 Posicion posicionAAtacar=posicionCastillo.PosicionCorridaA(i,j);
                 if(esValidaLaUbicacionDeAtaque=posicionAAtacar.ValidarPosicion(miMapa.getLargoHorizontal(),miMapa.getLargoVertical())){
                     Ubicable unidadEnemiga=miMapa.GetUbicableEn(posicionAAtacar);

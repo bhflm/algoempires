@@ -1,4 +1,5 @@
 package fiuba.algo3.algoempires;
+import fiuba.algo3.algoempires.Entidades.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -55,8 +56,8 @@ public class CuartelTest {
         Mapa mapa = new Mapa(20,20);
         Posicion pos = new Posicion(1, 2);
         Cuartel cuartel = MiAldeano.construirCuartel(mapa, pos);
-
-        assertTrue(cuartel.estado instanceof EstadoEdificioConstruyendose);
+        EstadoEdificio estadoCuartel = cuartel.getEstado();
+        assertTrue(estadoCuartel instanceof EstadoEdificioConstruyendose);
     }
 
     @Test
@@ -69,7 +70,10 @@ public class CuartelTest {
         MiAldeano.trabajar();
         MiAldeano.trabajar(); //Pasan 3 turnos
 
-        assertTrue(cuartel.estado instanceof EstadoEdificioNormal);
+        EstadoEdificio estadoCuartel = cuartel.getEstado();
+
+
+        assertTrue(estadoCuartel instanceof EstadoEdificioNormal);
     }
 
 //    @Test

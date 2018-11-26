@@ -1,4 +1,7 @@
 package fiuba.algo3.algoempires;
+import fiuba.algo3.algoempires.Entidades.Aldeano;
+import fiuba.algo3.algoempires.Entidades.Arquero;
+import fiuba.algo3.algoempires.Entidades.Cuartel;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -23,6 +26,9 @@ public class ArqueroTest {
 
     @Test
     public void test04ArqueroAtacaAAldeano(){
+
+        int danioProducidoPorArquero = 15;
+
         Arquero unArquero = new Arquero();
         Aldeano unAldeano = new Aldeano();
         Posicion posicionArquero =new Posicion(1,1);
@@ -31,7 +37,7 @@ public class ArqueroTest {
         unAldeano.modificarPosicion(posicionAldeano);
         int vidaPreviaAldeano=unAldeano.getVida();
         unArquero.atacarA(unAldeano);
-        assertEquals(vidaPreviaAldeano-unAldeano.danioProducidoPorArquero,unAldeano.getVida());
+        assertEquals(vidaPreviaAldeano-danioProducidoPorArquero,unAldeano.getVida());
     }
 
     @Test
@@ -39,7 +45,7 @@ public class ArqueroTest {
         boolean seLanzoError = false;
         Arquero unArquero = new Arquero();
         Aldeano unAldeano = new Aldeano();
-        int rangoMaximo=unArquero.rangoDeAtaque;
+        int rangoMaximo=unArquero.getRangoDeAtaque();
         Posicion posicionArquero =new Posicion(1,1);
         Posicion posicionAldeano= new Posicion(1,(1+rangoMaximo)+1);
         unArquero.modificarPosicion(posicionArquero);
@@ -56,6 +62,9 @@ public class ArqueroTest {
 
     @Test
     public void test06ArqueroAtacaAUnCuartel(){
+
+        int danioProducidoPorArqueroEdificio = 10;
+
         Arquero unArquero = new Arquero();
         Cuartel unCuartel = new Cuartel();
         Posicion posicionArquero=new Posicion(1,1);
@@ -64,7 +73,7 @@ public class ArqueroTest {
         unCuartel.modificarPosicion(posicionCuartel);
         int vidaPreviaCuartel=unCuartel.getVida();
         unArquero.atacarA(unCuartel);
-        assertEquals(vidaPreviaCuartel-unCuartel.danioProducidoPorArquero,unCuartel.getVida());
+        assertEquals(vidaPreviaCuartel-danioProducidoPorArqueroEdificio,unCuartel.getVida());
 
     }
 

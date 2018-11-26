@@ -1,6 +1,10 @@
 package fiuba.algo3.algoempires;
 
 
+import fiuba.algo3.algoempires.Entidades.Aldeano;
+import fiuba.algo3.algoempires.Entidades.Castillo;
+import fiuba.algo3.algoempires.Entidades.PlazaCentral;
+
 public class Juego {
     protected Jugador actual;
     protected Jugador esperando;

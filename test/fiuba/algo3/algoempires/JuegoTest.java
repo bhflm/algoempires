@@ -1,7 +1,7 @@
 package fiuba.algo3.algoempires;
 
-import junit.framework.TestCase;
-import org.junit.Assert;
+import fiuba.algo3.algoempires.Direcciones.*;
+import fiuba.algo3.algoempires.Entidades.*;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -294,6 +294,8 @@ public class JuegoTest {
     @Test
     public void test17CreoJuegoConDosJugadoresConUnArqueroAtancandoUnAldeano() {
 
+        int DanioProducidoPorArquero = 15;
+
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
@@ -309,7 +311,7 @@ public class JuegoTest {
         unMapa.UbicarUnidadEnMapa(otraPos,unAldeano);
         int vidaPrevia=unAldeano.getVida();
         unJugador.realizarAtaque(unArquero,unAldeano);
-        assertEquals(vidaPrevia-unAldeano.danioProducidoPorArquero,unAldeano.getVida());
+        assertEquals(vidaPrevia-DanioProducidoPorArquero,unAldeano.getVida());
     }
 
     @Test
@@ -339,6 +341,9 @@ public class JuegoTest {
 
     @Test
     public void test19CreoJuegoConDosJugadoresConUnCastilloAtancandoDosAldeanos() {
+
+        int danioProducidoPorCastillo = 20;
+
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
@@ -357,8 +362,8 @@ public class JuegoTest {
         unMapa.UbicarUnidadEnMapa(posicionCastillo,unCastillo);
         int vidaPreviaUnAldeano=unAldeano.getVida();
         otroJugador.CastilloRealizaAtaqueMasivo(unCastillo,unMapa);
-        assertEquals(unAldeano.getVida(),vidaPreviaUnAldeano-unAldeano.danioProducidoPorCastillo);
-        assertEquals(otroAldeano.getVida(),vidaPreviaUnAldeano-otroAldeano.danioProducidoPorCastillo);
+        assertEquals(unAldeano.getVida(),vidaPreviaUnAldeano-danioProducidoPorCastillo);
+        assertEquals(otroAldeano.getVida(),vidaPreviaUnAldeano-danioProducidoPorCastillo);
 
     }
 
