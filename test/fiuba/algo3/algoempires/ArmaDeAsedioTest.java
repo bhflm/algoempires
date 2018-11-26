@@ -1,4 +1,6 @@
 package fiuba.algo3.algoempires;
+import fiuba.algo3.algoempires.Entidades.ArmaDeAsedio;
+import fiuba.algo3.algoempires.Entidades.Cuartel;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,6 +23,9 @@ public class ArmaDeAsedioTest {
 
     @Test
     public void test04ArmaDeAsedioAtacaAUnCuartel(){
+
+        int danioProducidoPorArmaDeAsedioContraEdificios = 75;
+
         ArmaDeAsedio unArquero = new ArmaDeAsedio();
         Cuartel unCuartel = new Cuartel();
         Posicion posicionArmaDeAsedio=new Posicion(1,1);
@@ -29,7 +34,7 @@ public class ArmaDeAsedioTest {
         unCuartel.modificarPosicion(posicionCuartel);
         int vidaPreviaCuartel=unCuartel.getVida();
         unArquero.atacarA(unCuartel);
-        assertEquals(vidaPreviaCuartel-unCuartel.danioProducidoPorArmaDeAsedio,unCuartel.getVida());
+        assertEquals(vidaPreviaCuartel-danioProducidoPorArmaDeAsedioContraEdificios,unCuartel.getVida());
 
     }
 
@@ -38,7 +43,7 @@ public class ArmaDeAsedioTest {
         boolean seLanzoError = false;
         ArmaDeAsedio unArmaDeAsedio = new ArmaDeAsedio();
         Cuartel unCuartel = new Cuartel();
-        int rangoMaximo=unArmaDeAsedio.rangoDeAtaque;
+        int rangoMaximo=unArmaDeAsedio.getRangoDeAtaque();
         Posicion posicionArmaDeAsedio =new Posicion(1,1);
         Posicion posicionCuartel= new Posicion(1,(1+rangoMaximo)+1);
         unArmaDeAsedio.modificarPosicion(posicionArmaDeAsedio);

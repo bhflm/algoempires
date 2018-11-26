@@ -1,6 +1,9 @@
 package fiuba.algo3.algoempires;
 
-import java.util.HashMap;
+import fiuba.algo3.algoempires.Entidades.ArmaDeAsedio;
+import fiuba.algo3.algoempires.Entidades.Arquero;
+import fiuba.algo3.algoempires.Entidades.Castillo;
+import fiuba.algo3.algoempires.Entidades.Espadachin;
 
 public class EspacioLibre implements Ubicable{
     protected int dimension = 0;

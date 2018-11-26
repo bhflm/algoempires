@@ -1,7 +1,6 @@
 package fiuba.algo3.algoempires;
 
-import junit.framework.TestCase;
-import org.junit.Assert;
+import fiuba.algo3.algoempires.Entidades.Aldeano;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

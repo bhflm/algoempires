@@ -1,4 +1,7 @@
 package fiuba.algo3.algoempires;
+import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.ExcepcionesEdificios.EdificioReparandoseException;
+import fiuba.algo3.algoempires.ExcepcionesEdificios.EdificioVidaMaximaException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -34,8 +37,9 @@ public class AldeanoTest{
     }
     @Test
     public void test06AldeanoConstruyendoNoGeneraOro(){
+        EstadoUnidad unEstado = new EstadoAldeanoConstruyendo();
         Aldeano MiAldeano = new Aldeano();
-        MiAldeano.estado=new EstadoAldeanoConstruyendo();
+        MiAldeano.setEstado(unEstado);
         int oroRecaudado=MiAldeano.recaudarOro();
         assertEquals(oroRecaudado,0);
 
@@ -43,8 +47,9 @@ public class AldeanoTest{
 
     @Test
     public void test07AldeanoReparandoNoGeneraOro(){
+        EstadoUnidad unEstado = new EstadoAldeanoReparando();
         Aldeano MiAldeano = new Aldeano();
-        MiAldeano.estado=new EstadoAldeanoReparando();
+        MiAldeano.setEstado(unEstado);
         int oroRecaudado=MiAldeano.recaudarOro();
         assertEquals(oroRecaudado,0);
 
