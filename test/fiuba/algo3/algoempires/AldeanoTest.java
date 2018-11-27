@@ -1,7 +1,8 @@
 package fiuba.algo3.algoempires;
 import fiuba.algo3.algoempires.Entidades.*;
-import fiuba.algo3.algoempires.ExcepcionesEdificios.EdificioReparandoseException;
-import fiuba.algo3.algoempires.ExcepcionesEdificios.EdificioVidaMaximaException;
+import fiuba.algo3.algoempires.Excepciones.AldeanoOcupadoException;
+import fiuba.algo3.algoempires.Excepciones.EdificioReparandoseException;
+import fiuba.algo3.algoempires.Excepciones.EdificioVidaMaximaException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

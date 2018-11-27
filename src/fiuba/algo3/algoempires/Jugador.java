@@ -4,6 +4,8 @@ import fiuba.algo3.algoempires.Direcciones.Direccion;
 import fiuba.algo3.algoempires.Entidades.Castillo;
 import fiuba.algo3.algoempires.Entidades.Edificio;
 import fiuba.algo3.algoempires.Entidades.Unidad;
+import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
+import fiuba.algo3.algoempires.Excepciones.TopePoblacionException;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -35,7 +37,7 @@ public class Jugador {
 
     public void agregarEdificio(Edificio unEdificio){this.edificiosJugador.add(unEdificio);}
 
-    public void moverUnidad(Juego unJuego, Mapa unMapa,Movible unaUnidad, Direccion unaDireccion){
+    public void moverUnidad(Juego unJuego, Mapa unMapa, Movible unaUnidad, Direccion unaDireccion){
         Posicion posicionMover = unaDireccion.ObtenerPosicion(unaUnidad);
         unMapa.MoverUnidad(posicionMover,unaUnidad);
         if (unJuego.getNombreActual() != this.nombre ){

@@ -1,6 +1,6 @@
 package fiuba.algo3.algoempires.Entidades;
 
-import fiuba.algo3.algoempires.ExcepcionesEdificios.EdificioConstruyendoseException;
+import fiuba.algo3.algoempires.Excepciones.EdificioConstruyendoseException;
 
 public class EstadoEdificioConstruyendose extends EstadoEdificio {
 

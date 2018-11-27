@@ -1,8 +1,7 @@
 package fiuba.algo3.algoempires.Entidades;
 
 
-import fiuba.algo3.algoempires.AtaqueFueraDeRango;
-import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.Excepciones.AtaqueFueraDeRango;
 import fiuba.algo3.algoempires.Posicion;
 
 public abstract class Unidad{

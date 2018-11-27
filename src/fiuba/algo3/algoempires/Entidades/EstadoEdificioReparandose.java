@@ -1,6 +1,6 @@
 package fiuba.algo3.algoempires.Entidades;
 
-import fiuba.algo3.algoempires.ExcepcionesEdificios.EdificioReparandoseException;
+import fiuba.algo3.algoempires.Excepciones.EdificioReparandoseException;
 
 public class EstadoEdificioReparandose extends EstadoEdificio{
     @Override

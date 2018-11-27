@@ -1,4 +1,9 @@
 package fiuba.algo3.algoempires;
+import fiuba.algo3.algoempires.Excepciones.DimensionInvalidaMapa;
+import fiuba.algo3.algoempires.Excepciones.UbicacionFueraDelMapaException;
+import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
+import fiuba.algo3.algoempires.Excepciones.MovimientoFueraDelMapa;
+
 import java.util.HashMap;
 
 public class Mapa {
@@ -68,7 +73,7 @@ private void GenerarPosiciones(){
     return Ubicaciones.get(posicionAldeano);
     }
 
-    public void MoverUnidad(Posicion nuevaPosicion,Movible unidadAMover){
+    public void MoverUnidad(Posicion nuevaPosicion, Movible unidadAMover){
     try{
         nuevaPosicion.ValidarPosicion(LargoHorizontal,LargoVertical);
     }

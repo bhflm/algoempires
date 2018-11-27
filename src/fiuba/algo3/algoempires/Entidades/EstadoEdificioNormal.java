@@ -1,6 +1,6 @@
 package fiuba.algo3.algoempires.Entidades;
 
-import fiuba.algo3.algoempires.ExcepcionesEdificios.EdificioVidaMaximaException;
+import fiuba.algo3.algoempires.Excepciones.EdificioVidaMaximaException;
 
 public class EstadoEdificioNormal extends EstadoEdificio{
     @Override

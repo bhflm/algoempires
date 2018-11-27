@@ -2,6 +2,8 @@ package fiuba.algo3.algoempires;
 
 import fiuba.algo3.algoempires.Entidades.ArmaDeAsedio;
 import fiuba.algo3.algoempires.Entidades.Castillo;
+import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
+import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

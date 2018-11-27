@@ -1,5 +1,7 @@
 package fiuba.algo3.algoempires;
 import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
+import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
