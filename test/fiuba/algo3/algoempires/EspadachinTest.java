@@ -2,6 +2,7 @@ package fiuba.algo3.algoempires;
 import fiuba.algo3.algoempires.Entidades.Aldeano;
 import fiuba.algo3.algoempires.Entidades.Cuartel;
 import fiuba.algo3.algoempires.Entidades.Espadachin;
+import fiuba.algo3.algoempires.Excepciones.AtaqueFueraDeRango;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

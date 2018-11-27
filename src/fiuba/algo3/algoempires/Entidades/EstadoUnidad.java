@@ -1,6 +1,7 @@
 package fiuba.algo3.algoempires.Entidades;
 
 import fiuba.algo3.algoempires.*;
+import fiuba.algo3.algoempires.Excepciones.AldeanoOcupadoException;
 
 public abstract class EstadoUnidad {
     void reparar(Edificio unEdificio, Aldeano aldeano){throw new AldeanoOcupadoException();}

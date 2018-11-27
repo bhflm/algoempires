@@ -2,7 +2,7 @@ package fiuba.algo3.algoempires.Entidades;
 
 import fiuba.algo3.algoempires.Mapa;
 import fiuba.algo3.algoempires.Posicion;
-import fiuba.algo3.algoempires.PosicionInvalidaException;
+import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
 
 public class Cuartel extends Edificio {
 

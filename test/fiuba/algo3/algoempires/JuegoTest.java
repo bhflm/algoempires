@@ -2,6 +2,7 @@ package fiuba.algo3.algoempires;
 
 import fiuba.algo3.algoempires.Direcciones.*;
 import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

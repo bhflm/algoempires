@@ -1,10 +1,8 @@
 package fiuba.algo3.algoempires.Entidades;
 
-import fiuba.algo3.algoempires.Entidades.Aldeano;
-import fiuba.algo3.algoempires.Entidades.Edificio;
 import fiuba.algo3.algoempires.Mapa;
 import fiuba.algo3.algoempires.Posicion;
-import fiuba.algo3.algoempires.PosicionInvalidaException;
+import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
 
 public class PlazaCentral extends Edificio {
 

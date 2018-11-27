@@ -1,6 +1,7 @@
 package fiuba.algo3.algoempires.Entidades;
 
 import fiuba.algo3.algoempires.*;
+import fiuba.algo3.algoempires.Movible;
 
 public class Arquero extends Unidad implements Movible, Atacante {
 

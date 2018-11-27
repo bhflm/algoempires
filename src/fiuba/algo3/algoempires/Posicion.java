@@ -1,7 +1,8 @@
 package fiuba.algo3.algoempires;
 
+import fiuba.algo3.algoempires.Excepciones.MovimientoFueraDelMapa;
+
 import static java.lang.Math.abs;
-import static java.lang.Math.sqrt;
 
 public class Posicion {
     private int x;

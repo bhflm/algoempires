@@ -1,5 +1,9 @@
 package fiuba.algo3.algoempires;
 import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.Excepciones.DimensionInvalidaMapa;
+import fiuba.algo3.algoempires.Excepciones.UbicacionFueraDelMapaException;
+import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
+import fiuba.algo3.algoempires.Excepciones.MovimientoFueraDelMapa;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

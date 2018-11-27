@@ -1,6 +1,8 @@
 package fiuba.algo3.algoempires.Entidades;
 
 import fiuba.algo3.algoempires.*;
+import fiuba.algo3.algoempires.Excepciones.AtaqueFueraDeRango;
+import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
 
 public abstract class Edificio implements Ubicable {
     protected int vidaMaxima;
