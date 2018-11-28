@@ -355,7 +355,7 @@ public class JuegoTest {
         Mapa unMapa = new Mapa(25,25);
         Posicion unaPos = new Posicion(2,2);
         Posicion otraPos= new Posicion(2,3);
-        Posicion posicionCastillo=new Posicion(5,5);
+        Posicion posicionCastillo=new Posicion(4,1);
         unJugador.agregarUnidad(otroAldeano);
         unJugador.agregarUnidad(unAldeano);
         unMapa.UbicarUnidadEnMapa(unaPos,unAldeano);

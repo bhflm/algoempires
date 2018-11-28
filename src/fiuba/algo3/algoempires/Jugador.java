@@ -5,6 +5,7 @@ import fiuba.algo3.algoempires.Entidades.Castillo;
 import fiuba.algo3.algoempires.Entidades.Edificio;
 import fiuba.algo3.algoempires.Entidades.Unidad;
 import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
+import fiuba.algo3.algoempires.Excepciones.MovimientoFueraDelMapa;
 import fiuba.algo3.algoempires.Excepciones.TopePoblacionException;
 
 import java.util.Set;
@@ -76,16 +77,23 @@ public class Jugador {
     public void CastilloRealizaAtaqueMasivo(Castillo miCastillo, Mapa miMapa){
         Posicion posicionCastillo=miCastillo.getPosicion();
         boolean esDelJugador=false;
-        boolean esValidaLaUbicacionDeAtaque=false;
-        for (int i=-3;i<(3+miCastillo.getDimension());i++)
-            for (int j=-3;j<(3+miCastillo.getDimension());j++){
+        boolean esValidaLaUbicacionDeAtaque=true;
+        int rangoAtaque=miCastillo.getRango();
+        for (int i=-rangoAtaque;i<(rangoAtaque+miCastillo.getDimension());i++)
+            for (int j=-rangoAtaque;j<(rangoAtaque+miCastillo.getDimension());j++){
                 Posicion posicionAAtacar=posicionCastillo.PosicionCorridaA(i,j);
-                if(esValidaLaUbicacionDeAtaque=posicionAAtacar.ValidarPosicion(miMapa.getLargoHorizontal(),miMapa.getLargoVertical())){
+                esValidaLaUbicacionDeAtaque=true;
+                try{posicionAAtacar.ValidarPosicion(miMapa.getLargoHorizontal(),miMapa.getLargoVertical());}
+               catch (MovimientoFueraDelMapa e){esValidaLaUbicacionDeAtaque=false;}
+                  if(esValidaLaUbicacionDeAtaque ){
                     Ubicable unidadEnemiga=miMapa.GetUbicableEn(posicionAAtacar);
                     esDelJugador=perteneceUnidad(unidadEnemiga);
-                    if(esDelJugador==false)
+                    if(esDelJugador==false) {
                         miCastillo.atacarA(unidadEnemiga);
+                    }
+
+                  }
                 }}
     }
 
-}
+

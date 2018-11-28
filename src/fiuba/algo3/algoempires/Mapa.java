@@ -43,12 +43,13 @@ private void GenerarPosiciones(){
 
 
         Ubicable UbicableEnLaNuevaPosicion=this.Ubicaciones.get(PosicionUnidad);
-        if(UbicableEnLaNuevaPosicion.esPisableEnElMapa()==false){
-            throw new UbicacionOcupadaPorOtraUnidad();}
 
         for (int i = 0; i < dimension+1; i++){
             for (int j = 0; j < dimension+1; j++){
                 Posicion posicionActual = new Posicion(CoordHorizontal+i, CoordVertical+j);
+                UbicableEnLaNuevaPosicion=this.Ubicaciones.get(posicionActual);
+                if(UbicableEnLaNuevaPosicion.esPisableEnElMapa()==false){
+                    throw new UbicacionOcupadaPorOtraUnidad();}
                 Ubicaciones.put(posicionActual, Unidad);
             }
         }

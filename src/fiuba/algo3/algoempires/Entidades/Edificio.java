@@ -166,8 +166,5 @@ public abstract class Edificio implements Ubicable {
     }
 
 
-
-
-
-
+    public int getRango(){return this.rangoDeAtaque;};
 }
