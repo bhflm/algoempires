@@ -1,5 +1,6 @@
 package fiuba.algo3.algoempires;
 import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.Excepciones.EdificioConstruyendoseException;
 import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
 import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
 import org.junit.Test;
@@ -78,31 +79,8 @@ public class CuartelTest {
         assertTrue(estadoCuartel instanceof EstadoEdificioNormal);
     }
 
-//    @Test
-//    public void test08CuartelConstruyendoseNoPuedeSerAtacado() {
-//        Aldeano MiAldeano = new Aldeano();
-//        Espadachin unEspadachin = new Espadachin();
-//
-//        Mapa mapa = new Mapa(20,20);
-//        Posicion pos1 = new Posicion(1, 2);
-//        Posicion pos2 = new Posicion(2,2);
-//
-//        Cuartel cuartel = MiAldeano.construirCuartel(mapa, pos1);
-//        unEspadachin.modificarPosicion(pos2);
-//
-//        boolean seLanzoError = false;
-//
-//        try{
-//            unEspadachin.atacarA(cuartel);
-//        }
-//        catch(EdificioConstruyendoseException e){
-//            seLanzoError=true;
-//        }
-//        assertTrue(seLanzoError);
-//    }
-
     @Test
-    public void test09CuartelNoPuedeCrearArqueroSiLaPosicionOcupada() {
+    public void test08CuartelNoPuedeCrearArqueroSiLaPosicionOcupada() {
         Mapa mapa = new Mapa(20,20);
         Cuartel unCuartel = new Cuartel();
         Espadachin unEspadachin = new Espadachin();
@@ -124,7 +102,7 @@ public class CuartelTest {
     }
 
     @Test
-    public void test10CuartelNoPuedeCrearEspadachinSiLaPosicionOcupada() {
+    public void test09CuartelNoPuedeCrearEspadachinSiLaPosicionOcupada() {
         Mapa mapa = new Mapa(20,20);
         Cuartel unCuartel = new Cuartel();
         Espadachin unEspadachin = new Espadachin();
@@ -145,7 +123,7 @@ public class CuartelTest {
     }
 
     @Test
-    public void test11CuartelCreaArqueroEnPosicionIndicada() {
+    public void test10CuartelCreaArqueroEnPosicionIndicada() {
         Mapa mapa = new Mapa(20,20);
         Cuartel unCuartel = new Cuartel();
 
@@ -158,7 +136,7 @@ public class CuartelTest {
     }
 
     @Test
-    public void test12CuartelCreaEspadachinEnPosicionIndicada() {
+    public void test11CuartelCreaEspadachinEnPosicionIndicada() {
         Mapa mapa = new Mapa(20,20);
         Cuartel unCuartel = new Cuartel();
 
@@ -171,7 +149,7 @@ public class CuartelTest {
     }
 
     @Test
-    public void test13CuartelNoPuedeCrearEspadachinFueraDeSuRango() {
+    public void test12CuartelNoPuedeCrearEspadachinFueraDeSuRango() {
         Mapa mapa = new Mapa(20,20);
         Cuartel unCuartel = new Cuartel();
 
@@ -190,7 +168,7 @@ public class CuartelTest {
     }
 
     @Test
-    public void test14CuartelNoPuedeCrearArqueroFueraDeSuRango() {
+    public void test13CuartelNoPuedeCrearArqueroFueraDeSuRango() {
         Mapa mapa = new Mapa(20,20);
         Cuartel unCuartel = new Cuartel();
 
@@ -207,8 +185,4 @@ public class CuartelTest {
         }
         assertTrue(SeLanzoError);
     }
-
 }
-
-
-
