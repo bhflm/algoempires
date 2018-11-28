@@ -64,30 +64,8 @@ public class PlazaCentralTest {
         assertTrue(estadoPlaza instanceof EstadoEdificioNormal);
     }
 
-//    @Test
-//    public void test07PlazaCentralConstruyendoseNoPuedeSerAtacado() {
-//        Aldeano MiAldeano = new Aldeano();
-//        Espadachin unEspadachin = new Espadachin();
-//
-//        Mapa mapa = new Mapa(20, 20);
-//        Posicion pos1 = new Posicion(1, 2);
-//        Posicion pos2 = new Posicion(2, 2);
-//
-//        PlazaCentral plazaCentral = MiAldeano.construirPlazaCentral(mapa, pos1);
-//        unEspadachin.modificarPosicion(pos2);
-//
-//        boolean seLanzoError = false;
-//
-//        try {
-//            unEspadachin.atacarA(plazaCentral);
-//        } catch (EdificioConstruyendoseException e) {
-//            seLanzoError = true;
-//        }
-//        assertTrue(seLanzoError);
-//    }
-
     @Test
-    public void test08PlazaCentralCreaAldeanoEnPosicionIndicada() {
+    public void test07PlazaCentralCreaAldeanoEnPosicionIndicada() {
         Mapa mapa = new Mapa(20, 20);
         PlazaCentral unaPlazaCentral = new PlazaCentral();
 
@@ -100,7 +78,7 @@ public class PlazaCentralTest {
     }
 
     @Test
-    public void test09PlazaCentralNoPuedeCrearAldeanoSiLaPosicionOcupada() {
+    public void test08PlazaCentralNoPuedeCrearAldeanoSiLaPosicionOcupada() {
         Mapa mapa = new Mapa(20,20);
         PlazaCentral unaPlazaCentral = new PlazaCentral();
         Espadachin unEspadachin = new Espadachin();
@@ -121,7 +99,7 @@ public class PlazaCentralTest {
     }
 
     @Test
-    public void test10PlazaCentralNoPuedeCrearAldeanoFueraDeRango() {
+    public void test09PlazaCentralNoPuedeCrearAldeanoFueraDeRango() {
         Mapa mapa = new Mapa(20,20);
         PlazaCentral unaPlazaCentral = new PlazaCentral();
 
@@ -140,7 +118,3 @@ public class PlazaCentralTest {
     }
 
 }
-
-
-
-
