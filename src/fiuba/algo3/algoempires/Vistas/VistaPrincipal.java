@@ -1,6 +1,7 @@
 package fiuba.algo3.algoempires.Vistas;
 
 import javafx.geometry.Insets;
+import fiuba.algo3.algoempires.Controladores.AgregarAldeano;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
@@ -8,8 +9,7 @@ public class VistaPrincipal extends BorderPane {
 
     public VistaPrincipal(){
         this.setFondo();
-        this.setBotonera();
-
+        this.setAcciones();
     }
 
     public void setFondo() {
@@ -25,7 +25,7 @@ public class VistaPrincipal extends BorderPane {
                 bSize)));
     }
 
-    private void setBotonera() {
+    private void setAcciones() {
 
         Boton botonMoverse = new Boton("Moverse A", null);
         Boton botonAtacar = new Boton("Atacar", null);
@@ -49,4 +49,5 @@ public class VistaPrincipal extends BorderPane {
         contenedorVertical.setPadding(new Insets(20,20,20,20));
         this.setRight(contenedorVertical);
     }
+
 }
