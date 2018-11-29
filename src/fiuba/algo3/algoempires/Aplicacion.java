@@ -29,9 +29,6 @@ public class Aplicacion extends Application {
         registrador.pasarEscena(ventana,algoEmpires);
 
         ventana.setScene(inicioJuego);
-        //ventana.setResizable(false);
         ventana.show();
     }
-
-
 }
