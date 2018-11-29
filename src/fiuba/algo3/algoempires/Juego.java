@@ -8,7 +8,6 @@ import fiuba.algo3.algoempires.Entidades.PlazaCentral;
 public class Juego {
     protected Jugador actual;
     protected Jugador esperando;
-
     protected Mapa mapa;
 
 

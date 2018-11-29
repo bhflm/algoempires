@@ -39,8 +39,6 @@ public abstract class Unidad{
         this.vida = this.vida - danio;
     }
 
-
-
     public void recibirDanio(Arquero arquero){
         Posicion posicionAtacable=this.PosicionUnidad;
         Posicion posicionAtacante=arquero.PosicionUnidad;
