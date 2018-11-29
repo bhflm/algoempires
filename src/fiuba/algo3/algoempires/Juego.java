@@ -8,6 +8,8 @@ import fiuba.algo3.algoempires.Entidades.PlazaCentral;
 public class Juego {
     protected Jugador actual;
     protected Jugador esperando;
+    boolean finalizado = false;
+
     protected Mapa mapa;
 
 
@@ -15,6 +17,7 @@ public class Juego {
         this.esperando = otroJugador;
         this.actual = unJugador;
     }
+
     public void comenzarJuego(Jugador unJugador,Jugador otroJugador,int dimensionMapa){
         iniciarJuego(unJugador,otroJugador);
         Mapa miMapa=new Mapa(dimensionMapa,dimensionMapa);
@@ -32,7 +35,7 @@ public class Juego {
         miMapa.UbicarUnidadEnMapa(posicionCastilloUnJugador,castilloUnJugador);
         Castillo castilloOtroJugador=new Castillo();
         Posicion posicionCastilloOtroJugador=new Posicion((dimensionMapa/2+3),dimensionMapa-3);
-        unJugador.agregarEdificio(castilloOtroJugador);
+        otroJugador.agregarEdificio(castilloOtroJugador);
         miMapa.UbicarUnidadEnMapa(posicionCastilloOtroJugador,castilloOtroJugador);
 
 
@@ -81,11 +84,16 @@ public class Juego {
 
     public Jugador getActual() { return this.actual; }
 
-    public void cambiarTurno(){
-        Jugador aux = this.actual;
-        this.actual = this.esperando;
-        this.esperando = aux;
+    public void cambiarTurno() {
+        if (!finalizoJuego()) {
+            Jugador aux = this.actual;
+            this.actual = this.esperando;
+            this.esperando = aux;
+        }
     }
 
+    public boolean finalizoJuego(){
+        return this.actual.perdio();
+    }
 
 }
