@@ -1,6 +1,7 @@
 package fiuba.algo3.algoempires.Vistas;
 
 import fiuba.algo3.algoempires.Controladores.AgregarAldeano;
+import fiuba.algo3.algoempires.Controladores.Casillero;
 import fiuba.algo3.algoempires.Controladores.NodoLibre;
 import fiuba.algo3.algoempires.EspacioLibre;
 import javafx.geometry.Pos;
@@ -43,9 +44,8 @@ public class VistaPrincipal extends BorderPane {
         int counter = 0;
         for (int row = 3; row > 0; row--)
             for (int col = 0; col < 3; col++) {
-                Button a=new Button("." );
-                a.setStyle("-fx-background-image: url('file:src/fiuba/algo3/algoempires/Vistas/Img/ricky.jpeg')");
-
+                Casillero a = new Casillero();
+                a.setStyle("-fx-background-image: url('file:src/fiuba/algo3/algoempires/Vistas/Img/arquero.png')");
                 gridPane.add(a, col, row);
                 GridPane.setHgrow(a, Priority.ALWAYS);
                 GridPane.setVgrow(a, Priority.ALWAYS);
