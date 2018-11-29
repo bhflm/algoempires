@@ -19,6 +19,7 @@ public class Juego {
     public void comenzarJuego(Jugador unJugador,Jugador otroJugador,int dimensionMapa){
         iniciarJuego(unJugador,otroJugador);
         Mapa miMapa=new Mapa(dimensionMapa,dimensionMapa);
+        this.mapa=miMapa;
         this.agregarOroInicial(unJugador,otroJugador);
         this.agregarPlazasCentralesIniciales(unJugador,otroJugador,miMapa,dimensionMapa);
         this.agregarAldeanosIniciales(unJugador,otroJugador,miMapa,dimensionMapa);
