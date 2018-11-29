@@ -31,5 +31,4 @@ public class Aplicacion extends Application {
         ventana.show();
     }
 
-
 }
