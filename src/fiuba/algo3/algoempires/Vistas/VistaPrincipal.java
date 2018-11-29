@@ -1,20 +1,9 @@
 package fiuba.algo3.algoempires.Vistas;
 
-import fiuba.algo3.algoempires.Entidades.*;
 import javafx.geometry.Insets;
-import fiuba.algo3.algoempires.Controladores.AgregarAldeano;
 import fiuba.algo3.algoempires.Controladores.Casillero;
-import fiuba.algo3.algoempires.Controladores.NodoLibre;
-import fiuba.algo3.algoempires.EspacioLibre;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Rectangle;
-
-import java.io.File;
 
 public class VistaPrincipal extends BorderPane {
 
@@ -43,17 +32,20 @@ public class VistaPrincipal extends BorderPane {
         GridPane gridPane = new GridPane();
         this.setCenter(gridPane);
         gridPane.setGridLinesVisible(true);
-        int counter = 0;
         for (int row = 10; row > 0; row--)
             for (int col = 0; col <10; col++){
                 Casillero a = new Casillero();
-                PlazaCentral miPlaza=new PlazaCentral();//Aca tiene que hacer un new de otro ubicable y cambia la imagen solo.
-                a.setUbicable(miPlaza);
+
                 gridPane.add(a, col, row);
                 gridPane.setHgrow(a, Priority.ALWAYS);
                 gridPane.setVgrow(a, Priority.ALWAYS);
             }
+
+
     }
+
+
+
 
     private void setAcciones() {
 
