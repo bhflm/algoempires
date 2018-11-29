@@ -43,12 +43,11 @@ public class VistaPrincipal extends BorderPane {
         GridPane gridPane = new GridPane();
         this.setCenter(gridPane);
         gridPane.setGridLinesVisible(true);
-        int counter = 0;
-        for (int row = 10; row > 0; row--)
-            for (int col = 0; col <10; col++){
+        int dimensionHorizontal = 10;
+        int dimensionVertical = 10;
+        for (int row = dimensionHorizontal; row > 0; row--)
+            for (int col = 0; col < dimensionVertical; col++){
                 Casillero a = new Casillero();
-                PlazaCentral miPlaza=new PlazaCentral();//Aca tiene que hacer un new de otro ubicable y cambia la imagen solo.
-                a.setUbicable(miPlaza);
                 gridPane.add(a, col, row);
                 gridPane.setHgrow(a, Priority.ALWAYS);
                 gridPane.setVgrow(a, Priority.ALWAYS);
