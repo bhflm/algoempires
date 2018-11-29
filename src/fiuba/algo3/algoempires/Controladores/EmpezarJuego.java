@@ -18,6 +18,7 @@ public class EmpezarJuego implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         stage.setScene(proximaEscena);
+
     }
 
 }
