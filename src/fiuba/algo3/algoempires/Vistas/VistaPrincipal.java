@@ -1,25 +1,18 @@
 package fiuba.algo3.algoempires.Vistas;
 
 import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.Mapa;
+import fiuba.algo3.algoempires.Posicion;
+import fiuba.algo3.algoempires.Ubicable;
 import javafx.geometry.Insets;
-import fiuba.algo3.algoempires.Controladores.AgregarAldeano;
 import fiuba.algo3.algoempires.Controladores.Casillero;
-import fiuba.algo3.algoempires.Controladores.NodoLibre;
-import fiuba.algo3.algoempires.EspacioLibre;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Rectangle;
-
-import java.io.File;
 
 public class VistaPrincipal extends BorderPane {
 
-    public VistaPrincipal(){
-        this.crearTablero();
+    public VistaPrincipal(Mapa miMapa){
+        this.crearTablero(miMapa);
         this.setFondo();
         this.setAcciones();
     }
@@ -39,20 +32,31 @@ public class VistaPrincipal extends BorderPane {
        //         bSize)));
     }
 
-    public void crearTablero() {
+    public void crearTablero(Mapa miMapa) {
         GridPane gridPane = new GridPane();
         this.setCenter(gridPane);
         gridPane.setGridLinesVisible(true);
-        int dimensionHorizontal = 10;
-        int dimensionVertical = 10;
-        for (int row = dimensionHorizontal; row > 0; row--)
-            for (int col = 0; col < dimensionVertical; col++){
-                Casillero a = new Casillero();
-                gridPane.add(a, col, row);
+        int counter = 0;
+        int dimenRow=miMapa.getLargoHorizontal();
+        int dimenCol=miMapa.getLargoVertical();
+        for (int row = 0; row < dimenRow; row++)
+            for (int col = 0; col <dimenCol; col++){
+                Posicion posicionUbicable=new Posicion(row+1,col+1);
+                Ubicable elUbicable=miMapa.GetUbicableEn(posicionUbicable);
+                Casillero a=new Casillero(elUbicable,posicionUbicable);
+               // Posicion pos=new Posicion(row,col);
+              //  Casillero a=new Casillero(miPlaza,pos);
+               // a.setUbicable(miPlaza);
+                gridPane.add(a,row, col);
                 gridPane.setHgrow(a, Priority.ALWAYS);
                 gridPane.setVgrow(a, Priority.ALWAYS);
             }
+
+
     }
+
+
+
 
     private void setAcciones() {
 
