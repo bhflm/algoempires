@@ -5,6 +5,7 @@ import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+
 public class Aplicacion extends Application {
 
     Stage ventana;
@@ -28,6 +29,7 @@ public class Aplicacion extends Application {
         registrador.pasarEscena(ventana,algoEmpires);
 
         ventana.setScene(inicioJuego);
+        //ventana.setResizable(false);
         ventana.show();
     }
 
