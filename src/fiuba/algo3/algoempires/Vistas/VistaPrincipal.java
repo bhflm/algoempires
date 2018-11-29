@@ -7,7 +7,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.shape.Rectangle;
+
+import java.io.File;
 
 public class VistaPrincipal extends BorderPane {
 
@@ -39,10 +43,12 @@ public class VistaPrincipal extends BorderPane {
         int counter = 0;
         for (int row = 3; row > 0; row--)
             for (int col = 0; col < 3; col++) {
-                gridPane.add(new NodoLibre(), col, row);
-                GridPane.setHgrow(celda, Priority.ALWAYS);
-                GridPane.setVgrow(celda, Priority.ALWAYS);
+                Button a=new Button("." );
+                a.setStyle("-fx-background-image: url('file:src/fiuba/algo3/algoempires/Vistas/Img/ricky.jpeg')");
 
+                gridPane.add(a, col, row);
+                GridPane.setHgrow(a, Priority.ALWAYS);
+                GridPane.setVgrow(a, Priority.ALWAYS);
             }
     }
 
