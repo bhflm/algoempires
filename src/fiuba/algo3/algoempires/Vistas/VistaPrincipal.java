@@ -1,5 +1,6 @@
 package fiuba.algo3.algoempires.Vistas;
 
+import fiuba.algo3.algoempires.Controladores.AgregarAldeano;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
@@ -7,7 +8,7 @@ public class VistaPrincipal extends BorderPane {
 
     public VistaPrincipal(){
         this.setFondo();
-
+        this.setAcciones();
     }
 
     public void setFondo() {
@@ -21,6 +22,16 @@ public class VistaPrincipal extends BorderPane {
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.CENTER,
                 bSize)));
+    }
+
+
+    public void setAcciones() {
+        Boton agregarAldeano = new Boton("Crear Aldeano", new AgregarAldeano());
+
+        VBox vb = new VBox();
+
+        vb.getChildren().addAll(agregarAldeano);
+        this.setRight(vb);
     }
 
 }
