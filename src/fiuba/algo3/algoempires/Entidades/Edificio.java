@@ -164,7 +164,6 @@ public abstract class Edificio implements Ubicable {
             this.vida=this.vida-danioProducidoPorArmaDeAsedio;
         else throw new AtaqueFueraDeRango();
     }
-
-
+    
     public int getRango(){return this.rangoDeAtaque;};
 }

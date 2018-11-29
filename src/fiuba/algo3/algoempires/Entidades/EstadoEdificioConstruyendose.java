@@ -10,10 +10,6 @@ public class EstadoEdificioConstruyendose extends EstadoEdificio {
         throw new EdificioConstruyendoseException();
     }
 
-    public void recibirDanio(Edificio edificio, int danioRecibido){
-        throw new EdificioConstruyendoseException();
-    }
-
     Arquero crearArquero(){
         throw new EdificioConstruyendoseException();
     };
