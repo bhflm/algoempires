@@ -11,6 +11,7 @@ public class Aldeano extends Unidad implements Movible {
         this.edificioActual = null;
         this.estado = new EstadoAldeanoDisponible();
         this.PosicionUnidad = new Posicion(0,0);
+        this.Nombre="Aldeano";
     }
 
     public void setEstado(EstadoUnidad nuevoEstado) { this.estado = nuevoEstado;}

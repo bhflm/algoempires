@@ -12,6 +12,8 @@ public class Cuartel extends Edificio {
         costo = 50;
         dimension = 2;
         turnosRestantes = 3;
+        this.Nombre="Cuartel";
+
     }
 
     public void continuarRepararacion(Aldeano unAldeano){

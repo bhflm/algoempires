@@ -14,6 +14,7 @@ public abstract class Edificio implements Ubicable {
     protected EstadoEdificio estado = new EstadoEdificioNormal();
     protected boolean PisableEnElMapa=false;
     protected int rangoDeAtaque = 0;
+    protected  String Nombre;
 
 
     protected int danioProducidoPorArquero=10;
@@ -166,4 +167,7 @@ public abstract class Edificio implements Ubicable {
     }
     
     public int getRango(){return this.rangoDeAtaque;};
+    public String getNombre(){
+        return this.Nombre;
+    }
 }

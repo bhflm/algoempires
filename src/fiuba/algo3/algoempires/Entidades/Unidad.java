@@ -8,6 +8,7 @@ public abstract class Unidad{
     protected int vida;
     protected int costo;
     protected String origen;
+    protected  String Nombre;
     protected EstadoUnidad estado;
     protected Posicion PosicionUnidad;
     protected Edificio edificioActual;
@@ -86,6 +87,8 @@ public abstract class Unidad{
     public void modificarPosicion(Posicion posicionUnidad){
         this.PosicionUnidad=posicionUnidad;
     }
-
+    public String getNombre(){
+        return this.Nombre;
+    }
 
 }

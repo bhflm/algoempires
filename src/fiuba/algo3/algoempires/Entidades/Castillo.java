@@ -12,6 +12,8 @@ public class Castillo extends Edificio {
             vida = 1000;
             dimension = 4;
             this.rangoDeAtaque=3;
+            this.Nombre="Castillo";
+
 
         }
 
@@ -40,4 +42,4 @@ public class Castillo extends Edificio {
 
     public void atacarA(Ubicable unidadAtacada){ unidadAtacada.recibirDanio(this); }
 
-}
+    }
