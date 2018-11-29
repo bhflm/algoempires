@@ -13,6 +13,8 @@ public class ArmaDeAsedio extends Unidad implements Movible {
         this.estado=new EstadoArmaDeAsedioDisponible();
         this.PosicionUnidad=new Posicion(0,0);
         this.rangoDeAtaque = 5;
+        this.Nombre="ArmaDeAsedio";
+
 
     }
 

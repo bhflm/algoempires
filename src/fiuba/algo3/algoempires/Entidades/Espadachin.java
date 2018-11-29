@@ -13,6 +13,8 @@ public class Espadachin extends Unidad implements Movible {
         this.estado=new EstadoEspadachinDisponible();
         this.PosicionUnidad=new Posicion(0,0);
         this.rangoDeAtaque = 1;
+        this.Nombre="Espadachin";
+
     }
 
     public void actualizarUbicacion(Posicion pos){

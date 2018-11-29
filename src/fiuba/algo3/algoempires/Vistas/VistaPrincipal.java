@@ -1,5 +1,6 @@
 package fiuba.algo3.algoempires.Vistas;
 
+import fiuba.algo3.algoempires.Entidades.*;
 import javafx.geometry.Insets;
 import fiuba.algo3.algoempires.Controladores.AgregarAldeano;
 import fiuba.algo3.algoempires.Controladores.Casillero;
@@ -30,26 +31,27 @@ public class VistaPrincipal extends BorderPane {
         BackgroundImage imagenDeFondo = new BackgroundImage(imagenMapa, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
-        BackgroundSize bSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false);
-        this.setBackground(new Background(new BackgroundImage(imagenMapa,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.CENTER,
-                bSize)));
+       // BackgroundSize bSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false);
+       // this.setBackground(new Background(new BackgroundImage(imagenMapa,
+       //         BackgroundRepeat.NO_REPEAT,
+       //         BackgroundRepeat.NO_REPEAT,
+       //         BackgroundPosition.CENTER,
+       //         bSize)));
     }
 
     public void crearTablero() {
         GridPane gridPane = new GridPane();
         this.setCenter(gridPane);
-
+        gridPane.setGridLinesVisible(true);
         int counter = 0;
-        for (int row = 3; row > 0; row--)
-            for (int col = 0; col < 3; col++) {
+        for (int row = 10; row > 0; row--)
+            for (int col = 0; col <10; col++){
                 Casillero a = new Casillero();
-                a.setStyle("-fx-background-image: url('file:src/fiuba/algo3/algoempires/Vistas/Img/arquero.png')");
+                PlazaCentral miPlaza=new PlazaCentral();//Aca tiene que hacer un new de otro ubicable y cambia la imagen solo.
+                a.setUbicable(miPlaza);
                 gridPane.add(a, col, row);
-                GridPane.setHgrow(a, Priority.ALWAYS);
-                GridPane.setVgrow(a, Priority.ALWAYS);
+                gridPane.setHgrow(a, Priority.ALWAYS);
+                gridPane.setVgrow(a, Priority.ALWAYS);
             }
     }
 

@@ -12,6 +12,8 @@ public class PlazaCentral extends Edificio {
         costo = 1000;
         dimension = 2;
         turnosRestantes = 3;
+        this.Nombre="PlazaCentral";
+
     }
 
 
