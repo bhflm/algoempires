@@ -1,25 +1,14 @@
 package fiuba.algo3.algoempires.Vistas;
 
-import fiuba.algo3.algoempires.Entidades.*;
+
 import fiuba.algo3.algoempires.Mapa;
 import fiuba.algo3.algoempires.Posicion;
 import fiuba.algo3.algoempires.Ubicable;
-import javafx.beans.binding.Bindings;
-import javafx.beans.binding.NumberBinding;
 import javafx.geometry.Insets;
-import fiuba.algo3.algoempires.Controladores.AgregarAldeano;
 import fiuba.algo3.algoempires.Controladores.Casillero;
-import fiuba.algo3.algoempires.Controladores.NodoLibre;
-import fiuba.algo3.algoempires.EspacioLibre;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Rectangle;
 
-import java.io.File;
 
 public class VistaPrincipal extends BorderPane {
 
@@ -49,7 +38,6 @@ public class VistaPrincipal extends BorderPane {
         gridPane.setMaxWidth(30);
         gridPane.setMaxHeight(40);
         this.setCenter(gridPane);
-        gridPane.heightProperty();
         gridPane.setGridLinesVisible(true);
         int dimenRow=miMapa.getLargoHorizontal();
         int dimenCol=miMapa.getLargoVertical();
