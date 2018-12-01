@@ -9,7 +9,6 @@ import fiuba.algo3.algoempires.Controladores.Casillero;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
-
 public class VistaPrincipal extends BorderPane {
 
     public VistaPrincipal(Mapa miMapa){
@@ -50,7 +49,12 @@ public class VistaPrincipal extends BorderPane {
                 gridPane.setHgrow(a, Priority.ALWAYS);
                 gridPane.setVgrow(a, Priority.ALWAYS);
             }
+
+
     }
+
+
+
 
     private void setAcciones() {
 
