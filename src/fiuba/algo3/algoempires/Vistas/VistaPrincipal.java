@@ -4,6 +4,8 @@ import fiuba.algo3.algoempires.Entidades.*;
 import fiuba.algo3.algoempires.Mapa;
 import fiuba.algo3.algoempires.Posicion;
 import fiuba.algo3.algoempires.Ubicable;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.NumberBinding;
 import javafx.geometry.Insets;
 import fiuba.algo3.algoempires.Controladores.AgregarAldeano;
 import fiuba.algo3.algoempires.Controladores.Casillero;
@@ -44,9 +46,11 @@ public class VistaPrincipal extends BorderPane {
 
     public void crearTablero(Mapa miMapa) {
         GridPane gridPane = new GridPane();
+        gridPane.setMaxWidth(30);
+        gridPane.setMaxHeight(40);
         this.setCenter(gridPane);
+        gridPane.heightProperty();
         gridPane.setGridLinesVisible(true);
-        int counter = 0;
         int dimenRow=miMapa.getLargoHorizontal();
         int dimenCol=miMapa.getLargoVertical();
         for (int row = 0; row < dimenRow; row++)
@@ -54,9 +58,6 @@ public class VistaPrincipal extends BorderPane {
                 Posicion posicionUbicable=new Posicion(row+1,col+1);
                 Ubicable elUbicable=miMapa.GetUbicableEn(posicionUbicable);
                 Casillero a=new Casillero(elUbicable,posicionUbicable);
-               // Posicion pos=new Posicion(row,col);
-              //  Casillero a=new Casillero(miPlaza,pos);
-               // a.setUbicable(miPlaza);
                 gridPane.add(a,row, col);
                 gridPane.setHgrow(a, Priority.ALWAYS);
                 gridPane.setVgrow(a, Priority.ALWAYS);

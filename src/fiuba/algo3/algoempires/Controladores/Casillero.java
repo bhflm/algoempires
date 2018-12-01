@@ -16,12 +16,9 @@ public class Casillero extends Rectangle {
 
     public Casillero() {
         Ubicable ubicable=new EspacioLibre();
-        //this.setWidth(20);
-        //this.setHeight(20);
+
         this.setFill(Color.TRANSPARENT);
         this.setStroke(Color.RED);
-     //   Image img = new Image("file:src/fiuba/algo3/algoempires/Vistas/Img/ricky.jpeg");
-     //   this.setFill(new ImagePattern(img));
     }
     public void setUbicable(Ubicable ubicable) {
         this.miUbicable = ubicable;
