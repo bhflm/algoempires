@@ -1,10 +1,8 @@
 package fiuba.algo3.algoempires.Controladores;
 
 
-import fiuba.algo3.algoempires.Entidades.Arquero;
-import fiuba.algo3.algoempires.EspacioLibre;
-import fiuba.algo3.algoempires.Posicion;
-import fiuba.algo3.algoempires.Ubicable;
+import fiuba.algo3.algoempires.*;
+import fiuba.algo3.algoempires.Entidades.*;
 import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -48,4 +46,31 @@ public class Casillero extends Rectangle {
     public void desSeleccionarCasillero(VistaPrincipal vista) {
         this.setStroke(Color.RED);
     }
+
+    public void mostrarPosiblesAcciones(VistaPrincipal vistaPrincipal) {
+        Ubicable elUbicableDelCasillero = this.miUbicable;
+        vistaPrincipal.desactivarBotones();
+        if (elUbicableDelCasillero instanceof Movible)
+            vistaPrincipal.activarBotonMoverse();
+        if (elUbicableDelCasillero instanceof Atacante)
+            vistaPrincipal.activarBotonAtacar();
+        if (elUbicableDelCasillero instanceof Aldeano){
+            vistaPrincipal.activarBotonReparar();
+            vistaPrincipal.activarBotonConstruirCuartel();
+            vistaPrincipal.activarBotonConstruirPC();}
+        if (elUbicableDelCasillero instanceof PlazaCentral)
+            vistaPrincipal.activarBotonCrearAldeano();
+        if (elUbicableDelCasillero instanceof Castillo) {
+            vistaPrincipal.activarBotonCrearArmaDeAsedio();
+            vistaPrincipal.desactivarBotonAtacar();
+        }
+        if (elUbicableDelCasillero instanceof Cuartel){
+            vistaPrincipal.activarBotonCrearEspadachin();
+            vistaPrincipal.activarBotonCrearArquero();}
+
+    }
 }
+
+
+
+

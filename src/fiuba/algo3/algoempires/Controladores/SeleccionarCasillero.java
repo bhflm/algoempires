@@ -33,5 +33,6 @@ public class SeleccionarCasillero implements EventHandler<Event> {
         casilleroASeleccionar.seleccionarCasillero(vistaTableroJuegoActual);
         Posicion posicionActual=casilleroASeleccionar.miPosicion;
         gridpane.add(casilleroASeleccionar,posicionActual.getCoordenadaHorizontal(),posicionActual.getCoordenadaVertical());
-    }
+        casilleroASeleccionar.mostrarPosiblesAcciones(this.vistaTableroJuegoActual);
+   }
 }
