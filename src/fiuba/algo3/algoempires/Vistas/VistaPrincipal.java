@@ -10,7 +10,6 @@ import fiuba.algo3.algoempires.Controladores.Casillero;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
-
 public class VistaPrincipal extends BorderPane {
     Jugador unJugador;
     Jugador otroJugador;
@@ -68,7 +67,12 @@ public class VistaPrincipal extends BorderPane {
                 gridPane.setHgrow(casillero, Priority.ALWAYS);
                 gridPane.setVgrow(casillero, Priority.ALWAYS);
             }
+
+
     }
+
+
+
 
     private void setAcciones() {
 
