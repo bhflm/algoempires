@@ -13,7 +13,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import jdk.internal.util.xml.impl.Input;
 
 
 public class RegistradorJugadores extends VBox {

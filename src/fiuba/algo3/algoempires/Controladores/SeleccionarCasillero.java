@@ -21,10 +21,10 @@ public class SeleccionarCasillero implements EventHandler<Event> {
 
     @Override
     public void handle(Event actionEvent) {
-        casilleroASeleccionar.seleccionarCasillero();
         vistaTableroJuegoActual.getChildren().remove(gridpane);
+        casilleroASeleccionar.seleccionarCasillero();
         Posicion pos=casilleroASeleccionar.miPosicion;
-        //gridpane.add(casilleroASeleccionar,pos.getCoordenadaHorizontal(),pos.getCoordenadaVertical());
+       // gridpane.add(casilleroASeleccionar,pos.getCoordenadaHorizontal(),pos.getCoordenadaVertical());
 
     }
 }
