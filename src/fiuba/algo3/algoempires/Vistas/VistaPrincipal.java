@@ -11,10 +11,10 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 public class VistaPrincipal extends BorderPane {
+    Casillero casilleroSeleccionado;
     Jugador unJugador;
     Jugador otroJugador;
     Juego juegoAlgoEmpires;
-    Casillero CasilleroSeleccionado;
     Boton botonMoverse;
     Boton botonAtacar;
     Boton botonConstruirCuartel;
@@ -27,7 +27,7 @@ public class VistaPrincipal extends BorderPane {
     GridPane gridPane;
 
     public VistaPrincipal(){
-        this.CasilleroSeleccionado=null;
+        this.casilleroSeleccionado=null;
         this.juegoAlgoEmpires= new Juego();
         this.unJugador = new Jugador("Foo");
         this.otroJugador = new Jugador("Bar");
@@ -98,4 +98,11 @@ public class VistaPrincipal extends BorderPane {
         this.setRight(contenedorVertical);
     }
 
+    public Casillero getCasilleroSeleccionado() {
+        return this.casilleroSeleccionado;
+    }
+
+    public void asignarCasilleroActual(Casillero casillero) {
+        this.casilleroSeleccionado=casillero;
+    }
 }

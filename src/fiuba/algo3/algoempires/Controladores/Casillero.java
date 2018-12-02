@@ -5,6 +5,7 @@ import fiuba.algo3.algoempires.Entidades.Arquero;
 import fiuba.algo3.algoempires.EspacioLibre;
 import fiuba.algo3.algoempires.Posicion;
 import fiuba.algo3.algoempires.Ubicable;
+import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
@@ -31,7 +32,7 @@ public class Casillero extends Rectangle {
         this.setFill(Color.TRANSPARENT);
         this.setStroke(Color.RED);
         this.setUbicable(unUbicable);
-        this.miPosicion=posicionDelUbicable;
+        this.miPosicion=posicionDelUbicable.PosicionCorridaA(-1,-1);
     }
 
     public int ObtenerCoorderanadaHorizontal(){
@@ -40,7 +41,11 @@ public class Casillero extends Rectangle {
     public int ObtenerCoordenadaVertical(){
         return this.miPosicion.getCoordenadaVertical();}
 
-    public void seleccionarCasillero() {
-        this.setFill(Color.ALICEBLUE);
+    public void seleccionarCasillero(VistaPrincipal vista) {
+        vista.asignarCasilleroActual(this);
+        this.setStroke(Color.BLACK);
+    }
+    public void desSeleccionarCasillero(VistaPrincipal vista) {
+        this.setStroke(Color.RED);
     }
 }
