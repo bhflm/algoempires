@@ -19,24 +19,13 @@ public class Aplicacion extends Application {
     public void start(Stage primaryStage) throws Exception {
 
 
-        Juego unJuego = new Juego();
-        Jugador unJugador = new Jugador("Foo");
-        Jugador otroJugador = new Jugador("Bar");
-        int dimensionMapa=15;
-        unJuego.comenzarJuego(unJugador,otroJugador,dimensionMapa);
-        ImportadorMapa importadorMapa=new ImportadorMapa();
-        Mapa elMapa =importadorMapa.GenerarMapa(unJuego.mapa);
+
 
         ventana = primaryStage;
         ventana.setTitle("AlgoEmpires");
 
-        RegistradorJugadores registrador = new RegistradorJugadores();
-        VistaPrincipal vistaPrincipal = new VistaPrincipal(elMapa);
-
+        RegistradorJugadores registrador = new RegistradorJugadores(ventana);
         Scene inicioJuego = new Scene(registrador);
-        Scene algoEmpires = new Scene(vistaPrincipal);
-
-        registrador.pasarEscena(ventana,algoEmpires);
 
         ventana.setScene(inicioJuego);
         ventana.show();

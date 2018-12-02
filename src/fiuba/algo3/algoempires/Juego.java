@@ -89,4 +89,7 @@ public class Juego {
     }
 
 
+    public Mapa getmapa() {
+        return this.mapa;
+    }
 }

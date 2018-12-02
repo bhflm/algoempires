@@ -39,4 +39,8 @@ public class Casillero extends Rectangle {
     }
     public int ObtenerCoordenadaVertical(){
         return this.miPosicion.getCoordenadaVertical();}
+
+    public void seleccionarCasillero() {
+        this.setFill(Color.ALICEBLUE);
+    }
 }
