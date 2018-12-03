@@ -48,26 +48,30 @@ public class Casillero extends Rectangle {
     }
 
     public void mostrarPosiblesAcciones(VistaPrincipal vistaPrincipal) {
-        Ubicable elUbicableDelCasillero = this.miUbicable;
         vistaPrincipal.desactivarBotones();
-        if (elUbicableDelCasillero instanceof Movible)
-            vistaPrincipal.activarBotonMoverse();
-        if (elUbicableDelCasillero instanceof Atacante)
-            vistaPrincipal.activarBotonAtacar();
-        if (elUbicableDelCasillero instanceof Aldeano){
-            vistaPrincipal.activarBotonReparar();
-            vistaPrincipal.activarBotonConstruirCuartel();
-            vistaPrincipal.activarBotonConstruirPC();}
-        if (elUbicableDelCasillero instanceof PlazaCentral)
-            vistaPrincipal.activarBotonCrearAldeano();
-        if (elUbicableDelCasillero instanceof Castillo) {
-            vistaPrincipal.activarBotonCrearArmaDeAsedio();
-            vistaPrincipal.desactivarBotonAtacar();
+        Ubicable elUbicableDelCasillero = this.miUbicable;
+        Jugador JugadorActual=vistaPrincipal.elJugadorActualEs();
+        if(JugadorActual.perteneceUnidad(elUbicableDelCasillero)) {
+            if (elUbicableDelCasillero instanceof Movible)
+                vistaPrincipal.activarBotonMoverse();
+            if (elUbicableDelCasillero instanceof Atacante)
+                vistaPrincipal.activarBotonAtacar();
+            if (elUbicableDelCasillero instanceof Aldeano) {
+                vistaPrincipal.activarBotonReparar();
+                vistaPrincipal.activarBotonConstruirCuartel();
+                vistaPrincipal.activarBotonConstruirPC();
+            }
+            if (elUbicableDelCasillero instanceof PlazaCentral)
+                vistaPrincipal.activarBotonCrearAldeano();
+            if (elUbicableDelCasillero instanceof Castillo) {
+                vistaPrincipal.activarBotonCrearArmaDeAsedio();
+                vistaPrincipal.desactivarBotonAtacar();
+            }
+            if (elUbicableDelCasillero instanceof Cuartel) {
+                vistaPrincipal.activarBotonCrearEspadachin();
+                vistaPrincipal.activarBotonCrearArquero();
+            }
         }
-        if (elUbicableDelCasillero instanceof Cuartel){
-            vistaPrincipal.activarBotonCrearEspadachin();
-            vistaPrincipal.activarBotonCrearArquero();}
-
     }
 }
 

@@ -14,6 +14,7 @@ public class VistaPrincipal extends BorderPane {
     Casillero casilleroSeleccionado;
     Jugador unJugador;
     Jugador otroJugador;
+    Jugador jugadorEnTurno;
     Juego juegoAlgoEmpires;
     Boton botonMoverse;
     Boton botonAtacar;
@@ -24,6 +25,8 @@ public class VistaPrincipal extends BorderPane {
     Boton botonCrearArquero;
     Boton botonCrearEspadachin;
     Boton botonCrearArmaDeAsedio;
+    Boton botonPasarTurno;
+    boolean seRealizoJugada;
     GridPane gridPane;
 
     public VistaPrincipal() {
@@ -33,11 +36,13 @@ public class VistaPrincipal extends BorderPane {
         this.otroJugador = new Jugador("Bar");
         int dimensionMapa = 15;
         this.juegoAlgoEmpires.comenzarJuego(unJugador, otroJugador, dimensionMapa);
+        this.jugadorEnTurno=this.juegoAlgoEmpires.getActual();
         ImportadorMapa importadorMapa = new ImportadorMapa();
         Mapa elMapa = importadorMapa.GenerarMapa(this.juegoAlgoEmpires.getmapa());
         this.crearTablero(elMapa);
         this.setFondo();
         this.setAcciones();
+        this.seRealizoJugada=false;
 
     }
 
@@ -83,12 +88,13 @@ public class VistaPrincipal extends BorderPane {
         this.botonCrearArquero = new Boton("Crear Arquero", null);
         this.botonCrearEspadachin = new Boton("Crear Espadachin", null);
         this.botonCrearArmaDeAsedio = new Boton("Crear Arma De Asedio", null);
-
+        this.botonPasarTurno = new Boton("Terminar Turno", null);
 
         Pane separador = new Pane();
         separador.setPrefHeight(80);
 
-        VBox contenedorVertical = new VBox(botonMoverse, botonAtacar, botonConstruirCuartel, botonConstruirPC, botonReparar, separador, botonCrearAldeano, botonCrearArquero, botonCrearEspadachin, botonCrearArmaDeAsedio);
+        VBox contenedorVertical = new VBox(botonMoverse, botonAtacar, botonConstruirCuartel, botonConstruirPC, botonReparar, separador, botonCrearAldeano, botonCrearArquero, botonCrearEspadachin, botonCrearArmaDeAsedio,botonPasarTurno);
+        this.desactivarBotones();
         contenedorVertical.setPrefWidth(200);
         contenedorVertical.setSpacing(20);
         contenedorVertical.setStyle("-fx-background-color: #8B4513;");
@@ -142,10 +148,16 @@ public class VistaPrincipal extends BorderPane {
         this.botonCrearArquero.setDisable(true);
         this.botonCrearEspadachin.setDisable(true);
         this.botonCrearArmaDeAsedio.setDisable(true);
+        this.botonPasarTurno.setDisable(true);
+
     }
 
 
     public void desactivarBotonAtacar() {
         this.botonAtacar.setDisable(true);
+    }
+
+    public Jugador elJugadorActualEs() {
+    return this.jugadorEnTurno;
     }
 }
