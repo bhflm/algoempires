@@ -96,4 +96,7 @@ public class Juego {
         return this.actual.perdio();
     }
 
+    public Mapa getmapa() {
+        return this.mapa;
+    }
 }

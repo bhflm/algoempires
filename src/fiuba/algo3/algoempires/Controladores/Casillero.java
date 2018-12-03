@@ -1,10 +1,9 @@
 package fiuba.algo3.algoempires.Controladores;
 
 
-import fiuba.algo3.algoempires.Entidades.Arquero;
-import fiuba.algo3.algoempires.EspacioLibre;
-import fiuba.algo3.algoempires.Posicion;
-import fiuba.algo3.algoempires.Ubicable;
+import fiuba.algo3.algoempires.*;
+import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
@@ -16,10 +15,9 @@ public class Casillero extends Rectangle {
 
     public Casillero() {
         Ubicable ubicable=new EspacioLibre();
-        //this.setWidth(20);
-        //this.setHeight(20);
+
         this.setFill(Color.TRANSPARENT);
-        this.setStroke(Color.BLACK);
+        this.setStroke(Color.RED);
     }
     public void setUbicable(Ubicable ubicable) {
         this.miUbicable = ubicable;
@@ -32,7 +30,7 @@ public class Casillero extends Rectangle {
         this.setFill(Color.TRANSPARENT);
         this.setStroke(Color.RED);
         this.setUbicable(unUbicable);
-        this.miPosicion=posicionDelUbicable;
+        this.miPosicion=posicionDelUbicable.PosicionCorridaA(-1,-1);
     }
 
     public int ObtenerCoorderanadaHorizontal(){
@@ -40,4 +38,39 @@ public class Casillero extends Rectangle {
     }
     public int ObtenerCoordenadaVertical(){
         return this.miPosicion.getCoordenadaVertical();}
+
+    public void seleccionarCasillero(VistaPrincipal vista) {
+        vista.asignarCasilleroActual(this);
+        this.setStroke(Color.BLACK);
+    }
+    public void desSeleccionarCasillero(VistaPrincipal vista) {
+        this.setStroke(Color.RED);
+    }
+
+    public void mostrarPosiblesAcciones(VistaPrincipal vistaPrincipal) {
+        Ubicable elUbicableDelCasillero = this.miUbicable;
+        vistaPrincipal.desactivarBotones();
+        if (elUbicableDelCasillero instanceof Movible)
+            vistaPrincipal.activarBotonMoverse();
+        if (elUbicableDelCasillero instanceof Atacante)
+            vistaPrincipal.activarBotonAtacar();
+        if (elUbicableDelCasillero instanceof Aldeano){
+            vistaPrincipal.activarBotonReparar();
+            vistaPrincipal.activarBotonConstruirCuartel();
+            vistaPrincipal.activarBotonConstruirPC();}
+        if (elUbicableDelCasillero instanceof PlazaCentral)
+            vistaPrincipal.activarBotonCrearAldeano();
+        if (elUbicableDelCasillero instanceof Castillo) {
+            vistaPrincipal.activarBotonCrearArmaDeAsedio();
+            vistaPrincipal.desactivarBotonAtacar();
+        }
+        if (elUbicableDelCasillero instanceof Cuartel){
+            vistaPrincipal.activarBotonCrearEspadachin();
+            vistaPrincipal.activarBotonCrearArquero();}
+
+    }
 }
+
+
+
+

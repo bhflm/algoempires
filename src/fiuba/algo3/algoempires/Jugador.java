@@ -20,11 +20,11 @@ public class Jugador {
     private Set<Edificio> edificiosJugador = new HashSet<Edificio>();
     private boolean perdio = false;
 
-    Jugador(String nombreJugador) {
+    public Jugador(String nombreJugador) {
         this.oro = 0;
         this.poblacion = 0;
         this.nombre = nombreJugador;
-    }
+        }
 
     public String getNombre() {
         return nombre;

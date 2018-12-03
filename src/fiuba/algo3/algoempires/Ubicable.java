@@ -14,6 +14,6 @@ public interface Ubicable {
  void recibirDanio(Castillo castillo);
  void recibirDanio(Espadachin espadachin);
  void recibirDanio(ArmaDeAsedio armaDeAsedio);
-
  String getNombre();
+
 }
