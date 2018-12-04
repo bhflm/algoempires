@@ -1,5 +1,6 @@
 package fiuba.algo3.algoempires.Controladores;
 
+import fiuba.algo3.algoempires.EspacioLibre;
 import fiuba.algo3.algoempires.Posicion;
 import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.event.ActionEvent;
@@ -26,6 +27,11 @@ public class SeleccionarCasillero implements EventHandler<Event> {
 
     @Override
     public void handle(Event actionEvent) {
+        /*gridpane.getChildren().remove(this.casilleroASeleccionar);
+        this.casilleroASeleccionar.setUbicable(new EspacioLibre());
+        gridpane.add(this.casilleroASeleccionar, this.casilleroASeleccionar.miPosicion.getCoordenadaHorizontal()
+                , this.casilleroASeleccionar.miPosicion.getCoordenadaVertical());*/
+
         Casillero casilleroMarcadoPreviamente=vistaTableroJuegoActual.getCasilleroSeleccionado();
         if(casilleroMarcadoPreviamente!=null){
              gridpane.getChildren().remove(casilleroMarcadoPreviamente);

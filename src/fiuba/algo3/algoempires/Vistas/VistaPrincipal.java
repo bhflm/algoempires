@@ -204,11 +204,14 @@ public class VistaPrincipal extends BorderPane {
     public void actualizarTablero(Posicion posActual,Posicion posSiguiente){
         int dimenRow = this.elMapa.getLargoHorizontal();
         int posActualCoordenadaVertical=importadorMapa.obtenerCoordenadaFila(posActual,dimenRow);
-
         int posActualCoordenadaHorizontal=importadorMapa.obtenerCoordenadaColumna(posActual);
-        Casillero casilleroLibre=new Casillero(new EspacioLibre(),posActual);
-        this.gridPane.getChildren().remove(posActualCoordenadaHorizontal,posActualCoordenadaVertical);
+        System.out.println(posActualCoordenadaHorizontal);
+        System.out.println(posActualCoordenadaVertical);
+        Casillero casilleroLibre=new Casillero(new EspacioLibre(),new Posicion(10,2));
+        this.gridPane.getChildren().remove(this.casilleroSeleccionado);
         this.gridPane.add(casilleroLibre,posActualCoordenadaHorizontal,posActualCoordenadaVertical);
+        this.casilleroSeleccionado=casilleroLibre;
+        this.casilleroSeleccionado.seleccionarCasillero(this);
     }
 
     public Juego elJuegoEs() {
