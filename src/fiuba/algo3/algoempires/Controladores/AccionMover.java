@@ -22,9 +22,9 @@ public class AccionMover implements EventHandler<ActionEvent> {
         Mapa unMapa=elJuego.getmapa();
         Movible elUbicable =vistaPrincipal.elMovible();
         jugadorMoviendo.moverUnidad(elJuego, unMapa,elUbicable,this.direccion);
-        ImportadorMapa importadorMapa = new ImportadorMapa();
-        Mapa elMapaParaLaPantalla = importadorMapa.GenerarMapa(elJuego.getmapa());
-        vistaPrincipal.actualizarTablero(elMapaParaLaPantalla);
+        Posicion posicionAMover = this.direccion.ObtenerPosicion(elUbicable);
+        Posicion posicionActual =elUbicable.getPosicion();
+        vistaPrincipal.actualizarTablero(posicionActual,posicionAMover);
         vistaPrincipal.borrarSetAcciones();
         vistaPrincipal.setAcciones();
         vistaPrincipal.cambiarJugadorEnTurno(elJuego);

@@ -12,6 +12,7 @@ public class VistaPrincipal extends BorderPane {
     Mapa elMapa;
     Casillero casilleroSeleccionado;
     Movible unidadAmover;
+    ImportadorMapa importadorMapa;
     Jugador unJugador;
     Jugador otroJugador;
     Jugador jugadorEnTurno;
@@ -46,7 +47,7 @@ public class VistaPrincipal extends BorderPane {
         int dimensionMapa = 15;
         this.juegoAlgoEmpires.comenzarJuego(unJugador, otroJugador, dimensionMapa);
         this.jugadorEnTurno=this.juegoAlgoEmpires.getActual();
-        ImportadorMapa importadorMapa = new ImportadorMapa();
+        this.importadorMapa=new ImportadorMapa();
         this.elMapa = importadorMapa.GenerarMapa(this.juegoAlgoEmpires.getmapa());
         this.crearTablero(elMapa);
         this.setFondo();
@@ -79,7 +80,7 @@ public class VistaPrincipal extends BorderPane {
                 Ubicable elUbicable = miMapa.GetUbicableEn(posicionUbicable);
                 Casillero casillero = new Casillero(elUbicable, posicionUbicable);
                 casillero.setOnMouseClicked(new SeleccionarCasillero(this, gridPane, casillero));
-                gridPane.add(casillero, row, col);
+                gridPane.add(casillero, rowt, colt);
                 gridPane.setHgrow(casillero, Priority.ALWAYS);
                 gridPane.setVgrow(casillero, Priority.ALWAYS);
             }
@@ -199,8 +200,18 @@ public class VistaPrincipal extends BorderPane {
 
 
     }
-    public void actualizarTablero(Mapa elMapaActualizado){
-      //  this.elMapa=elMapaActualizado;
+    public void actualizarTablero(Posicion posActual,Posicion posSiguiente){
+        int dimenRow = this.elMapa.getLargoHorizontal();
+        int dimenCol = this.elMapa.getLargoVertical();
+        int posActualCoordenadasHorizontal=importadorMapa.obtenerCoordenadaHorizontal(posActual,dimenRow);
+        int posActualCoordenadaVertical=importadorMapa.obtenerCoordenadaVertical(posActual);
+        //int posSiguienteCoordenadasHorizontal=importadorMapa.obtenerCoordenadaHorizontal(posSiguiente,dimenRow);
+        //int posSiguienteCoordenadaVertical=importadorMapa.obtenerCoordenadaVertical(posSiguiente);
+        Casillero casilleroLibre=new Casillero(new EspacioLibre(),posActual);
+        this.gridPane.getChildren().remove(casilleroSeleccionado);
+        this.gridPane.add(casilleroLibre,posActualCoordenadasHorizontal,posActualCoordenadaVertical);
+        //this.gridPane.getChildren().remove(posSiguienteCoordenadasHorizontal,posSiguienteCoordenadaVertical);
+        //this.gridPane.add(casilleroSeleccionado,posSiguienteCoordenadasHorizontal,posSiguienteCoordenadaVertical);
 
     }
 

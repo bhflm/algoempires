@@ -15,7 +15,6 @@ public class Casillero extends Rectangle {
 
     public Casillero() {
         Ubicable ubicable=new EspacioLibre();
-
         this.setFill(Color.TRANSPARENT);
         this.setStroke(Color.RED);
     }
@@ -30,7 +29,7 @@ public class Casillero extends Rectangle {
         this.setFill(Color.TRANSPARENT);
         this.setStroke(Color.RED);
         this.setUbicable(unUbicable);
-        this.miPosicion=posicionDelUbicable.PosicionCorridaA(-1,-1);
+        this.miPosicion=posicionDelUbicable;
     }
 
     public int ObtenerCoorderanadaHorizontal(){
