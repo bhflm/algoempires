@@ -8,13 +8,12 @@ import java.util.HashMap;
 public class ImportadorMapa {
 
 
-    public int obtenerCoordenadaVertical(Posicion posActual) {
-        return posActual.getCoordenadaVertical()+1;
+    public int obtenerCoordenadaColumna(Posicion posActual) {
+        return posActual.getCoordenadaHorizontal()-1;
     }
 
-    public int obtenerCoordenadaHorizontal(Posicion posActual, int dimenRow) {
-        return posActual.getCoordenadaHorizontal()*(-1)+(dimenRow);
-
+    public int obtenerCoordenadaFila(Posicion posActual, int dimenRow) {
+        return posActual.getCoordenadaVertical()*(-1)+dimenRow;
     }
 
     //La idea es que el ImportadorMapa, le pase a la parte visual la informacion del mapa, si cambia la forma de representar el mapa, cambiaria el modelo y el controlador pero la vista se mantendria

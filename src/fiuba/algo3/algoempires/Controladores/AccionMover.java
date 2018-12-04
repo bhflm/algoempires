@@ -21,10 +21,10 @@ public class AccionMover implements EventHandler<ActionEvent> {
         Juego elJuego=vistaPrincipal.elJuegoEs();
         Mapa unMapa=elJuego.getmapa();
         Movible elUbicable =vistaPrincipal.elMovible();
+        Posicion posicionAnterior =elUbicable.getPosicion();
         jugadorMoviendo.moverUnidad(elJuego, unMapa,elUbicable,this.direccion);
-        Posicion posicionAMover = this.direccion.ObtenerPosicion(elUbicable);
-        Posicion posicionActual =elUbicable.getPosicion();
-        vistaPrincipal.actualizarTablero(posicionActual,posicionAMover);
+        Posicion posicionNueva=elUbicable.getPosicion();
+        vistaPrincipal.actualizarTablero(posicionAnterior,posicionNueva);
         vistaPrincipal.borrarSetAcciones();
         vistaPrincipal.setAcciones();
         vistaPrincipal.cambiarJugadorEnTurno(elJuego);

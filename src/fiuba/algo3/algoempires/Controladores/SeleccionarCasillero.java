@@ -10,14 +10,18 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
 public class SeleccionarCasillero implements EventHandler<Event> {
+    int dimension;
+    ImportadorMapa transformadorCoordernadas;
     VistaPrincipal vistaTableroJuegoActual;
     Casillero casilleroASeleccionar;
     GridPane gridpane;
 
-    public SeleccionarCasillero(VistaPrincipal vistaPrincipal, GridPane tablero,Casillero casillero) {
+    public SeleccionarCasillero(VistaPrincipal vistaPrincipal, GridPane tablero,Casillero casillero,ImportadorMapa importadorMapa,int dimenRow) {
         this.vistaTableroJuegoActual=vistaPrincipal;
         this.casilleroASeleccionar=casillero;
         this.gridpane=tablero;
+        this.transformadorCoordernadas=importadorMapa;
+        this.dimension=dimenRow;
     }
 
     @Override
@@ -27,12 +31,16 @@ public class SeleccionarCasillero implements EventHandler<Event> {
              gridpane.getChildren().remove(casilleroMarcadoPreviamente);
              casilleroMarcadoPreviamente.desSeleccionarCasillero(vistaTableroJuegoActual);
              Posicion posicionPrevia=casilleroMarcadoPreviamente.miPosicion;
-             gridpane.add(casilleroMarcadoPreviamente,posicionPrevia.getCoordenadaHorizontal(),posicionPrevia.getCoordenadaVertical());
+             int viejaY=this.transformadorCoordernadas.obtenerCoordenadaFila(posicionPrevia,this.dimension);
+             int viejaX=this.transformadorCoordernadas.obtenerCoordenadaColumna(posicionPrevia);
+             gridpane.add(casilleroMarcadoPreviamente,viejaX,viejaY);
         }
         gridpane.getChildren().remove(casilleroASeleccionar);
         casilleroASeleccionar.seleccionarCasillero(vistaTableroJuegoActual);
         Posicion posicionActual=casilleroASeleccionar.miPosicion;
-        gridpane.add(casilleroASeleccionar,posicionActual.getCoordenadaHorizontal(),posicionActual.getCoordenadaVertical());
+        int nuevaY=this.transformadorCoordernadas.obtenerCoordenadaFila(posicionActual,this.dimension);
+        int nuevaX=this.transformadorCoordernadas.obtenerCoordenadaColumna(posicionActual);
+        gridpane.add(casilleroASeleccionar,nuevaX,nuevaY);
         casilleroASeleccionar.mostrarPosiblesAcciones(this.vistaTableroJuegoActual);
    }
 }
