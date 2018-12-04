@@ -2,16 +2,16 @@ package fiuba.algo3.algoempires.Vistas;
 
 
 import fiuba.algo3.algoempires.*;
-import fiuba.algo3.algoempires.Controladores.EmpezarJuego;
-import fiuba.algo3.algoempires.Controladores.ImportadorMapa;
-import fiuba.algo3.algoempires.Controladores.SeleccionarCasillero;
+import fiuba.algo3.algoempires.Controladores.*;
+import fiuba.algo3.algoempires.Direcciones.*;
 import javafx.geometry.Insets;
-import fiuba.algo3.algoempires.Controladores.Casillero;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 public class VistaPrincipal extends BorderPane {
+    Mapa elMapa;
     Casillero casilleroSeleccionado;
+    Movible unidadAmover;
     Jugador unJugador;
     Jugador otroJugador;
     Jugador jugadorEnTurno;
@@ -26,8 +26,17 @@ public class VistaPrincipal extends BorderPane {
     Boton botonCrearEspadachin;
     Boton botonCrearArmaDeAsedio;
     Boton botonPasarTurno;
+    Boton botonArriba;
+    Boton botonArribaIzquierda;
+    Boton botonArribaDerecha;
+    Boton botonIzquierda;
+    Boton botonDerecha;
+    Boton botonAbajo;
+    Boton botonAbajoIzquierda;
+    Boton botonAbajoDerecha;
     boolean seRealizoJugada;
     GridPane gridPane;
+    VBox contenedorVertical;
 
     public VistaPrincipal() {
         this.casilleroSeleccionado = null;
@@ -38,7 +47,7 @@ public class VistaPrincipal extends BorderPane {
         this.juegoAlgoEmpires.comenzarJuego(unJugador, otroJugador, dimensionMapa);
         this.jugadorEnTurno=this.juegoAlgoEmpires.getActual();
         ImportadorMapa importadorMapa = new ImportadorMapa();
-        Mapa elMapa = importadorMapa.GenerarMapa(this.juegoAlgoEmpires.getmapa());
+        this.elMapa = importadorMapa.GenerarMapa(this.juegoAlgoEmpires.getmapa());
         this.crearTablero(elMapa);
         this.setFondo();
         this.setAcciones();
@@ -64,7 +73,9 @@ public class VistaPrincipal extends BorderPane {
         int dimenCol = miMapa.getLargoVertical();
         for (int row = 0; row < dimenRow; row++)
             for (int col = 0; col < dimenCol; col++) {
-                Posicion posicionUbicable = new Posicion(row + 1, col + 1);
+                int rowt=row*(-1)+(dimenRow);
+                int colt=col+1;
+                Posicion posicionUbicable = new Posicion(rowt, colt);
                 Ubicable elUbicable = miMapa.GetUbicableEn(posicionUbicable);
                 Casillero casillero = new Casillero(elUbicable, posicionUbicable);
                 casillero.setOnMouseClicked(new SeleccionarCasillero(this, gridPane, casillero));
@@ -77,9 +88,9 @@ public class VistaPrincipal extends BorderPane {
     }
 
 
-    private void setAcciones() {
+    public void setAcciones() {
 
-        this.botonMoverse = new Boton("Moverse A", null);
+        this.botonMoverse = new Boton("Moverse A", new AccionRealizarMovimiento(this));
         this.botonAtacar = new Boton("Atacar", null);
         this.botonConstruirCuartel = new Boton("Construir Cuartel", null);
         this.botonConstruirPC = new Boton("Construir Plaza Central", null);
@@ -93,7 +104,7 @@ public class VistaPrincipal extends BorderPane {
         Pane separador = new Pane();
         separador.setPrefHeight(80);
 
-        VBox contenedorVertical = new VBox(botonMoverse, botonAtacar, botonConstruirCuartel, botonConstruirPC, botonReparar, separador, botonCrearAldeano, botonCrearArquero, botonCrearEspadachin, botonCrearArmaDeAsedio,botonPasarTurno);
+        this.contenedorVertical = new VBox(botonMoverse, botonAtacar, botonConstruirCuartel, botonConstruirPC, botonReparar, separador, botonCrearAldeano, botonCrearArquero, botonCrearEspadachin, botonCrearArmaDeAsedio,botonPasarTurno);
         this.desactivarBotones();
         contenedorVertical.setPrefWidth(200);
         contenedorVertical.setSpacing(20);
@@ -159,5 +170,54 @@ public class VistaPrincipal extends BorderPane {
 
     public Jugador elJugadorActualEs() {
     return this.jugadorEnTurno;
+    }
+
+    public void borrarSetAcciones(){
+        this.getChildren().remove(this.contenedorVertical);
+    }
+
+    public void mostrarMenuDirecciones() {
+        this.botonArriba = new Boton("Arriba ", new AccionMover(this,new DireccionSuperiorVertical()));
+        this.botonArribaIzquierda = new Boton("Arriba Izquierda", new AccionMover(this,new DireccionDiagonalIzquierdaSuperior()));
+        this.botonArribaDerecha = new Boton("Arriba Derecha", new AccionMover(this,new DireccionDiagonalDerechaSuperior()));
+        this.botonIzquierda = new Boton("Izquierda", new AccionMover(this,new DireccionIzquierdaHorizontal()));
+        this.botonDerecha= new Boton("Derecha",  new AccionMover(this,new DireccionDerechaHorizontal()));
+        this.botonAbajo = new Boton("Abajo", new AccionMover(this,new DireccionInferiorVertical()));
+        this.botonAbajoIzquierda = new Boton("Abajo Izquierda", new AccionMover(this,new DireccionDiagonalIzquierdaInferior()));
+        this.botonAbajoDerecha = new Boton("Abajo Derecha",new AccionMover(this,new DireccionDiagonalDerechaInferior()));
+        Pane separador = new Pane();
+        separador.setPrefHeight(80);
+        this.contenedorVertical = new VBox(botonArriba, botonArribaIzquierda, botonArribaDerecha, botonIzquierda, botonDerecha,botonAbajoIzquierda, botonAbajo, botonAbajoDerecha);
+        contenedorVertical.setPrefWidth(200);
+        contenedorVertical.setSpacing(20);
+        contenedorVertical.setStyle("-fx-background-color: #8B4513;");
+        contenedorVertical.setPadding(new Insets(20, 20, 20, 20));
+        this.setRight(contenedorVertical);
+
+
+
+
+
+    }
+    public void actualizarTablero(Mapa elMapaActualizado){
+      //  this.elMapa=elMapaActualizado;
+
+    }
+
+    public Juego elJuegoEs() {
+        return this.juegoAlgoEmpires;
+    }
+
+    public void asignarMovible(Ubicable elUbicableDelCasillero) {
+        Movible elMovibleDelCasillero=(Movible) elUbicableDelCasillero;
+        this.unidadAmover= elMovibleDelCasillero;
+    }
+
+    public Movible elMovible() {
+        return this.unidadAmover;
+    }
+
+    public void cambiarJugadorEnTurno(Juego elJuego) {
+        this.jugadorEnTurno=elJuego.getActual();
     }
 }

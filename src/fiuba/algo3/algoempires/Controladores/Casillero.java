@@ -52,8 +52,10 @@ public class Casillero extends Rectangle {
         Ubicable elUbicableDelCasillero = this.miUbicable;
         Jugador JugadorActual=vistaPrincipal.elJugadorActualEs();
         if(JugadorActual.perteneceUnidad(elUbicableDelCasillero)) {
-            if (elUbicableDelCasillero instanceof Movible)
+            if (elUbicableDelCasillero instanceof Movible){
                 vistaPrincipal.activarBotonMoverse();
+                vistaPrincipal.asignarMovible(elUbicableDelCasillero);
+            }
             if (elUbicableDelCasillero instanceof Atacante)
                 vistaPrincipal.activarBotonAtacar();
             if (elUbicableDelCasillero instanceof Aldeano) {
@@ -72,6 +74,10 @@ public class Casillero extends Rectangle {
                 vistaPrincipal.activarBotonCrearArquero();
             }
         }
+    }
+
+    public Ubicable ObtenerUbicable() {
+        return this.miUbicable;
     }
 }
 
