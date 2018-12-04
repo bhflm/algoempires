@@ -7,6 +7,7 @@ import fiuba.algo3.algoempires.Entidades.Unidad;
 import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
 import fiuba.algo3.algoempires.Excepciones.MovimientoFueraDelMapa;
 import fiuba.algo3.algoempires.Excepciones.TopePoblacionException;
+import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
 
 import java.util.*;
 
@@ -40,7 +41,13 @@ public class Jugador {
 
     public void moverUnidad(Juego unJuego, Mapa unMapa, Movible unaUnidad, Direccion unaDireccion){
         Posicion posicionMover = unaDireccion.ObtenerPosicion(unaUnidad);
-        unMapa.MoverUnidad(posicionMover,unaUnidad);
+        try{unMapa.MoverUnidad(posicionMover,unaUnidad);}
+        catch(UbicacionOcupadaPorOtraUnidad e) {
+            throw new UbicacionOcupadaPorOtraUnidad();
+        }
+        catch(MovimientoFueraDelMapa e){
+            throw new MovimientoFueraDelMapa();
+        }
         if (unJuego.getNombreActual() != this.nombre ){
             throw new JugadaInvalidaException();
         }
