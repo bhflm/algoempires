@@ -27,26 +27,11 @@ public class SeleccionarCasillero implements EventHandler<Event> {
 
     @Override
     public void handle(Event actionEvent) {
-        /*gridpane.getChildren().remove(this.casilleroASeleccionar);
-        this.casilleroASeleccionar.setUbicable(new EspacioLibre());
-        gridpane.add(this.casilleroASeleccionar, this.casilleroASeleccionar.miPosicion.getCoordenadaHorizontal()
-                , this.casilleroASeleccionar.miPosicion.getCoordenadaVertical());*/
-
         Casillero casilleroMarcadoPreviamente=vistaTableroJuegoActual.getCasilleroSeleccionado();
         if(casilleroMarcadoPreviamente!=null){
-             gridpane.getChildren().remove(casilleroMarcadoPreviamente);
              casilleroMarcadoPreviamente.desSeleccionarCasillero(vistaTableroJuegoActual);
-             Posicion posicionPrevia=casilleroMarcadoPreviamente.miPosicion;
-             int viejaY=this.transformadorCoordernadas.obtenerCoordenadaFila(posicionPrevia,this.dimension);
-             int viejaX=this.transformadorCoordernadas.obtenerCoordenadaColumna(posicionPrevia);
-             gridpane.add(casilleroMarcadoPreviamente,viejaX,viejaY);
         }
-        gridpane.getChildren().remove(casilleroASeleccionar);
         casilleroASeleccionar.seleccionarCasillero(vistaTableroJuegoActual);
-        Posicion posicionActual=casilleroASeleccionar.miPosicion;
-        int nuevaY=this.transformadorCoordernadas.obtenerCoordenadaFila(posicionActual,this.dimension);
-        int nuevaX=this.transformadorCoordernadas.obtenerCoordenadaColumna(posicionActual);
-        gridpane.add(casilleroASeleccionar,nuevaX,nuevaY);
         casilleroASeleccionar.mostrarPosiblesAcciones(this.vistaTableroJuegoActual);
    }
 }

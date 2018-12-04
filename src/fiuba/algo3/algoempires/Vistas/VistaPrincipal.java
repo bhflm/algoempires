@@ -5,9 +5,12 @@ import fiuba.algo3.algoempires.*;
 import fiuba.algo3.algoempires.Controladores.*;
 import fiuba.algo3.algoempires.Direcciones.*;
 import fiuba.algo3.algoempires.Entidades.Aldeano;
+import fiuba.algo3.algoempires.Entidades.Arquero;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+
+import java.util.HashMap;
 
 public class VistaPrincipal extends BorderPane {
     Mapa elMapa;
@@ -39,6 +42,8 @@ public class VistaPrincipal extends BorderPane {
     boolean seRealizoJugada;
     GridPane gridPane;
     VBox contenedorVertical;
+    private HashMap<Posicion, Casillero> tableroDelMapa;
+
 
     public VistaPrincipal() {
         this.casilleroSeleccionado = null;
@@ -73,6 +78,8 @@ public class VistaPrincipal extends BorderPane {
         gridPane.setGridLinesVisible(true);
         int dimenRow = miMapa.getLargoHorizontal();
         int dimenCol = miMapa.getLargoVertical();
+        this.tableroDelMapa=new HashMap<Posicion, Casillero>();
+
         for (int row = 0; row < dimenRow; row++)
             for (int col = 0; col < dimenCol; col++) {
                 int rowt=(-row)+dimenRow;
@@ -80,6 +87,7 @@ public class VistaPrincipal extends BorderPane {
                 Posicion posicionUbicable = new Posicion(colt , rowt);
                 Ubicable elUbicable = miMapa.GetUbicableEn(posicionUbicable);
                 Casillero casillero = new Casillero(elUbicable, posicionUbicable);
+                this.tableroDelMapa.put(posicionUbicable,casillero);
                 casillero.setOnMouseClicked(new SeleccionarCasillero(this, gridPane, casillero,this.importadorMapa,dimenRow));
                 gridPane.add(casillero,col, row);
                 gridPane.setHgrow(casillero, Priority.ALWAYS);
@@ -201,17 +209,8 @@ public class VistaPrincipal extends BorderPane {
 
 
     }
-    public void actualizarTablero(Posicion posActual,Posicion posSiguiente){
-        int dimenRow = this.elMapa.getLargoHorizontal();
-        int posActualCoordenadaVertical=importadorMapa.obtenerCoordenadaFila(posActual,dimenRow);
-        int posActualCoordenadaHorizontal=importadorMapa.obtenerCoordenadaColumna(posActual);
-        System.out.println(posActualCoordenadaHorizontal);
-        System.out.println(posActualCoordenadaVertical);
-        Casillero casilleroLibre=new Casillero(new EspacioLibre(),new Posicion(10,2));
-        this.gridPane.getChildren().remove(this.casilleroSeleccionado);
-        this.gridPane.add(casilleroLibre,posActualCoordenadaHorizontal,posActualCoordenadaVertical);
-        this.casilleroSeleccionado=casilleroLibre;
-        this.casilleroSeleccionado.seleccionarCasillero(this);
+    public void actualizarTablero(){
+       this.crearTablero(this.elMapa);
     }
 
     public Juego elJuegoEs() {
@@ -229,5 +228,17 @@ public class VistaPrincipal extends BorderPane {
 
     public void cambiarJugadorEnTurno(Juego elJuego) {
         this.jugadorEnTurno=elJuego.getActual();
+    }
+
+    public void actualizarTableroPorMovimiento(Posicion posActual, Posicion posSiguiente) {
+        int dimenRow = this.elMapa.getLargoHorizontal();
+        int dimenCol = this.elMapa.getLargoVertical();
+        int posActualCoordenadaVertical=importadorMapa.obtenerCoordenadaFila(posActual,dimenRow);
+        int posActualCoordenadaHorizontal=importadorMapa.obtenerCoordenadaColumna(posActual);
+        Casillero casilleroLibre=new Casillero(new EspacioLibre(),new Posicion(posActualCoordenadaHorizontal,posActualCoordenadaVertical));
+        Casillero casilleroNuevo=this.tableroDelMapa.get(posSiguiente);
+        casilleroNuevo.setUbicable(casilleroSeleccionado.getUbicable());
+        this.casilleroSeleccionado.setUbicable(casilleroLibre.getUbicable());
+        this.casilleroSeleccionado.seleccionarCasillero(this);
     }
 }

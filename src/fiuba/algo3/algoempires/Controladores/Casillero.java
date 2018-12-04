@@ -78,6 +78,9 @@ public class Casillero extends Rectangle {
     public Ubicable ObtenerUbicable() {
         return this.miUbicable;
     }
+
+    public Ubicable getUbicable() {
+    return this.miUbicable;    }
 }
 
 
