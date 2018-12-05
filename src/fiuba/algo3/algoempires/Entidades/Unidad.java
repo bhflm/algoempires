@@ -88,5 +88,5 @@ public abstract class Unidad{
     public String getNombre(){
         return this.Nombre;
     }
-
+    public int vidaActual(){return this.vida;}
 }
