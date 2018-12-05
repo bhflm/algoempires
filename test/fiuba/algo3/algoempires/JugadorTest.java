@@ -1,13 +1,9 @@
 package fiuba.algo3.algoempires;
 
-import fiuba.algo3.algoempires.Entidades.Aldeano;
-import fiuba.algo3.algoempires.Entidades.Espadachin;
-import fiuba.algo3.algoempires.Entidades.PlazaCentral;
+import fiuba.algo3.algoempires.Entidades.*;
 import fiuba.algo3.algoempires.Excepciones.TopePoblacionException;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
 
 public class JugadorTest {
 
@@ -86,7 +82,7 @@ public class JugadorTest {
         otroJugador.agregarUnidad(otroEspadachin);
 
         //le saco toda la vida
-        for (int i = 0; i<4; i++) {
+        for (int i = 0; i < 4; i++) {
             unEspadachin.atacarA(otroEspadachin);
         }
         otroJugador.removerUnidadesMuertas();
@@ -113,7 +109,7 @@ public class JugadorTest {
         otroJugador.agregarUnidad(unAldeano2);
 
         //le saco toda la vida
-        for (int i = 0; i<4; i++) {
+        for (int i = 0; i < 4; i++) {
             unEspadachin.atacarA(otroEspadachin);
         }
 
@@ -129,12 +125,12 @@ public class JugadorTest {
         Jugador otroJugador = new Jugador("Foo2");
 
         Espadachin unEspadachin = new Espadachin();
-        Posicion pos1 = new Posicion (5,5);
+        Posicion pos1 = new Posicion(5, 5);
         unEspadachin.modificarPosicion(pos1);
         unJugador.agregarUnidad(unEspadachin);
 
         PlazaCentral plazaCentral = new PlazaCentral();
-        Posicion pos2 = new Posicion (4,3);
+        Posicion pos2 = new Posicion(4, 3);
         plazaCentral.modificarPosicion(pos2);
         otroJugador.agregarEdificio(plazaCentral);
 
@@ -150,17 +146,17 @@ public class JugadorTest {
         Jugador otroJugador = new Jugador("Foo2");
 
         Espadachin unEspadachin = new Espadachin();
-        Posicion pos1 = new Posicion (5,5);
+        Posicion pos1 = new Posicion(5, 5);
         unEspadachin.modificarPosicion(pos1);
         unJugador.agregarUnidad(unEspadachin);
 
         PlazaCentral plazaCentral = new PlazaCentral();
-        Posicion pos2 = new Posicion (4,3);
+        Posicion pos2 = new Posicion(4, 3);
         plazaCentral.modificarPosicion(pos2);
         otroJugador.agregarEdificio(plazaCentral);
 
         //le saco toda la vida
-        for (int i = 0; i<30; i++) {
+        for (int i = 0; i < 30; i++) {
             unEspadachin.atacarA(plazaCentral);
         }
         otroJugador.removerEdificiosDestruidos();
@@ -187,7 +183,7 @@ public class JugadorTest {
         otroJugador.agregarUnidad(unAldeano2);
 
         //le saco toda la vida
-        for (int i = 0; i<4; i++) {
+        for (int i = 0; i < 4; i++) {
             unEspadachin.atacarA(otroEspadachin);
         }
 
@@ -195,4 +191,42 @@ public class JugadorTest {
 
         assertTrue(!otroJugador.perteneceUnidad(otroEspadachin) & otroJugador.perteneceUnidad(unAldeano) & otroJugador.perteneceUnidad(unAldeano1) & otroJugador.perteneceUnidad(unAldeano2));
     }
-}
+
+    @Test
+    public void test10RecaudarOroAldeanosOk() {
+        Jugador unJugador = new Jugador("Foo");
+
+        Aldeano aldeano1 = new Aldeano();
+        Aldeano aldeano2 = new Aldeano();
+        Aldeano aldeano3 = new Aldeano();
+        Aldeano aldeano4 = new Aldeano();
+
+        unJugador.agregarUnidad(aldeano1);
+        unJugador.agregarUnidad(aldeano2);
+        unJugador.agregarUnidad(aldeano3);
+        unJugador.agregarUnidad(aldeano4);
+
+        unJugador.recaudarOro();
+
+        int oroRecaudadoPorAldeano = aldeano1.recaudarOro();
+
+        assert (unJugador.getOro() == oroRecaudadoPorAldeano * 4);
+    }
+
+    @Test
+    public void test11UnidadesDistintasAAldeanosNoRecaudanOro() {
+        Jugador unJugador = new Jugador("Foo");
+
+        Arquero arquero = new Arquero();
+        Espadachin espadachin = new Espadachin();
+        ArmaDeAsedio armaDeAsedio = new ArmaDeAsedio();
+
+        unJugador.agregarUnidad(arquero);
+        unJugador.agregarUnidad(espadachin);
+        unJugador.agregarUnidad(armaDeAsedio);
+
+        unJugador.recaudarOro();
+
+        assert (unJugador.getOro() == 0);
+        }
+    }
