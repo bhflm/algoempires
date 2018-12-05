@@ -48,6 +48,7 @@ public class VistaPrincipal extends BorderPane {
     private HashMap<Posicion, Casillero> tableroDelMapa;
     String textoVida;
     Label labelVida;
+    Label labelOro;
 
 
     public VistaPrincipal() {
@@ -76,7 +77,8 @@ public class VistaPrincipal extends BorderPane {
         this.contenedorInferior.setStyle("-fx-background-color: #8B4513;");
         this.setBottom(this.contenedorInferior);
         this.labelVida=new Label("Vida del Ubicable");
-        this.contenedorInferior.getChildren().addAll(new Label("Vida"),this.labelVida);
+        this.labelOro=new Label("Oro del jugador");
+        this.contenedorInferior.getChildren().addAll(new Label("Vida"),this.labelVida,new Label("Oro Disponible"),labelOro);
 
 
 
@@ -268,5 +270,7 @@ public class VistaPrincipal extends BorderPane {
         int vidaDelUbicable=ubicableDelCasillero.vidaActual();
         String textoVida=Integer.toString(vidaDelUbicable);
         this.labelVida.setText(textoVida);
+        String textoOro=Integer.toString(this.jugadorEnTurno.getOro());
+        this.labelOro.setText(textoOro);
     }
 }
