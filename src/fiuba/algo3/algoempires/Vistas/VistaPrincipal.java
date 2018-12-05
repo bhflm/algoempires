@@ -7,6 +7,8 @@ import fiuba.algo3.algoempires.Direcciones.*;
 import fiuba.algo3.algoempires.Entidades.Aldeano;
 import fiuba.algo3.algoempires.Entidades.Arquero;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
@@ -42,7 +44,11 @@ public class VistaPrincipal extends BorderPane {
     boolean seRealizoJugada;
     GridPane gridPane;
     VBox contenedorVertical;
+    HBox contenedorInferior;
     private HashMap<Posicion, Casillero> tableroDelMapa;
+    String textoVida;
+    Label labelVida;
+    Label labelOro;
 
 
     public VistaPrincipal() {
@@ -59,6 +65,22 @@ public class VistaPrincipal extends BorderPane {
         this.setFondo();
         this.setAcciones();
         this.seRealizoJugada=false;
+        this.setMenuInferior();
+
+    }
+
+    private void setMenuInferior() {
+        this.contenedorInferior=new HBox();
+        this.contenedorInferior.setPrefWidth(1);
+        this.contenedorInferior.setPrefHeight(1);
+        this.contenedorInferior.setSpacing(10);
+        this.contenedorInferior.setStyle("-fx-background-color: #8B4513;");
+        this.setBottom(this.contenedorInferior);
+        this.labelVida=new Label("Vida del Ubicable");
+        this.labelOro=new Label("Oro del jugador");
+        this.contenedorInferior.getChildren().addAll(new Label("Vida"),this.labelVida,new Label("Oro Disponible"),labelOro);
+
+
 
     }
 
@@ -240,5 +262,16 @@ public class VistaPrincipal extends BorderPane {
         casilleroNuevo.setUbicable(casilleroSeleccionado.getUbicable());
         this.casilleroSeleccionado.setUbicable(casilleroLibre.getUbicable());
         this.casilleroSeleccionado.seleccionarCasillero(this);
+    }
+
+    public void mostrarInformacionCasillero(Casillero casilleroASeleccionar) {
+
+        Ubicable ubicableDelCasillero=casilleroASeleccionar.getUbicable();
+        int vidaDelUbicable=ubicableDelCasillero.vidaActual();
+        String textoVida=Integer.toString(vidaDelUbicable);
+        this.labelVida.setText(textoVida);
+        Jugador jugadorActual=this.elJugadorActualEs();
+        String textoOro=Integer.toString(jugadorActual.getOro());
+        this.labelOro.setText(textoOro);
     }
 }

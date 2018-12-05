@@ -20,5 +20,5 @@ public class EspacioLibre implements Ubicable{
     public String getNombre(){
         return this.Nombre;
     }
-
+    public int vidaActual(){return 0;}
 }

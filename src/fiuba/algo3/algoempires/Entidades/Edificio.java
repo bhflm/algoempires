@@ -170,4 +170,5 @@ public abstract class Edificio implements Ubicable {
     public String getNombre(){
         return this.Nombre;
     }
+    public int vidaActual(){return this.vida;}
 }

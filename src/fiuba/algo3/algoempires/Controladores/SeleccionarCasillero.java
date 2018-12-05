@@ -32,6 +32,7 @@ public class SeleccionarCasillero implements EventHandler<Event> {
              casilleroMarcadoPreviamente.desSeleccionarCasillero(vistaTableroJuegoActual);
         }
         casilleroASeleccionar.seleccionarCasillero(vistaTableroJuegoActual);
+        vistaTableroJuegoActual.mostrarInformacionCasillero(casilleroASeleccionar);
         casilleroASeleccionar.mostrarPosiblesAcciones(this.vistaTableroJuegoActual);
    }
 }
