@@ -270,7 +270,8 @@ public class VistaPrincipal extends BorderPane {
         int vidaDelUbicable=ubicableDelCasillero.vidaActual();
         String textoVida=Integer.toString(vidaDelUbicable);
         this.labelVida.setText(textoVida);
-        String textoOro=Integer.toString(this.jugadorEnTurno.getOro());
+        Jugador jugadorActual=this.elJugadorActualEs();
+        String textoOro=Integer.toString(jugadorActual.getOro());
         this.labelOro.setText(textoOro);
     }
 }

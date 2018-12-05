@@ -132,6 +132,13 @@ public class Jugador {
     public boolean perdio(){
         return this.perdio;
     }
+
+    public void recaudarOro() {
+        for (Unidad unidad : unidadesJugador) {
+            this.oro=this.oro+unidad.recaudarOro();
+            }
+
+    }
 }
 
 
