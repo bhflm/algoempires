@@ -106,10 +106,12 @@ public class Jugador {
             }
     }
 
-    public void removerUnidadesMuertas(){
+    public void removerUnidadesMuertas(Mapa miMapa){
         List<Unidad> unidadesMuertas = new ArrayList<Unidad>();
         for (Unidad unidad : unidadesJugador) {
             if (unidad.getVida() <= 0) {
+                Posicion posicionDelMuerto=unidad.getPosicion();
+                miMapa.UbicarUnidadEnMapa(posicionDelMuerto,new EspacioLibre());
                 unidadesMuertas.add(unidad);
             }
         }
@@ -127,6 +129,15 @@ public class Jugador {
             }
         }
         edificiosJugador.removeAll(edificiosDestruidos);
+    }
+    public Castillo elCastilloDelJugador(){
+        List<Edificio> edificiosDestruidos = new ArrayList<Edificio>();
+        for (Edificio edificio: edificiosJugador){
+                if (edificio instanceof Castillo){
+                    return (Castillo) edificio;
+            }
+        }
+        return null;
     }
 
     public boolean perdio(){

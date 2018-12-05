@@ -41,7 +41,6 @@ public class VistaPrincipal extends BorderPane {
     Boton botonAbajo;
     Boton botonAbajoIzquierda;
     Boton botonAbajoDerecha;
-    boolean seRealizoJugada;
     GridPane gridPane;
     VBox contenedorVertical;
     HBox contenedorInferior;
@@ -64,7 +63,6 @@ public class VistaPrincipal extends BorderPane {
         this.crearTablero(elMapa);
         this.setFondo();
         this.setAcciones();
-        this.seRealizoJugada=false;
         this.setMenuInferior();
 
     }
@@ -232,8 +230,13 @@ public class VistaPrincipal extends BorderPane {
 
     }
     public void actualizarTablero(){
-       this.crearTablero(this.elMapa);
+       int numeroTurno=this.juegoAlgoEmpires.numeroDeTurno();
+       if(numeroTurno % 5==0)
+            this.crearTablero(this.elMapa);
     }
+
+
+
 
     public Juego elJuegoEs() {
         return this.juegoAlgoEmpires;
