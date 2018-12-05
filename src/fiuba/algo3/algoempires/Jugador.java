@@ -82,7 +82,8 @@ public class Jugador {
 
 
     public void CastilloRealizaAtaqueMasivo(Castillo miCastillo, Mapa miMapa) {
-        Posicion posicionCastillo = miCastillo.getPosicion();
+        Posicion posicionCastillo;
+        if ((posicionCastillo = miCastillo.getPosicion())!=null){
         boolean esDelJugador = false;
         boolean esValidaLaUbicacionDeAtaque = true;
         int rangoAtaque = miCastillo.getRango();
@@ -103,7 +104,7 @@ public class Jugador {
                     }
 
                 }
-            }
+            }}
     }
 
     public void removerUnidadesMuertas(Mapa miMapa){

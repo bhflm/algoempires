@@ -91,7 +91,7 @@ public class Juego {
             this.actual = this.esperando;
             this.esperando = aux;
             this.actual.recaudarOro();
-            this.actual.CastilloRealizaAtaqueMasivo(this.actual.elCastilloDelJugador(),this.mapa);
+           // this.actual.CastilloRealizaAtaqueMasivo(this.actual.elCastilloDelJugador(),this.mapa);
             this.actual.removerUnidadesMuertas(mapa);
             this.actual.removerEdificiosDestruidos();
             this.numeroDeTurno=this.numeroDeTurno+1;
