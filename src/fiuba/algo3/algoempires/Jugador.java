@@ -1,13 +1,8 @@
 package fiuba.algo3.algoempires;
 
 import fiuba.algo3.algoempires.Direcciones.Direccion;
-import fiuba.algo3.algoempires.Entidades.Castillo;
-import fiuba.algo3.algoempires.Entidades.Edificio;
-import fiuba.algo3.algoempires.Entidades.Unidad;
-import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
-import fiuba.algo3.algoempires.Excepciones.MovimientoFueraDelMapa;
-import fiuba.algo3.algoempires.Excepciones.TopePoblacionException;
-import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
+import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.Excepciones.*;
 
 import java.util.*;
 
@@ -73,11 +68,78 @@ public class Jugador {
         return this.oro;
     }
 
-    public void realizarAtaque(Atacante MiAtacante,Ubicable MiObjetivo){
+    public void realizarAtaque(Atacante MiAtacante, Ubicable MiObjetivo){
         boolean EstaUnidadEsMia=this.perteneceUnidad(MiObjetivo);
         if(!EstaUnidadEsMia)
             MiAtacante.atacarA(MiObjetivo);
         else throw new JugadaInvalidaException();
+    }
+
+    public void construirCuartel(Juego unJuego, Mapa unMapa, Aldeano unAldeano, Posicion unaPosicion){
+        if (this.oro < 50){
+            throw new OroInsuficienteError();
+        }
+        Cuartel unCuartel = unAldeano.construirCuartel(unMapa, unaPosicion);
+        this.edificiosJugador.add(unCuartel);
+        this.oro -= 50;
+        unJuego.cambiarTurno();
+    }
+
+    public void construirPlazaCentral(Juego unJuego, Mapa unMapa, Aldeano unAldeano, Posicion unaPosicion){
+        if (this.oro < 100){
+            throw new OroInsuficienteError();
+        }
+        PlazaCentral unaPlazaCentral = unAldeano.construirPlazaCentral(unMapa, unaPosicion);
+        this.edificiosJugador.add(unaPlazaCentral);
+        this.oro-=100;
+        unJuego.cambiarTurno();
+    }
+
+    public void crearAldeano(Juego unJuego, PlazaCentral unaPlazaCentral, Mapa mapa, Posicion unaPosicion){
+        if (this.oro < 25){
+            throw new OroInsuficienteError();
+        }
+        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, unaPosicion);
+        this.agregarUnidad(unAldeano);
+        this.oro -= 25;
+        unJuego.cambiarTurno();
+    }
+
+    public void crearArquero(Juego unJuego, Cuartel unCuartel, Mapa mapa, Posicion unaPosicion){
+        if (this.oro < 75){
+            throw new OroInsuficienteError();
+        }
+        Arquero unArquero = unCuartel.crearArquero(mapa, unaPosicion);
+        this.agregarUnidad(unArquero);
+        this.oro -= 75;
+        unJuego.cambiarTurno();
+    }
+
+    public void crearEspadachin(Juego unJuego, Cuartel unCuartel, Mapa mapa, Posicion unaPosicion){
+        if (this.oro < 50){
+            throw new OroInsuficienteError();
+        }
+        Espadachin unEspadachin = unCuartel.crearEspadachin(mapa, unaPosicion);
+        this.agregarUnidad(unEspadachin);
+        this.oro -= 50;
+        unJuego.cambiarTurno();
+    }
+
+    public void crearArmaDeAsedio(Juego unJuego, Castillo unCastillo, Mapa mapa, Posicion unaPosicion){
+        if (this.oro < 200){
+            throw new OroInsuficienteError();
+        }
+        ArmaDeAsedio unArmaDeAsedio = unCastillo.crearArmaDeAsedio(mapa, unaPosicion);
+        this.agregarUnidad(unArmaDeAsedio);
+        this.oro -= 200;
+        unJuego.cambiarTurno();
+    }
+
+    public void reparar(Juego unJuego, Mapa unMapa, Aldeano unAldeano, Edificio unEdificio){
+        boolean EsteEdificioEsMio=this.perteneceUnidad(unEdificio);
+        if(EsteEdificioEsMio){unAldeano.reparar(unEdificio);}
+        else throw new JugadaInvalidaException();
+        unJuego.cambiarTurno();
     }
 
 
@@ -145,9 +207,9 @@ public class Jugador {
         return this.perdio;
     }
 
-    public void recaudarOro() {
-        for (Unidad unidad : unidadesJugador) {
-            this.oro=this.oro+unidad.recaudarOro();
+        public void recaudarOro() {
+            for (Unidad unidad : unidadesJugador) {
+                this.oro=this.oro+unidad.recaudarOro();
             }
 
     }
