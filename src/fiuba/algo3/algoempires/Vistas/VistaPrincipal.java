@@ -142,11 +142,11 @@ public class VistaPrincipal extends BorderPane {
         this.botonAtacar = new Boton("Atacar", new RealizarAtaque(this));
         this.botonConstruirCuartel = new Boton("Construir Cuartel", new ConstruirCuartel(this));
         this.botonConstruirPC = new Boton("Construir Plaza Central", new ConstruirPlazaCentral(this));
-        this.botonReparar = new Boton("Reparar", null);
-        this.botonCrearAldeano = new Boton("Crear Aldeano", null);
-        this.botonCrearArquero = new Boton("Crear Arquero", null);
-        this.botonCrearEspadachin = new Boton("Crear Espadachin", null);
-        this.botonCrearArmaDeAsedio = new Boton("Crear Arma De Asedio", null);
+        this.botonReparar = new Boton("Reparar", new Reparar(this));
+        this.botonCrearAldeano = new Boton("Crear Aldeano", new CrearAldeano(this));
+        this.botonCrearArquero = new Boton("Crear Arquero", new CrearArquero(this));
+        this.botonCrearEspadachin = new Boton("Crear Espadachin", new CrearEspadachin(this));
+        this.botonCrearArmaDeAsedio = new Boton("Crear Arma De Asedio",new CrearArmaDeAsedio(this));
         this.botonPasarTurno = new Boton("Terminar Turno", new AccionPasarTurno(this));
 
         Pane separador = new Pane();
