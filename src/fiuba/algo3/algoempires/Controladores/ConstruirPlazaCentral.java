@@ -10,17 +10,17 @@ import javafx.event.ActionEvent;
 
 import javax.swing.*;
 
-public class ConstruirCuartel implements javafx.event.EventHandler<ActionEvent> {
+public class ConstruirPlazaCentral implements javafx.event.EventHandler<ActionEvent> {
     VistaPrincipal vistaPrincipal;
     Casillero ofrecido;
 
-    public ConstruirCuartel(VistaPrincipal vista){
+    public ConstruirPlazaCentral(VistaPrincipal vista){
         this.vistaPrincipal=vista;
     }
 
     @Override
     public void handle(ActionEvent actionEvent){
-        vistaPrincipal.nombreAccion="ConstruirCuartel";
+        vistaPrincipal.nombreAccion="ConstruirPlazaCentral";
         vistaPrincipal.ofrecerCasilleros(vistaPrincipal.elJuegoEs().getmapa());
     }
 
