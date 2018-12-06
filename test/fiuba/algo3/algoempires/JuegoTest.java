@@ -300,18 +300,17 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador, 15);
         Arquero unArquero = new Arquero();
         Aldeano unAldeano = new Aldeano();
-        Mapa unMapa = new Mapa(4,4);
         Posicion unaPos = new Posicion(2,2);
         Posicion otraPos= new Posicion(2,3);
         unJugador.agregarUnidad(unArquero);
         otroJugador.agregarUnidad(unAldeano);
-        unMapa.UbicarUnidadEnMapa(unaPos,unArquero);
-        unMapa.UbicarUnidadEnMapa(otraPos,unAldeano);
+        unJuego.getmapa().UbicarUnidadEnMapa(unaPos,unArquero);
+        unJuego.getmapa().UbicarUnidadEnMapa(otraPos,unAldeano);
         int vidaPrevia=unAldeano.getVida();
-        unJugador.realizarAtaque(unArquero,unAldeano);
+        unJugador.realizarAtaque(unJuego, unArquero,unAldeano);
         assertEquals(vidaPrevia-DanioProducidoPorArquero,unAldeano.getVida());
     }
 
@@ -321,18 +320,17 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
         Arquero unArquero = new Arquero();
         Aldeano unAldeano = new Aldeano();
-        Mapa unMapa = new Mapa(4,4);
         Posicion unaPos = new Posicion(2,2);
         Posicion otraPos= new Posicion(2,3);
         unJugador.agregarUnidad(unArquero);
         unJugador.agregarUnidad(unAldeano);
-        unMapa.UbicarUnidadEnMapa(unaPos,unArquero);
-        unMapa.UbicarUnidadEnMapa(otraPos,unAldeano);
+        unJuego.getmapa().UbicarUnidadEnMapa(unaPos,unArquero);
+        unJuego.getmapa().UbicarUnidadEnMapa(otraPos,unAldeano);
         try {
-            unJugador.realizarAtaque(unArquero, unAldeano);
+            unJugador.realizarAtaque(unJuego, unArquero, unAldeano);
         }
         catch(JugadaInvalidaException e){
             seLanzoError=true;
