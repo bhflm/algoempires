@@ -78,6 +78,7 @@ public class JugadorTest {
 
         Espadachin otroEspadachin = new Espadachin();
         otroJugador.agregarUnidad(otroEspadachin);
+        otroEspadachin.modificarPosicion(new Posicion(1,1));
         Mapa miMapa=new Mapa(10,10);
         //le saco toda la vida
         for (int i = 0; i < 4; i++) {
@@ -102,6 +103,7 @@ public class JugadorTest {
         Aldeano unAldeano2 = new Aldeano();
 
         otroJugador.agregarUnidad(otroEspadachin);
+        otroEspadachin.modificarPosicion(new Posicion(1,1));
         otroJugador.agregarUnidad(unAldeano);
         otroJugador.agregarUnidad(unAldeano1);
         otroJugador.agregarUnidad(unAldeano2);
@@ -176,6 +178,7 @@ public class JugadorTest {
         Aldeano unAldeano2 = new Aldeano();
 
         otroJugador.agregarUnidad(otroEspadachin);
+        otroEspadachin.modificarPosicion(new Posicion(1,1));
         otroJugador.agregarUnidad(unAldeano);
         otroJugador.agregarUnidad(unAldeano1);
         otroJugador.agregarUnidad(unAldeano2);
