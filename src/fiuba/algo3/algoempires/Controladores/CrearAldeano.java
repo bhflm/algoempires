@@ -1,6 +1,7 @@
 package fiuba.algo3.algoempires.Controladores;
 
 import fiuba.algo3.algoempires.Entidades.PlazaCentral;
+import fiuba.algo3.algoempires.Excepciones.OroInsuficienteError;
 import fiuba.algo3.algoempires.Juego;
 import fiuba.algo3.algoempires.Jugador;
 import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
@@ -16,10 +17,16 @@ public class CrearAldeano implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent){
+        boolean elMovimientoEsValido = true;
         Juego elJuego=vistaTableroJuegoActual.elJuegoEs();
         Jugador jugador=elJuego.getActual();
-        jugador.crearAldeano(elJuego, (PlazaCentral) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), elJuego.getmapa());
-        vistaTableroJuegoActual.actualizarTableroV2(elJuego.getmapa());
+        try {
+            jugador.crearAldeano(elJuego, (PlazaCentral) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), elJuego.getmapa());
+        }
+        catch(OroInsuficienteError e){elMovimientoEsValido=false;}
+        if (elMovimientoEsValido) {
+            vistaTableroJuegoActual.actualizarTableroV2(elJuego.getmapa());
+                                    }
         vistaTableroJuegoActual.borrarSetAcciones();
         vistaTableroJuegoActual.setAcciones();
     }
