@@ -330,8 +330,8 @@ public class VistaPrincipal extends BorderPane {
                 Posicion posicionUbicable = new Posicion(colt, rowt);
                 Ubicable elUbicable = this.elJuegoEs().getmapa().GetUbicableEn(posicionUbicable);
                 Casillero casillero = new Casillero(elUbicable, posicionUbicable);
+                this.tableroDelMapa.put(posicionUbicable, casillero);
                 if (elUbicable != this.tableroDelMapa.get(posicionUbicable).getUbicable()){
-                    this.tableroDelMapa.put(posicionUbicable, casillero);
                      gridPane.add(casillero,col, row);}
                 this.tableroDelMapa.get(posicionUbicable).setOnMouseClicked(new SeleccionarCasillero(this, gridPane, casillero,this.importadorMapa,dimenRow));
 
