@@ -91,7 +91,7 @@ public class Juego {
             this.actual.aldeanosTrabajar();
             this.actual.CastilloRealizaAtaqueMasivo(this.actual.elCastilloDelJugador(),this.mapa);
             this.actual.removerUnidadesMuertas(mapa);
-            this.actual.removerEdificiosDestruidos();
+            this.actual.removerEdificiosDestruidos(mapa);
             this.numeroDeTurno=this.numeroDeTurno+1;
         }
     }

@@ -39,7 +39,7 @@ public class ejecutarAccion implements EventHandler<ActionEvent> {
         else if(vistaTableroJuegoActual.nombreAccion.equals("RealizarAtaque")){
 
             try{
-                elJuego.getActual().realizarAtaque( (Atacante) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), vistaTableroJuegoActual.getCasilleroOfrecido().getUbicable());
+                elJuego.getActual().realizarAtaque(elJuego, (Atacante) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), vistaTableroJuegoActual.getCasilleroOfrecido().getUbicable());
             }
             catch (JugadaInvalidaException e){
                 elMovimientoEsValido=false;
