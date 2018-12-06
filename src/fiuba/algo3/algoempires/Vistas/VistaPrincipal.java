@@ -270,9 +270,7 @@ public class VistaPrincipal extends BorderPane {
 
     }
     public void actualizarTablero(){
-       int numeroTurno=this.juegoAlgoEmpires.numeroDeTurno();
-       if(numeroTurno % 5==0)
-            this.crearTablero(this.elMapa);
+        this.crearTablero(this.elMapa);
     }
 
 
@@ -298,14 +296,13 @@ public class VistaPrincipal extends BorderPane {
     public void actualizarTableroPorMovimiento(Posicion posActual, Posicion posSiguiente) {
         int dimenRow = this.elJuegoEs().getmapa().getLargoHorizontal();
         int dimenCol = this.elJuegoEs().getmapa().getLargoVertical();
-        int posActualCoordenadaVertical=importadorMapa.obtenerCoordenadaFila(posActual,dimenRow);
-        int posActualCoordenadaHorizontal=importadorMapa.obtenerCoordenadaColumna(posActual);
-        Casillero casilleroLibre=new Casillero(new EspacioLibre(),new Posicion(posActualCoordenadaHorizontal,posActualCoordenadaVertical));
-        Casillero casilleroNuevo=this.tableroDelMapa.get(posSiguiente);
-        casilleroNuevo.setUbicable(casilleroSeleccionado.getUbicable());
-        this.casilleroSeleccionado.setUbicable(casilleroLibre.getUbicable());
-        this.casilleroSeleccionado.seleccionarCasillero(this);
-    }
+        Ubicable elUbicableDondeEstoy = this.elJuegoEs().getmapa().getUbicaciones().get(posActual);
+        Ubicable elUbicableDondeQuieroEstar=this.elJuegoEs().getmapa().getUbicaciones().get(posSiguiente);
+        Casillero casilleroDondeEstoy=this.tableroDelMapa.get(posActual);
+        Casillero casilleroDondeQuieroEstar=this.tableroDelMapa.get(posSiguiente);
+        casilleroDondeEstoy.setUbicable(elUbicableDondeQuieroEstar);
+        casilleroDondeQuieroEstar.setUbicable(elUbicableDondeEstoy);
+        }
 
     public void mostrarInformacionCasillero(Casillero casilleroASeleccionar) {
 
@@ -319,26 +316,22 @@ public class VistaPrincipal extends BorderPane {
     }
 
 
-
-
-
-
-    public void actualizarTableroV2() {
-        int dimenRow = this.elJuegoEs().getmapa().getLargoHorizontal();
-        int dimenCol = this.elJuegoEs().getmapa().getLargoVertical();
+    public void actualizarTableroV2(Mapa unMapa) {
+        int dimenRow = unMapa.getLargoHorizontal();
+        int dimenCol = unMapa.getLargoVertical();
         for (int row = 0; row < dimenRow; row++)
             for (int col = 0; col < dimenCol; col++) {
                 int rowt = (-row) + dimenRow;
                 int colt = col + 1;
                 Posicion posicionUbicable = new Posicion(colt, rowt);
-                Ubicable elUbicable = this.elJuegoEs().getmapa().GetUbicableEn(posicionUbicable);
-                Casillero casillero = new Casillero(elUbicable, posicionUbicable);
-                this.tableroDelMapa.put(posicionUbicable, casillero);
+                Ubicable elUbicable = unMapa.getUbicaciones().get(posicionUbicable);
+                Casillero casillero = this.tableroDelMapa.get(posicionUbicable);
                 if (elUbicable != this.tableroDelMapa.get(posicionUbicable).getUbicable()){
-                     gridPane.add(casillero,col, row);}
+                    casillero.setUbicable(elUbicable);
+                }
                 this.tableroDelMapa.get(posicionUbicable).setOnMouseClicked(new SeleccionarCasillero(this, gridPane, casillero,this.importadorMapa,dimenRow));
 
-
+                System.gc();
             }
 
 

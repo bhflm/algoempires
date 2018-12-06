@@ -33,12 +33,11 @@ public class AccionMover implements EventHandler<ActionEvent> {
         }
         if(elMovimientoEsValido) {
             Posicion posicionNueva = elUbicable.getPosicion();
-            vistaPrincipal.actualizarTableroPorMovimiento(posicionAnterior, posicionNueva);
+           // vistaPrincipal.actualizarTableroPorMovimiento(posicionAnterior, posicionNueva);
             vistaPrincipal.cambiarJugadorEnTurno(elJuego);}
-           /*vistaPrincipal.actualizarTablero();*/ /*Este actualiza todo el tablero es mas lento*/
+            vistaPrincipal.actualizarTableroV2(elJuego.getmapa()); /*Este actualiza todo el tablero es mas lento*/
             vistaPrincipal.borrarSetAcciones();
             vistaPrincipal.setAcciones();
-            vistaPrincipal.actualizarTablero();
     }
 
 

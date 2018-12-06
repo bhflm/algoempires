@@ -76,8 +76,7 @@ public class Casillero extends Rectangle {
             if (elUbicableDelCasillero instanceof Aldeano) {
                 vistaPrincipal.activarBotonReparar();
                 vistaPrincipal.activarBotonConstruirCuartel();
-                vistaPrincipal.activarBotonConstruirPC();
-            }
+                vistaPrincipal.activarBotonConstruirPC();}
             if (elUbicableDelCasillero instanceof PlazaCentral)
                 vistaPrincipal.activarBotonCrearAldeano();
             if (elUbicableDelCasillero instanceof Castillo) {
