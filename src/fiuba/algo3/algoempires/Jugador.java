@@ -70,8 +70,9 @@ public class Jugador {
 
     public void realizarAtaque(Atacante MiAtacante, Ubicable MiObjetivo){
         boolean EstaUnidadEsMia=this.perteneceUnidad(MiObjetivo);
-        if(!EstaUnidadEsMia)
-            MiAtacante.atacarA(MiObjetivo);
+        if(!EstaUnidadEsMia){
+            try{MiAtacante.atacarA(MiObjetivo);}
+            catch(AtaqueFueraDeRango e){throw new AtaqueFueraDeRango();}}
         else throw new JugadaInvalidaException();
     }
 

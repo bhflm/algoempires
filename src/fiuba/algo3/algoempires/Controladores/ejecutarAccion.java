@@ -2,6 +2,7 @@ package fiuba.algo3.algoempires.Controladores;
 
 import fiuba.algo3.algoempires.*;
 import fiuba.algo3.algoempires.Entidades.*;
+import fiuba.algo3.algoempires.Excepciones.AtaqueFueraDeRango;
 import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
 import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.event.ActionEvent;
@@ -41,7 +42,7 @@ public class ejecutarAccion implements EventHandler<ActionEvent> {
             try{
                 elJuego.getActual().realizarAtaque( (Atacante) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), vistaTableroJuegoActual.getCasilleroOfrecido().getUbicable());
             }
-            catch (JugadaInvalidaException e){
+            catch (JugadaInvalidaException | AtaqueFueraDeRango e){
                 elMovimientoEsValido=false;
                 }
 
