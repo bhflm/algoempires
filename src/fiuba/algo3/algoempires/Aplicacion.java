@@ -18,9 +18,6 @@ public class Aplicacion extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-
-
-
         ventana = primaryStage;
         ventana.setTitle("AlgoEmpires");
 

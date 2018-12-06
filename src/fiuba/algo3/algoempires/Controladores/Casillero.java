@@ -18,6 +18,11 @@ public class Casillero extends Rectangle {
         this.setFill(Color.TRANSPARENT);
         this.setStroke(Color.RED);
     }
+
+    public void printNombre(){
+        System.out.println("Daaaaaaa");
+    }
+
     public void setUbicable(Ubicable ubicable) {
         this.miUbicable = ubicable;
         Image img = new Image("file:src/fiuba/algo3/algoempires/Vistas/Img/" + this.miUbicable.getNombre() + ".png");
@@ -42,6 +47,17 @@ public class Casillero extends Rectangle {
         vista.asignarCasilleroActual(this);
         this.setStroke(Color.BLACK);
     }
+
+
+    public void confirmarCasillero(VistaPrincipal vista){
+        vista.mostrarConfirmacion();
+    }
+
+    public void seleccionarCasilleroOfrecido(VistaPrincipal vista) {
+        vista.asignarCasilleroOfrecido(this);
+        this.setStroke(Color.YELLOWGREEN);
+    }
+
     public void desSeleccionarCasillero(VistaPrincipal vista) {
         this.setStroke(Color.RED);
     }
@@ -81,6 +97,10 @@ public class Casillero extends Rectangle {
 
     public Ubicable getUbicable() {
     return this.miUbicable;    }
+
+    public Posicion getPosicion() {
+        return this.miPosicion;
+    }
 }
 
 
