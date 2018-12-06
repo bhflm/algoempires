@@ -19,7 +19,6 @@ public class CrearAldeano implements EventHandler<ActionEvent> {
         Juego elJuego=vistaTableroJuegoActual.elJuegoEs();
         Jugador jugador=elJuego.getActual();
         jugador.crearAldeano(elJuego, (PlazaCentral) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), elJuego.getmapa());
-        vistaTableroJuegoActual.cambiarJugadorEnTurno(elJuego);
         vistaTableroJuegoActual.actualizarTableroV2(elJuego.getmapa());
         vistaTableroJuegoActual.borrarSetAcciones();
         vistaTableroJuegoActual.setAcciones();

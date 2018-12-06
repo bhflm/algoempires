@@ -52,7 +52,6 @@ public class ejecutarAccion implements EventHandler<ActionEvent> {
 
 
             if(elMovimientoEsValido){
-        vistaTableroJuegoActual.cambiarJugadorEnTurno(elJuego);
         vistaTableroJuegoActual.actualizarTableroV2(elJuego.getmapa());
         vistaTableroJuegoActual.borrarSetAcciones();
         vistaTableroJuegoActual.setAcciones();

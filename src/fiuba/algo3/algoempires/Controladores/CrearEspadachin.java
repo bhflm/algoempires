@@ -18,7 +18,6 @@ public class CrearEspadachin implements EventHandler<ActionEvent> {
         Juego elJuego=vistaTableroJuegoActual.elJuegoEs();
         Jugador jugador=elJuego.getActual();
         jugador.crearEspadachin(elJuego, (Cuartel) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), elJuego.getmapa());
-        vistaTableroJuegoActual.cambiarJugadorEnTurno(elJuego);
         vistaTableroJuegoActual.actualizarTableroV2(elJuego.getmapa());
         vistaTableroJuegoActual.borrarSetAcciones();
         vistaTableroJuegoActual.setAcciones();

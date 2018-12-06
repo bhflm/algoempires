@@ -20,7 +20,6 @@ public class CrearArquero implements EventHandler<ActionEvent> {
         Juego elJuego=vistaTableroJuegoActual.elJuegoEs();
         Jugador jugador=elJuego.getActual();
         jugador.crearArquero(elJuego, (Cuartel) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), elJuego.getmapa());
-        vistaTableroJuegoActual.cambiarJugadorEnTurno(elJuego);
         vistaTableroJuegoActual.actualizarTableroV2(elJuego.getmapa());
         vistaTableroJuegoActual.borrarSetAcciones();
         vistaTableroJuegoActual.setAcciones();
