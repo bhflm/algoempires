@@ -6,6 +6,7 @@ import fiuba.algo3.algoempires.Controladores.*;
 import fiuba.algo3.algoempires.Direcciones.*;
 import fiuba.algo3.algoempires.Entidades.Aldeano;
 import fiuba.algo3.algoempires.Entidades.Arquero;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -115,8 +116,40 @@ public class VistaPrincipal extends BorderPane {
                 gridPane.setHgrow(casillero, Priority.ALWAYS);
                 gridPane.setVgrow(casillero, Priority.ALWAYS);
             }
+    }
 
 
+
+
+    public Node getNodeByRowColumnIndex (final int row, final int column, GridPane gridPane) {
+        Node result = null;
+        ObservableList<Node> childrens = gridPane.getChildren();
+
+        for (Node node : childrens) {
+            System.out.println(row);
+            System.out.println(column);
+            System.out.println(gridPane.getColumnIndex(node));
+            System.out.println(gridPane.getRowIndex(node));
+//            if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
+//                result = node;
+//                break;
+//            }
+        }
+        return result;
+    }
+
+
+    public void ofrecerCasilleros(Mapa miMapa) {
+        int dimenRow = miMapa.getLargoHorizontal();
+        int dimenCol = miMapa.getLargoVertical();
+
+        for (int row = 0; row < dimenRow; row++)
+            for (int col = 0; col < dimenCol; col++) {
+                Node a= this.getNodeByRowColumnIndex(row,col,this.gridPane);
+                a.setOnMouseClicked(new AccionClickear());
+                System.out.println("Hizo nodo elegible");
+                System.out.println(a);
+            }
     }
 
 
@@ -124,7 +157,7 @@ public class VistaPrincipal extends BorderPane {
 
         this.botonMoverse = new Boton("Moverse A", new AccionRealizarMovimiento(this));
         this.botonAtacar = new Boton("Atacar", null);
-        this.botonConstruirCuartel = new Boton("Construir Cuartel", null);
+        this.botonConstruirCuartel = new Boton("Construir Cuartel", new ConstruirCuartel(this));
         this.botonConstruirPC = new Boton("Construir Plaza Central", null);
         this.botonReparar = new Boton("Reparar", null);
         this.botonCrearAldeano = new Boton("Crear Aldeano", null);
@@ -143,6 +176,11 @@ public class VistaPrincipal extends BorderPane {
         contenedorVertical.setStyle("-fx-background-color: #8B4513;");
         contenedorVertical.setPadding(new Insets(20, 20, 20, 20));
         this.setRight(contenedorVertical);
+    }
+
+
+    public Mapa getElMapa() {
+        return this.elMapa;
     }
 
     public Casillero getCasilleroSeleccionado() {
@@ -225,9 +263,6 @@ public class VistaPrincipal extends BorderPane {
         contenedorVertical.setStyle("-fx-background-color: #8B4513;");
         contenedorVertical.setPadding(new Insets(20, 20, 20, 20));
         this.setRight(contenedorVertical);
-
-
-
 
 
     }
