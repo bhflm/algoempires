@@ -95,41 +95,41 @@ public class Jugador {
         unJuego.cambiarTurno();
     }
 
-    public void crearAldeano(Juego unJuego, PlazaCentral unaPlazaCentral, Mapa mapa, Posicion unaPosicion){
+    public void crearAldeano(Juego unJuego, PlazaCentral unaPlazaCentral, Mapa mapa){
         if (this.oro < 25){
             throw new OroInsuficienteError();
         }
-        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, unaPosicion);
+        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa);
         this.agregarUnidad(unAldeano);
         this.oro -= 25;
         unJuego.cambiarTurno();
     }
 
-    public void crearArquero(Juego unJuego, Cuartel unCuartel, Mapa mapa, Posicion unaPosicion){
+    public void crearArquero(Juego unJuego, Cuartel unCuartel, Mapa mapa){
         if (this.oro < 75){
             throw new OroInsuficienteError();
         }
-        Arquero unArquero = unCuartel.crearArquero(mapa, unaPosicion);
+        Arquero unArquero = unCuartel.crearArquero(mapa);
         this.agregarUnidad(unArquero);
         this.oro -= 75;
         unJuego.cambiarTurno();
     }
 
-    public void crearEspadachin(Juego unJuego, Cuartel unCuartel, Mapa mapa, Posicion unaPosicion){
+    public void crearEspadachin(Juego unJuego, Cuartel unCuartel, Mapa mapa){
         if (this.oro < 50){
             throw new OroInsuficienteError();
         }
-        Espadachin unEspadachin = unCuartel.crearEspadachin(mapa, unaPosicion);
+        Espadachin unEspadachin = unCuartel.crearEspadachin(mapa);
         this.agregarUnidad(unEspadachin);
         this.oro -= 50;
         unJuego.cambiarTurno();
     }
 
-    public void crearArmaDeAsedio(Juego unJuego, Castillo unCastillo, Mapa mapa, Posicion unaPosicion){
+    public void crearArmaDeAsedio(Juego unJuego, Castillo unCastillo, Mapa mapa){
         if (this.oro < 200){
             throw new OroInsuficienteError();
         }
-        ArmaDeAsedio unArmaDeAsedio = unCastillo.crearArmaDeAsedio(mapa, unaPosicion);
+        ArmaDeAsedio unArmaDeAsedio = unCastillo.crearArmaDeAsedio(mapa);
         this.agregarUnidad(unArmaDeAsedio);
         this.oro -= 200;
         unJuego.cambiarTurno();

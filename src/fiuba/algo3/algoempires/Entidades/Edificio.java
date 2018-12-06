@@ -4,6 +4,9 @@ import fiuba.algo3.algoempires.*;
 import fiuba.algo3.algoempires.Excepciones.AtaqueFueraDeRango;
 import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public abstract class Edificio implements Ubicable {
     protected int vidaMaxima;
     protected int vida;
@@ -12,32 +15,44 @@ public abstract class Edificio implements Ubicable {
     protected int turnosRestantes;
     protected Posicion PosicionEdificio;
     protected EstadoEdificio estado = new EstadoEdificioNormal();
-    protected boolean PisableEnElMapa=false;
+    protected boolean PisableEnElMapa = false;
     protected int rangoDeAtaque = 0;
-    protected  String Nombre;
+    protected String Nombre;
 
 
-    protected int danioProducidoPorArquero=10;
-    protected int danioProducidoPorCastillo=20;
-    protected int danioProducidoPorEspadachin=15;
-    protected int danioProducidoPorArmaDeAsedio=75;
+    protected int danioProducidoPorArquero = 10;
+    protected int danioProducidoPorCastillo = 20;
+    protected int danioProducidoPorEspadachin = 15;
+    protected int danioProducidoPorArmaDeAsedio = 75;
 
 
-
-    public EstadoEdificio getEstado() { return this.estado ;}
+    public EstadoEdificio getEstado() {
+        return this.estado;
+    }
 
     public int getVida() {
         return this.vida;
     }
-    public void setVida(int vidaNueva) {this.vida = vidaNueva;}
+
+    public void setVida(int vidaNueva) {
+        this.vida = vidaNueva;
+    }
+
     public int getCosto() {
         return this.costo;
     }
+
     public int getDimension() {
         return this.dimension;
     }
-    public int getVidaMaxima() {return this.vidaMaxima;}
-    public Posicion getPosicion(){return this.PosicionEdificio;}
+
+    public int getVidaMaxima() {
+        return this.vidaMaxima;
+    }
+
+    public Posicion getPosicion() {
+        return this.PosicionEdificio;
+    }
 
     public abstract void reparar(Aldeano unAldeano);
 
@@ -56,119 +71,158 @@ public abstract class Edificio implements Ubicable {
     public void asignarReparacion() {
         estado = new EstadoEdificioReparandose();
     }
+
     public void terminarReparacion() {
         this.estado = new EstadoEdificioNormal();
     }
 
     public void actualizarUbicacion(Posicion NuevaPosicion) {
-        this.PosicionEdificio=NuevaPosicion;
+        this.PosicionEdificio = NuevaPosicion;
     }
 
-    public void empezarConstruccion(){ this.estado = new EstadoEdificioConstruyendose();}
+    public void empezarConstruccion() {
+        this.estado = new EstadoEdificioConstruyendose();
+    }
 
-    public void construir(Aldeano unAldeano){
+    public void construir(Aldeano unAldeano) {
         turnosRestantes -= 1;
-        if (turnosRestantes == 0){
+        if (turnosRestantes == 0) {
             this.estado = new EstadoEdificioNormal();
         }
-        if (turnosRestantes == -1){
+        if (turnosRestantes == -1) {
             unAldeano.desocupar();
         }
     }
 
-    public void continuarRepararacion(Aldeano unAldeano){}
-
-    public void modificarPosicion(Posicion posicionEd){
-        this.PosicionEdificio=posicionEd;
+    public void continuarRepararacion(Aldeano unAldeano) {
     }
 
-    public void chequearPosicion(Posicion posicionUbicable, Posicion posicionEdificio, int dimension){
+    public void modificarPosicion(Posicion posicionEd) {
+        this.PosicionEdificio = posicionEd;
+    }
+
+    public void chequearPosicion(Posicion posicionUbicable, Posicion posicionEdificio, int dimension) {
         int posicionMinima = posicionEdificio.getCoordenadaHorizontal() - 1;
         int posicionMaxima = posicionEdificio.getCoordenadaHorizontal() + dimension;
 
-        if (posicionUbicable.getCoordenadaHorizontal() < posicionMinima || posicionUbicable.getCoordenadaVertical() > posicionMaxima){
+        if (posicionUbicable.getCoordenadaHorizontal() < posicionMinima || posicionUbicable.getCoordenadaVertical() > posicionMaxima) {
             throw new PosicionInvalidaException();
         }
     }
 
-    public void RecibirDanio(int danio){
+    public void RecibirDanio(int danio) {
         this.vida = this.vida - danio;
     }
 
-    public void recibirDanio(Arquero arquero){
-        Posicion posicionAtacable=this.PosicionEdificio;
-        Posicion posicionAtacante=arquero.PosicionUnidad;
-        boolean esAtacable=false;
-        boolean esAtacableDesde=false;
+    public void recibirDanio(Arquero arquero) {
+        Posicion posicionAtacable = this.PosicionEdificio;
+        Posicion posicionAtacante = arquero.PosicionUnidad;
+        boolean esAtacable = false;
+        boolean esAtacableDesde = false;
 
-        for(int i=0;i<this.dimension;i++){
-            for (int j=0;j<this.dimension;j++){
-                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
-                esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,arquero.rangoDeAtaque);
-                if(esAtacableDesde){
-                    esAtacable=true;}}}
-        if(esAtacable)
-            this.vida=this.vida-danioProducidoPorArquero;
+        for (int i = 0; i < this.dimension; i++) {
+            for (int j = 0; j < this.dimension; j++) {
+                Posicion posicionDelAtacable = posicionAtacable.PosicionCorridaA(i, j);
+                esAtacableDesde = posicionAtacante.estaAlAlcance(posicionDelAtacable, arquero.rangoDeAtaque);
+                if (esAtacableDesde) {
+                    esAtacable = true;
+                }
+            }
+        }
+        if (esAtacable)
+            this.vida = this.vida - danioProducidoPorArquero;
         else throw new AtaqueFueraDeRango();
     }
 
-    public void recibirDanio(Castillo castillo){
-        Posicion posicionAtacable=this.PosicionEdificio;
-        Posicion posicionAtacante=castillo.PosicionEdificio;
-        int dimensionAtacante=castillo.getDimension();
-        boolean esAtacableDesde=false;
-        boolean esAtacable=false;
-        for(int i=0;i<dimensionAtacante;i++){
-            for (int j=0;j<dimensionAtacante;j++){
-                for(int k=0;k<this.dimension;k++){
-                    for(int f=0;f<this.dimension;f++){
-                        Posicion posicionDelAtacante=posicionAtacante.PosicionCorridaA(i,j);
-                        Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(k,f);
-                        esAtacableDesde=posicionDelAtacable.estaAlAlcance(posicionDelAtacante,castillo.rangoDeAtaque);
-                        if(esAtacableDesde){
-                            esAtacable=true;}}}}}
-        if(esAtacable)
-            this.vida=this.vida-danioProducidoPorCastillo;
+    public void recibirDanio(Castillo castillo) {
+        Posicion posicionAtacable = this.PosicionEdificio;
+        Posicion posicionAtacante = castillo.PosicionEdificio;
+        int dimensionAtacante = castillo.getDimension();
+        boolean esAtacableDesde = false;
+        boolean esAtacable = false;
+        for (int i = 0; i < dimensionAtacante; i++) {
+            for (int j = 0; j < dimensionAtacante; j++) {
+                for (int k = 0; k < this.dimension; k++) {
+                    for (int f = 0; f < this.dimension; f++) {
+                        Posicion posicionDelAtacante = posicionAtacante.PosicionCorridaA(i, j);
+                        Posicion posicionDelAtacable = posicionAtacable.PosicionCorridaA(k, f);
+                        esAtacableDesde = posicionDelAtacable.estaAlAlcance(posicionDelAtacante, castillo.rangoDeAtaque);
+                        if (esAtacableDesde) {
+                            esAtacable = true;
+                        }
+                    }
+                }
+            }
+        }
+        if (esAtacable)
+            this.vida = this.vida - danioProducidoPorCastillo;
         else throw new AtaqueFueraDeRango();
     }
 
-    public void recibirDanio(Espadachin espadachin){
-        Posicion posicionAtacable=this.PosicionEdificio;
-        Posicion posicionAtacante=espadachin.PosicionUnidad;
-        boolean esAtacable=false;
-        boolean esAtacableDesde=false;
+    public void recibirDanio(Espadachin espadachin) {
+        Posicion posicionAtacable = this.PosicionEdificio;
+        Posicion posicionAtacante = espadachin.PosicionUnidad;
+        boolean esAtacable = false;
+        boolean esAtacableDesde = false;
 
-        for(int i=0;i<this.dimension;i++){
-            for (int j=0;j<this.dimension;j++){
-                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
-                esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,espadachin.rangoDeAtaque);
-                if(esAtacableDesde){
-                    esAtacable=true;}}}
-        if(esAtacable)
-            this.vida=this.vida-danioProducidoPorEspadachin;
+        for (int i = 0; i < this.dimension; i++) {
+            for (int j = 0; j < this.dimension; j++) {
+                Posicion posicionDelAtacable = posicionAtacable.PosicionCorridaA(i, j);
+                esAtacableDesde = posicionAtacante.estaAlAlcance(posicionDelAtacable, espadachin.rangoDeAtaque);
+                if (esAtacableDesde) {
+                    esAtacable = true;
+                }
+            }
+        }
+        if (esAtacable)
+            this.vida = this.vida - danioProducidoPorEspadachin;
         else throw new AtaqueFueraDeRango();
     }
 
-    public void recibirDanio(ArmaDeAsedio armaDeAsedio){
-        Posicion posicionAtacable=this.PosicionEdificio;
-        Posicion posicionAtacante=armaDeAsedio.PosicionUnidad;
-        boolean esAtacable=false;
-        boolean esAtacableDesde=false;
+    public void recibirDanio(ArmaDeAsedio armaDeAsedio) {
+        Posicion posicionAtacable = this.PosicionEdificio;
+        Posicion posicionAtacante = armaDeAsedio.PosicionUnidad;
+        boolean esAtacable = false;
+        boolean esAtacableDesde = false;
 
-        for(int i=0;i<this.dimension;i++){
-            for (int j=0;j<this.dimension;j++){
-                Posicion posicionDelAtacable=posicionAtacable.PosicionCorridaA(i,j);
-                esAtacableDesde=posicionAtacante.estaAlAlcance(posicionDelAtacable,armaDeAsedio.rangoDeAtaque);
-                if(esAtacableDesde){
-                    esAtacable=true;}}}
-        if(esAtacable)
-            this.vida=this.vida-danioProducidoPorArmaDeAsedio;
+        for (int i = 0; i < this.dimension; i++) {
+            for (int j = 0; j < this.dimension; j++) {
+                Posicion posicionDelAtacable = posicionAtacable.PosicionCorridaA(i, j);
+                esAtacableDesde = posicionAtacante.estaAlAlcance(posicionDelAtacable, armaDeAsedio.rangoDeAtaque);
+                if (esAtacableDesde) {
+                    esAtacable = true;
+                }
+            }
+        }
+        if (esAtacable)
+            this.vida = this.vida - danioProducidoPorArmaDeAsedio;
         else throw new AtaqueFueraDeRango();
     }
-    
-    public int getRango(){return this.rangoDeAtaque;};
-    public String getNombre(){
+
+    public int getRango() {
+        return this.rangoDeAtaque;
+    }
+
+    public String getNombre() {
         return this.Nombre;
     }
-    public int vidaActual(){return this.vida;}
+
+    public int vidaActual() {
+        return this.vida;
+    }
+
+    protected Set<Posicion> getPosicionesAdyacentes() {
+        Set<Posicion> posicionesAdyacentes = new HashSet<>();
+        int inicioX = this.PosicionEdificio.getCoordenadaHorizontal() - 1;
+        int finX = this.PosicionEdificio.getCoordenadaHorizontal() + this.dimension + 1;
+        int inicioY = this.PosicionEdificio.getCoordenadaVertical() - 1;
+        int finY = this.PosicionEdificio.getCoordenadaVertical() + this.dimension + 1;
+
+        for (int col = inicioX; col < finX; col++) {
+            for (int row = inicioY; row < finY; row++) {
+                posicionesAdyacentes.add(new Posicion(col,row));
+            }
+        }
+        return posicionesAdyacentes;
+    }
 }
