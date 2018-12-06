@@ -123,7 +123,7 @@ public class JugadorTest {
     public void test08EdificioAtacadoSiguePerteneciendoAJugador() {
         Jugador unJugador = new Jugador("Foo1");
         Jugador otroJugador = new Jugador("Foo2");
-
+        Mapa mapa = new Mapa(15,15);
         Espadachin unEspadachin = new Espadachin();
         Posicion pos1 = new Posicion(5, 5);
         unEspadachin.modificarPosicion(pos1);
@@ -135,7 +135,7 @@ public class JugadorTest {
         otroJugador.agregarEdificio(plazaCentral);
 
         unEspadachin.atacarA(plazaCentral);
-        otroJugador.removerEdificiosDestruidos();
+        otroJugador.removerEdificiosDestruidos(mapa);
 
         assertTrue(otroJugador.perteneceUnidad(plazaCentral));
     }
@@ -144,6 +144,7 @@ public class JugadorTest {
     public void test09EdificioDestruidoDejaDePertenecerAJugador() {
         Jugador unJugador = new Jugador("Foo1");
         Jugador otroJugador = new Jugador("Foo2");
+        Mapa mapa = new Mapa(15,15);
 
         Espadachin unEspadachin = new Espadachin();
         Posicion pos1 = new Posicion(5, 5);
@@ -159,7 +160,7 @@ public class JugadorTest {
         for (int i = 0; i < 30; i++) {
             unEspadachin.atacarA(plazaCentral);
         }
-        otroJugador.removerEdificiosDestruidos();
+        otroJugador.removerEdificiosDestruidos(mapa);
 
         assertFalse(otroJugador.perteneceUnidad(plazaCentral));
     }

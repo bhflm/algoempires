@@ -68,12 +68,13 @@ public class Jugador {
         return this.oro;
     }
 
-    public void realizarAtaque(Atacante MiAtacante, Ubicable MiObjetivo){
+    public void realizarAtaque(Juego unJuego, Atacante MiAtacante, Ubicable MiObjetivo){
         boolean EstaUnidadEsMia=this.perteneceUnidad(MiObjetivo);
         if(!EstaUnidadEsMia){
             try{MiAtacante.atacarA(MiObjetivo);}
             catch(AtaqueFueraDeRango e){throw new AtaqueFueraDeRango();}}
         else throw new JugadaInvalidaException();
+        unJuego.cambiarTurno();
     }
 
     public void construirCuartel(Juego unJuego, Mapa unMapa, Aldeano unAldeano, Posicion unaPosicion){
@@ -182,10 +183,18 @@ public class Jugador {
         unidadesJugador.removeAll(unidadesMuertas);
     }
 
-    public void removerEdificiosDestruidos(){
+    public void removerEdificiosDestruidos(Mapa miMapa){
         List<Edificio> edificiosDestruidos = new ArrayList<Edificio>();
         for (Edificio edificio: edificiosJugador){
             if (edificio.getVida() <= 0){
+                int inicioX = edificio.getPosicion().getCoordenadaHorizontal();
+                int inicioY = edificio.getPosicion().getCoordenadaVertical();
+                int dimension = edificio.getDimension();
+                for (int x=inicioX; x<inicioX + dimension; x++){
+                    for(int y=inicioY; y<inicioY + dimension; y++){
+                        miMapa.UbicarUnidadEnMapa(new Posicion(x,y),new EspacioLibre());
+                    }
+                }
                 edificiosDestruidos.add(edificio);
                 if (edificio instanceof Castillo){
                     this.perdio = true;
