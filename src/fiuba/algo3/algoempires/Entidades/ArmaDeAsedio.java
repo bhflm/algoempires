@@ -1,10 +1,11 @@
 package fiuba.algo3.algoempires.Entidades;
 
+import fiuba.algo3.algoempires.Atacante;
 import fiuba.algo3.algoempires.Movible;
 import fiuba.algo3.algoempires.Posicion;
 import fiuba.algo3.algoempires.Ubicable;
 
-public class ArmaDeAsedio extends Unidad implements Movible {
+public class ArmaDeAsedio extends Unidad implements Movible, Atacante {
 
     public ArmaDeAsedio() {
         vida = 150;
@@ -14,7 +15,6 @@ public class ArmaDeAsedio extends Unidad implements Movible {
         this.PosicionUnidad=new Posicion(0,0);
         this.rangoDeAtaque = 5;
         this.Nombre="ArmaDeAsedio";
-
 
     }
 
