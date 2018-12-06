@@ -25,7 +25,6 @@ public class VistaPrincipal extends BorderPane {
     ImportadorMapa importadorMapa;
     Jugador unJugador;
     Jugador otroJugador;
-    Jugador jugadorEnTurno;
     Juego juegoAlgoEmpires;
     Boton botonMoverse;
     Boton botonAtacar;
@@ -62,7 +61,6 @@ public class VistaPrincipal extends BorderPane {
         this.otroJugador = new Jugador("Bar");
         int dimensionMapa = 15;
         this.juegoAlgoEmpires.comenzarJuego(unJugador, otroJugador, dimensionMapa);
-        this.jugadorEnTurno=this.juegoAlgoEmpires.getActual();
         this.importadorMapa=new ImportadorMapa();
         this.elMapa = importadorMapa.GenerarMapa(this.juegoAlgoEmpires.getmapa());
         this.crearTablero(elMapa);
@@ -232,7 +230,7 @@ public class VistaPrincipal extends BorderPane {
     }
 
     public Jugador elJugadorActualEs() {
-    return this.jugadorEnTurno;
+    return this.elJuegoEs().getActual();
     }
 
     public void borrarSetAcciones(){
@@ -289,9 +287,6 @@ public class VistaPrincipal extends BorderPane {
         return this.unidadAmover;
     }
 
-    public void cambiarJugadorEnTurno(Juego elJuego) {
-        this.jugadorEnTurno=elJuego.getActual();
-    }
 
     public void actualizarTableroPorMovimiento(Posicion posActual, Posicion posSiguiente) {
         int dimenRow = this.elJuegoEs().getmapa().getLargoHorizontal();

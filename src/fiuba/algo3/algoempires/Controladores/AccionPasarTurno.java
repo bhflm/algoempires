@@ -16,7 +16,6 @@ public class AccionPasarTurno implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent){
         Juego elJuego=this.vistaPrincipal.elJuegoEs();
-        vistaPrincipal.cambiarJugadorEnTurno(elJuego);
         elJuego.cambiarTurno();
         vistaPrincipal.actualizarTableroV2(elJuego.getmapa());
         vistaPrincipal.borrarSetAcciones();

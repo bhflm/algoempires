@@ -46,25 +46,12 @@ public class ejecutarAccion implements EventHandler<ActionEvent> {
                 }
 
             }
-        else if(vistaTableroJuegoActual.nombreAccion.equals("CrearAldeano")) {
-            jugador.crearAldeano(elJuego, (PlazaCentral) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), elJuego.getmapa(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
-        }
-        else if(vistaTableroJuegoActual.nombreAccion.equals("CrearArquero")) {
-            jugador.crearArquero(elJuego, (Cuartel) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), elJuego.getmapa(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
-        }
-        else if(vistaTableroJuegoActual.nombreAccion.equals("CrearArmaDeAsedio")) {
-            jugador.crearArmaDeAsedio(elJuego, (Castillo) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), elJuego.getmapa(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
-        }
-        else if(vistaTableroJuegoActual.nombreAccion.equals("CrearEspadachin")) {
-            jugador.crearEspadachin(elJuego, (Cuartel) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), elJuego.getmapa(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
-        }
         else if(vistaTableroJuegoActual.nombreAccion.equals("Reparar")) {
             jugador.reparar(elJuego,elJuego.getmapa(),(Aldeano)vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(),(Edificio) vistaTableroJuegoActual.getCasilleroOfrecido().getUbicable());
         }
 
 
             if(elMovimientoEsValido){
-        vistaTableroJuegoActual.cambiarJugadorEnTurno(elJuego);
         vistaTableroJuegoActual.actualizarTableroV2(elJuego.getmapa());
         vistaTableroJuegoActual.borrarSetAcciones();
         vistaTableroJuegoActual.setAcciones();

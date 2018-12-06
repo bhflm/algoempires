@@ -65,7 +65,7 @@ public class Casillero extends Rectangle {
     public void mostrarPosiblesAcciones(VistaPrincipal vistaPrincipal) {
         vistaPrincipal.desactivarBotones();
         Ubicable elUbicableDelCasillero = this.miUbicable;
-        Jugador JugadorActual=vistaPrincipal.elJugadorActualEs();
+        Jugador JugadorActual=vistaPrincipal.elJuegoEs().getActual();
         if(JugadorActual.perteneceUnidad(elUbicableDelCasillero)) {
             if (elUbicableDelCasillero instanceof Movible){
                 vistaPrincipal.activarBotonMoverse();
