@@ -17,8 +17,11 @@ public class ConstruirCuartel implements javafx.event.EventHandler<ActionEvent> 
     @Override
     public void handle(ActionEvent actionEvent){
         Juego elJuego=vistaPrincipal.elJuegoEs();
+
         vistaPrincipal.ofrecerCasilleros(vistaPrincipal.getElMapa());
-        System.out.println("casillero ofrecido");
+
+
+        
     }
 
 

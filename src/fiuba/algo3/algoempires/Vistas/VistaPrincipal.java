@@ -182,6 +182,7 @@ public class VistaPrincipal extends BorderPane {
 
     public void asignarCasilleroOfrecido(Casillero casillero) {
         this.casilleroOfrecido = casillero;
+        casillero.printNombre();
     }
 
     public void activarBotonMoverse() {
