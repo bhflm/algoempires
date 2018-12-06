@@ -16,7 +16,7 @@ public class JuegoTest {
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
 
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
         assertEquals(unJugador.getNombre(),unJuego.getNombreActual());
     }
 
@@ -25,8 +25,8 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
-        unJuego.cambiarTurno();
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
+        unJuego.cambiarJugadorActual();
         assertEquals(otroJugador.getNombre(),unJuego.getNombreActual());
     }
 
@@ -35,7 +35,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
         unJuego.cambiarTurno();
         unJuego.cambiarTurno();
         assertEquals(unJugador.getNombre(),unJuego.getNombreActual());
@@ -46,7 +46,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
 
         Aldeano unAldeano = new Aldeano();
         Mapa unMapa = new Mapa(4,4);
@@ -69,7 +69,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
 
         Arquero unArquero = new Arquero();
         Mapa unMapa = new Mapa(4,4);
@@ -93,7 +93,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
 
         ArmaDeAsedio unArmaAsedio = new ArmaDeAsedio();
         Mapa unMapa = new Mapa(4,4);
@@ -115,7 +115,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
 
         Espadachin unEspadachin = new Espadachin();
         Mapa unMapa = new Mapa(4,4);
@@ -138,7 +138,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
 
         Espadachin unEspadachin = new Espadachin();
         Mapa unMapa = new Mapa(4,4);
@@ -161,7 +161,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
 
         Espadachin unEspadachin = new Espadachin();
         Mapa unMapa = new Mapa(4,4);
@@ -185,7 +185,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
 
         Espadachin unEspadachin = new Espadachin();
         Mapa unMapa = new Mapa(4,4);
@@ -208,7 +208,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
 
         Espadachin unEspadachin = new Espadachin();
         Mapa unMapa = new Mapa(4,4);
@@ -227,7 +227,7 @@ public class JuegoTest {
         Juego unJuego = new Juego();
         Jugador unJugador = new Jugador("Foo");
         Jugador otroJugador = new Jugador("Bar");
-        unJuego.iniciarJuego(unJugador,otroJugador);
+        unJuego.comenzarJuego(unJugador,otroJugador,15);
 
         boolean seLanzoError = false;
 

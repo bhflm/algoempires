@@ -87,15 +87,19 @@ public class Juego {
 
     public void cambiarTurno() {
         if (!finalizoJuego()) {
-            Jugador aux = this.actual;
-            this.actual = this.esperando;
-            this.esperando = aux;
+            this.cambiarJugadorActual();
             this.actual.recaudarOro();
-           // this.actual.CastilloRealizaAtaqueMasivo(this.actual.elCastilloDelJugador(),this.mapa);
+            this.actual.CastilloRealizaAtaqueMasivo(this.actual.elCastilloDelJugador(),this.mapa);
             this.actual.removerUnidadesMuertas(mapa);
             this.actual.removerEdificiosDestruidos();
             this.numeroDeTurno=this.numeroDeTurno+1;
         }
+    }
+
+    public void cambiarJugadorActual(){
+        Jugador aux = this.actual;
+        this.actual = this.esperando;
+        this.esperando = aux;
     }
 
     public boolean finalizoJuego(){

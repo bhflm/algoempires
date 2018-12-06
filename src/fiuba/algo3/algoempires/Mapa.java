@@ -54,7 +54,7 @@ private void GenerarPosiciones(){
             }
         }
 
-        //Ubicaciones.put(PosicionUnidad,Unidad);
+        Ubicaciones.put(PosicionUnidad,Unidad);
         Unidad.actualizarUbicacion(PosicionUnidad);
 
     }
