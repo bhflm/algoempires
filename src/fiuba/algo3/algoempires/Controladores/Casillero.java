@@ -48,6 +48,11 @@ public class Casillero extends Rectangle {
         this.setStroke(Color.BLACK);
     }
 
+
+    public void confirmarCasillero(VistaPrincipal vista){
+        vista.mostrarConfirmacion();
+    }
+
     public void seleccionarCasilleroOfrecido(VistaPrincipal vista) {
         vista.asignarCasilleroOfrecido(this);
         this.setStroke(Color.YELLOWGREEN);

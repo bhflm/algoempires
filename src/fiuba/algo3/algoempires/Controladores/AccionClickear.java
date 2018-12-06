@@ -27,10 +27,12 @@ public class AccionClickear implements javafx.event.EventHandler<MouseEvent> {
 
     @Override
     public void handle(MouseEvent actionEvent){
-        System.out.println("DISPARO EVENTO MOUSE");
+        Casillero ofrecidoPrevio = vistaTableroJuegoActual.getCasilleroOfrecido();
+        if(ofrecidoPrevio != null){
+            ofrecidoPrevio.desSeleccionarCasillero(vistaTableroJuegoActual);
+        }
         casilleroOfrecido.seleccionarCasilleroOfrecido(vistaTableroJuegoActual);
-
-        // vistaTableroJuegoActual.mostrarInformacionCasillero(casilleroOfrecido);
-
+        casilleroOfrecido.confirmarCasillero(this.vistaTableroJuegoActual);
     }
+
 }

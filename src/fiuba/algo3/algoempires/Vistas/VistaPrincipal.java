@@ -52,6 +52,7 @@ public class VistaPrincipal extends BorderPane {
     String textoVida;
     Label labelVida;
     Label labelOro;
+    Boton botonConfirmar;
 
 
     public VistaPrincipal() {
@@ -238,6 +239,16 @@ public class VistaPrincipal extends BorderPane {
         this.getChildren().remove(this.contenedorVertical);
     }
 
+    public void mostrarConfirmacion() {
+        this.botonConfirmar = new Boton("Confirmar Casillero", null);
+        this.contenedorVertical = new VBox(botonConfirmar);
+        contenedorVertical.setPrefWidth(200);
+        contenedorVertical.setSpacing(20);
+        contenedorVertical.setStyle("-fx-background-color: #8B4513;");
+        contenedorVertical.setPadding(new Insets(20, 20, 20, 20));
+        this.setRight(contenedorVertical);
+    };
+
     public void mostrarMenuDirecciones() {
         this.botonArriba = new Boton("Arriba ", new AccionMover(this,new DireccionSuperiorVertical()));
         this.botonArribaIzquierda = new Boton("Arriba Izquierda", new AccionMover(this,new DireccionDiagonalIzquierdaSuperior()));
@@ -255,7 +266,6 @@ public class VistaPrincipal extends BorderPane {
         contenedorVertical.setStyle("-fx-background-color: #8B4513;");
         contenedorVertical.setPadding(new Insets(20, 20, 20, 20));
         this.setRight(contenedorVertical);
-
 
     }
     public void actualizarTablero(){
