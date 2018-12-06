@@ -26,15 +26,17 @@ public class ejecutarAccion implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         Juego elJuego = vistaTableroJuegoActual.elJuegoEs();
         Jugador jugador = elJuego.getActual();
+        System.out.println("ACCION");
         if (vistaTableroJuegoActual.nombreAccion.equals("ConstruirCuartel")) {
             jugador.construirCuartel(elJuego, elJuego.getmapa(), (Aldeano) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
+        }
+        if (vistaTableroJuegoActual.nombreAccion.equals("ConstruirPlazaCentral")) {
+            jugador.construirPlazaCentral(elJuego, elJuego.getmapa(), (Aldeano) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
         }
 
         vistaTableroJuegoActual.cambiarJugadorEnTurno(elJuego);
         vistaTableroJuegoActual.actualizarTablero();
         vistaTableroJuegoActual.borrarSetAcciones();
         vistaTableroJuegoActual.setAcciones();
-
-
     }
 }
