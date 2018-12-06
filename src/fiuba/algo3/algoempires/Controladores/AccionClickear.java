@@ -10,12 +10,27 @@ import javax.swing.*;
 
 public class AccionClickear implements javafx.event.EventHandler<MouseEvent> {
 
-    public AccionClickear() {
+    int dimension;
+    ImportadorMapa transformadorCoordernadas;
+    VistaPrincipal vistaTableroJuegoActual;
+    Casillero casilleroOfrecido;
+    GridPane gridpane;
+
+
+    public AccionClickear(VistaPrincipal vistaPrincipal, GridPane tablero,Casillero casillero,ImportadorMapa importadorMapa,int dimenRow) {
+        this.vistaTableroJuegoActual=vistaPrincipal;
+        this.casilleroOfrecido=casillero;
+        this.gridpane=tablero;
+        this.transformadorCoordernadas=importadorMapa;
+        this.dimension=dimenRow;
     }
 
     @Override
     public void handle(MouseEvent actionEvent){
         System.out.println("DISPARO EVENTO MOUSE");
+        casilleroOfrecido.seleccionarCasilleroOfrecido(vistaTableroJuegoActual);
+
+        // vistaTableroJuegoActual.mostrarInformacionCasillero(casilleroOfrecido);
 
     }
 }

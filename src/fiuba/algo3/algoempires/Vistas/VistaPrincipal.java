@@ -19,6 +19,7 @@ import java.util.HashMap;
 public class VistaPrincipal extends BorderPane {
     Mapa elMapa;
     Casillero casilleroSeleccionado;
+    Casillero casilleroOfrecido;
     Movible unidadAmover;
     ImportadorMapa importadorMapa;
     Jugador unJugador;
@@ -122,33 +123,16 @@ public class VistaPrincipal extends BorderPane {
 
 
 
-    public Node getNodeByRowColumnIndex (final int row, final int column, GridPane gridPane) {
-        Node result = null;
-        ObservableList<Node> childrens = gridPane.getChildren();
-
-        for (Node node : childrens) {
-//            System.out.println(gridPane.getColumnIndex(node));
-//            System.out.println(gridPane.getRowIndex(node));
-            if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
-                result = node;
-                break;
-            }
-        }
-        return result;
-    }
-
-
     public void ofrecerCasilleros(Mapa miMapa) {
         int dimenRow = miMapa.getLargoHorizontal();
         int dimenCol = miMapa.getLargoVertical();
 
-
         for (int row = 0; row < dimenRow; row++)
             for (int col = 0; col < dimenCol; col++) {
-                Casillero a = (Casillero) (gridPane.getChildren().get(row*(15)+col));
-                System.out.println(a);
-                a.setOnMouseClicked(new AccionClickear());
+                Casillero casillero = (Casillero) (gridPane.getChildren().get(row*(15)+col));
+                casillero.setOnMouseClicked(new AccionClickear(this, gridPane, casillero,this.importadorMapa,dimenRow));
             }
+
     }
 
 
@@ -186,8 +170,17 @@ public class VistaPrincipal extends BorderPane {
         return this.casilleroSeleccionado;
     }
 
+
+    public Casillero getCasilleroOfrecido() {
+        return this.casilleroOfrecido;
+    }
+
     public void asignarCasilleroActual(Casillero casillero) {
         this.casilleroSeleccionado = casillero;
+    }
+
+    public void asignarCasilleroOfrecido(Casillero casillero) {
+        this.casilleroOfrecido = casillero;
     }
 
     public void activarBotonMoverse() {
