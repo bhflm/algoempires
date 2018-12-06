@@ -9,6 +9,7 @@ public class Juego {
     protected Jugador actual;
     protected Jugador esperando;
     boolean finalizado = false;
+    int numeroDeTurno=0;
 
     protected Mapa mapa;
 
@@ -29,8 +30,8 @@ public class Juego {
     }
 
     private void agregarCastillosIniciales(Jugador unJugador, Jugador otroJugador, Mapa miMapa, int dimensionMapa) {
-        Castillo castilloUnJugador=new Castillo();
         Posicion posicionCastilloUnJugador=new Posicion((dimensionMapa/2+3),1);
+        Castillo castilloUnJugador=new Castillo();
         unJugador.agregarEdificio(castilloUnJugador);
         miMapa.UbicarUnidadEnMapa(posicionCastilloUnJugador,castilloUnJugador);
         Castillo castilloOtroJugador=new Castillo();
@@ -86,11 +87,19 @@ public class Juego {
 
     public void cambiarTurno() {
         if (!finalizoJuego()) {
-            Jugador aux = this.actual;
-            this.actual = this.esperando;
-            this.esperando = aux;
+            this.cambiarJugadorActual();
             this.actual.aldeanosTrabajar();
+            this.actual.CastilloRealizaAtaqueMasivo(this.actual.elCastilloDelJugador(),this.mapa);
+            this.actual.removerUnidadesMuertas(mapa);
+            this.actual.removerEdificiosDestruidos();
+            this.numeroDeTurno=this.numeroDeTurno+1;
         }
+    }
+
+    public void cambiarJugadorActual(){
+        Jugador aux = this.actual;
+        this.actual = this.esperando;
+        this.esperando = aux;
     }
 
     public boolean finalizoJuego(){
@@ -99,5 +108,9 @@ public class Juego {
 
     public Mapa getmapa() {
         return this.mapa;
+    }
+
+    public int numeroDeTurno() {
+        return this.numeroDeTurno;
     }
 }

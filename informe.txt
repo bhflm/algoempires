@@ -1,0 +1,183 @@
+\documentclass[titlepage,a4paper]{article}
+
+\usepackage{a4wide}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,bookmarksopen=true]{hyperref}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{float}
+
+\pagestyle{fancy} % Encabezado y pie de página
+\fancyhf{}
+\fancyhead[L]{TP2}
+\fancyhead[R]{Algoritmos y Programación III - FIUBA}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+\begin{titlepage} % Carátula
+	\hfill\includegraphics[width=6cm]{logofiuba.jpg}
+    \centering
+    \vfill
+    \Huge \textbf{Trabajo Práctico 2 — AlgoEmpires}
+    \vskip2cm
+    \Large [7507/9502] Algoritmos y Programación III\\
+    Curso 1 \\ % Curso 1 para el de la tarde y 2 para el de la noche
+    Segundo cuatrimestre de 2018 
+    \vfill
+    \begin{tabular}{ | l | l | } % Datos del alumno
+      \hline
+      Bonin German: & 99050 \\ \hline
+      Copertini Felipe: & 101651 \\ \hline
+      Funes Pablo: & 94894 \\ \hline
+  	\end{tabular}
+    \vfill
+    \vfill
+\end{titlepage}
+
+\tableofcontents % Índice general
+\newpage
+
+\section{Introducción}\label{sec:intro}
+El presente informe reune la documentación de la solución del trabajo práctico final de la materia Algoritmos y Programación III que consiste en desarrollar una aplicación similar al juego "Age of Empires" conceptos del paradigma de la orientación a objetos vistos en el curso.
+
+\section{Supuestos}\label{sec:supuestos}
+
+Acciones del Jugador : Las acciones de un jugador son limitadas a un turno. Es decir, por cada accion que tome este, es lo que le va a costar el turno. Sea mover la unidad, sea atacar, construir, etc. Esta permitido nada mas realizar una por turno. 
+
+
+\section{Modelo de dominio}\label{sec:modelo}
+% Explicación concisa del diseño general del trabajo.
+
+Paquete modelo:
+
+Clase Juego : Representa el flujo del juego.
+
+Clase Jugador: Representa un modelo de cada jugador con sus atributos predefinidos (pobla-
+cion, oro), y ademas contiene sus respectivas acciones que puede realizar a lo largo del juego. Clase Mapa: Representa una abstraccion de lo que nos guiariamos como mapa del juego. 
+
+Clase Unidad: Es una representacion de los tipos de unidades con los que contamos en el
+juego. Clases como Arquero, Espadachin, ArmaDeAsedio, Aldeano, heredan de ella. Ya que todas cuentan con al menos caracteristicas similares que necesitan utilizar.
+
+Clase Edificio: Representacion de los tipos de edificios con los que vamos a trabajar a lo largo del desarrollo del trabajo. Contamos con Castillo, Plaza Central, y Cuartel.
+
+Clase Mapa: Es la representacion del tablero donde va a ocurrir todo, este consta de posiciones donde cada una contiene la informacion lleva al momento (Unidades, Edificios, o espacios vacios).
+
+Paquete Vista:
+
+RegistradorJugadores: Es la vista inicial del programa, en esta se almacena los nombres de ambos jugadores. Posee un Boton que nos permite iniciar el Juego.
+
+Clase Boton: Es el accionable que controla el flujo del programa. Nos permite transitar de una escena a otra durante el juego. 
+
+VistaPrincipal: Es donde transcurre todo el juego. Cuenta con las acciones permitidas al jugador y  la representacion del mapa.  
+
+Paquete Controladores: 
+
+Casillero: Representacion de la celda del tablero. Contiene la informacion tanto visual como la representacion del codigo de quien esta ocupando la celda del mapa. 
+
+EmpezarJuego: Es el flujo de transicion de una escena a otra. 
+
+InputUsuario: Encargado de capturar el texto ingresado por pantalla. 
+
+
+\section{Diagramas de clase}\label{sec:diagramasdeclase}
+% Uno o varios diagramas de clases mostrando las relaciones estáticas entre las clases.  Puede agregarse todo el texto necesario para aclarar y explicar su diseño. Recuerden que la idea de todo el documento es que quede documentado y entendible cómo está implementada la solución.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.2\textwidth]{diagramaClase.jpeg}
+\caption{\label{fig:class01}Diagrama de clase.}
+\end{figure}
+
+\section{Detalles de implementación}\label{sec:implementacion}
+% Explicaciones sobre la implementación interna de algunas clases que consideren que puedan llegar a resultar interesantes.
+
+\subsection {Unidad y Edificio}
+
+El daño que reciben de parte de otras unidades es un atributo. Cada unidad que te ataca, afecta al mismo conjunto por igual. Ejemplo: si un arquero ataca a un edificio, le pega por igual a todos. 
+El objeto que recibe daño es el encargado de quitarse los puntos de vida, ya que este sabe que "tipo de dato" lo ataca. 
+
+\begin{verbatim}
+public abstract class Edificio implements Ubicable {
+    protected int vidaMaxima;
+    [....]
+    protected int danioProducidoPorArquero=10;
+    protected int danioProducidoPorCastillo=20;
+    protected int danioProducidoPorEspadachin=15;
+    protected int danioProducidoPorArmaDeAsedio=75;
+    [....]
+\end{verbatim}
+
+\begin{verbatim}
+public abstract class Unidad{
+    protected int vida;
+    protected int costo;
+    [...]
+    protected int puntosDeAtaque=0;
+    protected int danioProducidoPorArquero=15;
+    protected int danioProducidoPorCastillo=20;
+    protected int getDanioProducidoPorEspadachin=25;
+    protected int getDanioProducidoPorArmaDeAsedio=0;
+    [...]
+\end{verbatim}
+
+
+\subsection{Acciones del jugador}
+Como comentamos en el supuesto, la menos engorrosa de tener un flujo claro del juego para nosotros fue concluir de que cada turno del jugador iba a estar limitado a la accion que este realice. 
+Sea atacar una unidad, construir un edificio, o crear un Aldeano. 
+Optar por la otra implementacion donde cada  jugador podria realizar una cantidad x de acciones por turno, implicaba llevar un "trackeo" de todas las unidades hasta el momento y tambien considerar si estas realizaron alguna accion. 
+
+De esta manera nosotros pudimos condensar el flujo del juego en las acciones, lo cual consideramos que es un mas legible que la otra implementacion.
+
+
+Un ejemplo para mostrar es mover una unidad en el mapa: 
+\begin{verbatim}
+    public void moverUnidad(Juego unJuego, Mapa unMapa, Movible unaUnidad, Direccion unaDireccion){
+        Posicion posicionMover = unaDireccion.ObtenerPosicion(unaUnidad);
+        unMapa.MoverUnidad(posicionMover,unaUnidad);
+        if (unJuego.getNombreActual() != this.nombre ){
+            throw new JugadaInvalidaException();
+        }
+        unJuego.cambiarTurno();
+    }
+\end{verbatim}
+
+\section{Excepciones}\label{sec:excepciones}
+% Explicación de cada una de las excepciones creadas y con qué fin fueron creadas.
+
+\begin{description}
+\item[AldeanoOcupadoException] Sucede cuando se intenta cambiar el estado de un Aldeano y este ya esta realizando otra tarea en el momento. Por tarea puede entenderse construir un edificio, o repararlo.
+
+\item[AtaqueFueraDeRango] Cuando una unidad intenta atacar fuera del rango que tiene permitido se levanta esta excepcion. 
+
+\item[DimensionInvalidaMapa] Cuando se intenta crear un mapa con dimensiones invalidas 
+
+\item[TopePoblacionExcepcion] Se lanza esta excepcion si se intenta sumar una unidad mas cuando ya se alcanzo el limite de poblacion. 
+
+\item[MovimientoFueraDelMapa] Se lanza cuando se intenta mover una unidad a rangos invalidos para el mapa. 
+
+\item[JugadaInvalidaExcepcion] Se lanza cuando se intenta jugar en un turno que no corresponde. 
+
+\item[UbicacionFueraDelMapaExcepcion] Se lanza cuando se intenta acceder a una Ubicacion invalida en el mapa.  
+
+\item[UbicacionOcupadaPorOtraUnidad] Se lanza cuando se intenta pisar una unidad en la ubicacion. 
+
+
+\end{description}
+
+\section{Diagramas de secuencia}\label{sec:diagramasdesecuencia}
+% Mostrar las secuencias interesantes que hayan implementado. Pueden agregar texto para explicar si algo no queda claro.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{realizarAtaque.jpeg}
+\caption{\label{fig:seq02}Realizar ataque.}
+\end{figure}
+
+
+\end{document}
