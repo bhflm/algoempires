@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
+import java.awt.*;
 import java.util.HashMap;
 
 public class VistaPrincipal extends BorderPane {
@@ -98,7 +99,7 @@ public class VistaPrincipal extends BorderPane {
         gridPane.setMaxWidth(30);
         gridPane.setMaxHeight(40);
         this.setCenter(gridPane);
-        gridPane.setGridLinesVisible(true);
+        // gridPane.setGridLinesVisible(true);
         int dimenRow = miMapa.getLargoHorizontal();
         int dimenCol = miMapa.getLargoVertical();
         this.tableroDelMapa=new HashMap<Posicion, Casillero>();
@@ -126,14 +127,12 @@ public class VistaPrincipal extends BorderPane {
         ObservableList<Node> childrens = gridPane.getChildren();
 
         for (Node node : childrens) {
-            System.out.println(row);
-            System.out.println(column);
-            System.out.println(gridPane.getColumnIndex(node));
-            System.out.println(gridPane.getRowIndex(node));
-//            if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
-//                result = node;
-//                break;
-//            }
+//            System.out.println(gridPane.getColumnIndex(node));
+//            System.out.println(gridPane.getRowIndex(node));
+            if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
+                result = node;
+                break;
+            }
         }
         return result;
     }
@@ -143,12 +142,12 @@ public class VistaPrincipal extends BorderPane {
         int dimenRow = miMapa.getLargoHorizontal();
         int dimenCol = miMapa.getLargoVertical();
 
+
         for (int row = 0; row < dimenRow; row++)
             for (int col = 0; col < dimenCol; col++) {
-                Node a= this.getNodeByRowColumnIndex(row,col,this.gridPane);
-                a.setOnMouseClicked(new AccionClickear());
-                System.out.println("Hizo nodo elegible");
+                Casillero a = (Casillero) (gridPane.getChildren().get(row*(15)+col));
                 System.out.println(a);
+                a.setOnMouseClicked(new AccionClickear());
             }
     }
 

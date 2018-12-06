@@ -18,6 +18,11 @@ public class Casillero extends Rectangle {
         this.setFill(Color.TRANSPARENT);
         this.setStroke(Color.RED);
     }
+
+    public void printNombre(){
+        System.out.println("Daaaaaaa");
+    }
+
     public void setUbicable(Ubicable ubicable) {
         this.miUbicable = ubicable;
         Image img = new Image("file:src/fiuba/algo3/algoempires/Vistas/Img/" + this.miUbicable.getNombre() + ".png");
