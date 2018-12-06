@@ -97,6 +97,10 @@ public class Casillero extends Rectangle {
 
     public Ubicable getUbicable() {
     return this.miUbicable;    }
+
+    public Posicion getPosicion() {
+        return this.miPosicion;
+    }
 }
 
 

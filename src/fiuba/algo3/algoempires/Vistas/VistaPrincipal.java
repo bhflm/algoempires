@@ -17,6 +17,7 @@ import java.awt.*;
 import java.util.HashMap;
 
 public class VistaPrincipal extends BorderPane {
+    public String nombreAccion;
     Mapa elMapa;
     Casillero casilleroSeleccionado;
     Casillero casilleroOfrecido;
@@ -102,8 +103,8 @@ public class VistaPrincipal extends BorderPane {
         gridPane.setMaxHeight(40);
         this.setCenter(gridPane);
         // gridPane.setGridLinesVisible(true);
-        int dimenRow = miMapa.getLargoHorizontal();
-        int dimenCol = miMapa.getLargoVertical();
+        int dimenRow = this.elJuegoEs().getmapa().getLargoHorizontal();
+        int dimenCol = this.elJuegoEs().getmapa().getLargoVertical();
         this.tableroDelMapa=new HashMap<Posicion, Casillero>();
 
         for (int row = 0; row < dimenRow; row++)
@@ -111,7 +112,7 @@ public class VistaPrincipal extends BorderPane {
                 int rowt=(-row)+dimenRow;
                 int colt=col+1;
                 Posicion posicionUbicable = new Posicion(colt , rowt);
-                Ubicable elUbicable = miMapa.GetUbicableEn(posicionUbicable);
+                Ubicable elUbicable = this.elJuegoEs().getmapa().GetUbicableEn(posicionUbicable);
                 Casillero casillero = new Casillero(elUbicable, posicionUbicable);
                 this.tableroDelMapa.put(posicionUbicable,casillero);
                 casillero.setOnMouseClicked(new SeleccionarCasillero(this, gridPane, casillero,this.importadorMapa,dimenRow));
@@ -243,7 +244,7 @@ public class VistaPrincipal extends BorderPane {
     public void mostrarConfirmacion() {
         this.botonConfirmar = new Boton("Confirmar", null);
         this.contenedorVertical.getChildren().add(this.botonConfirmar);
-        this.botonConfirmar.setOnAction(e -> System.out.println("jorge boton"));
+        this.botonConfirmar.setOnAction(new ejecutarAccion(this,gridPane));
         contenedorVertical.setPrefWidth(200);
         contenedorVertical.setSpacing(20);
         contenedorVertical.setStyle("-fx-background-color: #8B4513;");
@@ -292,8 +293,8 @@ public class VistaPrincipal extends BorderPane {
     }
 
     public void actualizarTableroPorMovimiento(Posicion posActual, Posicion posSiguiente) {
-        int dimenRow = this.elMapa.getLargoHorizontal();
-        int dimenCol = this.elMapa.getLargoVertical();
+        int dimenRow = this.elJuegoEs().getmapa().getLargoHorizontal();
+        int dimenCol = this.elJuegoEs().getmapa().getLargoVertical();
         int posActualCoordenadaVertical=importadorMapa.obtenerCoordenadaFila(posActual,dimenRow);
         int posActualCoordenadaHorizontal=importadorMapa.obtenerCoordenadaColumna(posActual);
         Casillero casilleroLibre=new Casillero(new EspacioLibre(),new Posicion(posActualCoordenadaHorizontal,posActualCoordenadaVertical));
@@ -313,4 +314,33 @@ public class VistaPrincipal extends BorderPane {
         String textoOro=Integer.toString(jugadorActual.getOro());
         this.labelOro.setText(textoOro);
     }
+
+
+
+
+
+
+    public void actualizarTableroV2() {
+        int dimenRow = this.elJuegoEs().getmapa().getLargoHorizontal();
+        int dimenCol = this.elJuegoEs().getmapa().getLargoVertical();
+        for (int row = 0; row < dimenRow; row++)
+            for (int col = 0; col < dimenCol; col++) {
+                int rowt = (-row) + dimenRow;
+                int colt = col + 1;
+                Posicion posicionUbicable = new Posicion(colt, rowt);
+                Ubicable elUbicable = this.elJuegoEs().getmapa().GetUbicableEn(posicionUbicable);
+                Casillero casillero = new Casillero(elUbicable, posicionUbicable);
+                if (elUbicable != this.tableroDelMapa.get(posicionUbicable).getUbicable()){
+                    this.tableroDelMapa.put(posicionUbicable, casillero);
+                     gridPane.add(casillero,col, row);}
+                this.tableroDelMapa.get(posicionUbicable).setOnMouseClicked(new SeleccionarCasillero(this, gridPane, casillero,this.importadorMapa,dimenRow));
+
+
+            }
+
+
+    }
+
+
+
 }

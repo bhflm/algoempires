@@ -1,6 +1,10 @@
 package fiuba.algo3.algoempires.Controladores;
 
+import fiuba.algo3.algoempires.Entidades.Aldeano;
 import fiuba.algo3.algoempires.Juego;
+import fiuba.algo3.algoempires.Jugador;
+import fiuba.algo3.algoempires.Mapa;
+import fiuba.algo3.algoempires.Posicion;
 import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.event.ActionEvent;
 
@@ -17,8 +21,8 @@ public class ConstruirCuartel implements javafx.event.EventHandler<ActionEvent> 
     @Override
     public void handle(ActionEvent actionEvent){
         Juego elJuego=vistaPrincipal.elJuegoEs();
-
-        vistaPrincipal.ofrecerCasilleros(vistaPrincipal.getElMapa());
+        vistaPrincipal.nombreAccion="ConstruirCuartel";
+        vistaPrincipal.ofrecerCasilleros(vistaPrincipal.elJuegoEs().getmapa());
 
     }
 

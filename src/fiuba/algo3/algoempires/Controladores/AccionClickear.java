@@ -1,6 +1,9 @@
 package fiuba.algo3.algoempires.Controladores;
 
 
+import fiuba.algo3.algoempires.Entidades.Aldeano;
+import fiuba.algo3.algoempires.Juego;
+import fiuba.algo3.algoempires.Jugador;
 import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
