@@ -65,8 +65,6 @@ public class JugadorTest {
         otroJugador.agregarUnidad(otroEspadachin);
 
         unEspadachin.atacarA(otroEspadachin);
-        otroJugador.removerUnidadesMuertas();
-
         assertTrue(otroJugador.perteneceUnidad(otroEspadachin));
     }
 
@@ -80,12 +78,12 @@ public class JugadorTest {
 
         Espadachin otroEspadachin = new Espadachin();
         otroJugador.agregarUnidad(otroEspadachin);
-
+        Mapa miMapa=new Mapa(10,10);
         //le saco toda la vida
         for (int i = 0; i < 4; i++) {
             unEspadachin.atacarA(otroEspadachin);
         }
-        otroJugador.removerUnidadesMuertas();
+        otroJugador.removerUnidadesMuertas(miMapa);
 
         assertFalse(otroJugador.perteneceUnidad(otroEspadachin));
     }
@@ -112,8 +110,8 @@ public class JugadorTest {
         for (int i = 0; i < 4; i++) {
             unEspadachin.atacarA(otroEspadachin);
         }
-
-        otroJugador.removerUnidadesMuertas();
+        Mapa miMapa=new Mapa(10,10);
+        otroJugador.removerUnidadesMuertas(miMapa);
 
         assertTrue(!otroJugador.perteneceUnidad(otroEspadachin) & otroJugador.perteneceUnidad(unAldeano) & otroJugador.perteneceUnidad(unAldeano1) & otroJugador.perteneceUnidad(unAldeano2));
     }
@@ -186,8 +184,8 @@ public class JugadorTest {
         for (int i = 0; i < 4; i++) {
             unEspadachin.atacarA(otroEspadachin);
         }
-
-        otroJugador.removerUnidadesMuertas();
+        Mapa miMapa=new Mapa(10,10);
+        otroJugador.removerUnidadesMuertas(miMapa);
 
         assertTrue(!otroJugador.perteneceUnidad(otroEspadachin) & otroJugador.perteneceUnidad(unAldeano) & otroJugador.perteneceUnidad(unAldeano1) & otroJugador.perteneceUnidad(unAldeano2));
     }

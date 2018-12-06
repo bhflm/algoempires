@@ -87,6 +87,8 @@ private void GenerarPosiciones(){
     Posicion posicionPrevia= unidadAMover.getPosicion();
     Ubicable ubicacionLiberada=new EspacioLibre();
     this.Ubicaciones.put(nuevaPosicion,unidadAMover);
+
+        UbicableEnLaNuevaPosicion=unidadAMover;
     unidadAMover.RealizarMovimiento(nuevaPosicion);
     this.Ubicaciones.put(posicionPrevia,ubicacionLiberada);
     }
