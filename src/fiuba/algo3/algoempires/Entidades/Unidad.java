@@ -89,4 +89,5 @@ public abstract class Unidad{
         return this.Nombre;
     }
     public int vidaActual(){return this.vida;}
+    public void trabajar(){;}
 }

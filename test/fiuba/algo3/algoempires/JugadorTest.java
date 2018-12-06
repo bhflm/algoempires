@@ -206,7 +206,7 @@ public class JugadorTest {
         unJugador.agregarUnidad(aldeano3);
         unJugador.agregarUnidad(aldeano4);
 
-        unJugador.recaudarOro();
+        unJugador.aldeanosTrabajar();
 
         int oroRecaudadoPorAldeano = aldeano1.recaudarOro();
 
@@ -225,7 +225,7 @@ public class JugadorTest {
         unJugador.agregarUnidad(espadachin);
         unJugador.agregarUnidad(armaDeAsedio);
 
-        unJugador.recaudarOro();
+        unJugador.aldeanosTrabajar();
 
         assert (unJugador.getOro() == 0);
         }

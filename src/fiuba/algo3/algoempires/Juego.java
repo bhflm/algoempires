@@ -89,7 +89,7 @@ public class Juego {
             Jugador aux = this.actual;
             this.actual = this.esperando;
             this.esperando = aux;
-            this.actual.recaudarOro();
+            this.actual.aldeanosTrabajar();
         }
     }
 

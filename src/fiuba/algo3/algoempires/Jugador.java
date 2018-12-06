@@ -195,11 +195,12 @@ public class Jugador {
         return this.perdio;
     }
 
-        public void recaudarOro() {
-            for (Unidad unidad : unidadesJugador) {
-                this.oro=this.oro+unidad.recaudarOro();
-            }
-
+    public void aldeanosTrabajar() {
+        //Continua Reparaciones, Construcciones y Recolecta Oro
+        for (Unidad unidad : unidadesJugador) {
+            unidad.trabajar();
+            this.oro=this.oro+unidad.recaudarOro();
+        }
     }
 }
 
