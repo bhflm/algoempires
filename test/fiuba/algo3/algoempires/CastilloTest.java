@@ -25,7 +25,7 @@ public class CastilloTest {
         Posicion pos2 = new Posicion(6, 6);
         mapa.UbicarUnidadEnMapa(pos1, unCastillo);
 
-        ArmaDeAsedio unArmaDeAsedio = unCastillo.crearArmaDeAsedio(mapa, pos2);
+        ArmaDeAsedio unArmaDeAsedio = unCastillo.crearArmaDeAsedio(mapa);
 
         assert (unArmaDeAsedio instanceof ArmaDeAsedio);
     }
@@ -39,7 +39,7 @@ public class CastilloTest {
         Posicion pos2 = new Posicion(6, 3);
         mapa.UbicarUnidadEnMapa(pos1, unCastillo);
 
-        ArmaDeAsedio armaDeAsedio = unCastillo.crearArmaDeAsedio(mapa, pos2);
+        ArmaDeAsedio armaDeAsedio = unCastillo.crearArmaDeAsedio(mapa);
         assert (mapa.GetUbicableEn(pos2) instanceof ArmaDeAsedio);
     }
 
@@ -57,7 +57,7 @@ public class CastilloTest {
         boolean SeLanzoError = false;
 
         try {
-            ArmaDeAsedio armaDeAsedio1 = unCastillo.crearArmaDeAsedio(mapa, pos2);
+            ArmaDeAsedio armaDeAsedio1 = unCastillo.crearArmaDeAsedio(mapa);
         } catch (UbicacionOcupadaPorOtraUnidad e) {
             SeLanzoError = true;
         }
@@ -75,7 +75,7 @@ public class CastilloTest {
         boolean SeLanzoError = false;
 
         try {
-            ArmaDeAsedio armaDeAsedio1 = unCastillo.crearArmaDeAsedio(mapa, pos2);
+            ArmaDeAsedio armaDeAsedio1 = unCastillo.crearArmaDeAsedio(mapa);
         } catch (PosicionInvalidaException e) {
             SeLanzoError = true;
         }

@@ -38,7 +38,7 @@ private void GenerarPosiciones(){
     int dimension = Unidad.getDimension() - 1;
     int CoordHorizontal = PosicionUnidad.getCoordenadaHorizontal();
     int CoordVertical = PosicionUnidad.getCoordenadaVertical();
-    if (CoordHorizontal + dimension > this.LargoHorizontal || CoordVertical + dimension > this.LargoVertical){
+    if (CoordHorizontal + dimension > this.LargoHorizontal || CoordVertical + dimension > this.LargoVertical || CoordHorizontal == 0 || CoordVertical == 0){
             throw new UbicacionFueraDelMapaException();}
 
 
@@ -48,7 +48,7 @@ private void GenerarPosiciones(){
             for (int j = 0; j < dimension+1; j++){
                 Posicion posicionActual = new Posicion(CoordHorizontal+i, CoordVertical+j);
                 UbicableEnLaNuevaPosicion=this.Ubicaciones.get(posicionActual);
-                if(UbicableEnLaNuevaPosicion.esPisableEnElMapa()==false){
+                if(!UbicableEnLaNuevaPosicion.esPisableEnElMapa()){
                     throw new UbicacionOcupadaPorOtraUnidad();}
                 Ubicaciones.put(posicionActual, Unidad);
             }

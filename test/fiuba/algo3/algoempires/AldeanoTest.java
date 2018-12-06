@@ -155,4 +155,23 @@ public class AldeanoTest{
 
         assertTrue(oroRecaudado1 == 0 & oroRecaudado2 == 20);
     }
+
+    @Test
+    public void test16AldeanoNoPuedeConstruirDosEdificiosALaVez(){
+        Aldeano MiAldeano = new Aldeano();
+        Mapa mapa = new Mapa(20,20);
+        Posicion pos = new Posicion(3,3);
+        Posicion pos2 = new Posicion(7,7);
+
+        MiAldeano.construirPlazaCentral(mapa, pos);
+
+        boolean seLanzoError = false;
+
+        try {
+            MiAldeano.construirPlazaCentral(mapa, pos2);
+        } catch (AldeanoOcupadoException e){
+            seLanzoError = true;
+        }
+        assertTrue(seLanzoError);
+    }
 }
