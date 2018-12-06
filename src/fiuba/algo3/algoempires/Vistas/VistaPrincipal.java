@@ -241,8 +241,9 @@ public class VistaPrincipal extends BorderPane {
     }
 
     public void mostrarConfirmacion() {
-        this.botonConfirmar = new Boton("Confirmar Casillero", null);
-        this.contenedorVertical = new VBox(botonConfirmar);
+        this.botonConfirmar = new Boton("Confirmar", null);
+        this.contenedorVertical.getChildren().add(this.botonConfirmar);
+        this.botonConfirmar.setOnAction(e -> System.out.println("jorge boton"));
         contenedorVertical.setPrefWidth(200);
         contenedorVertical.setSpacing(20);
         contenedorVertical.setStyle("-fx-background-color: #8B4513;");

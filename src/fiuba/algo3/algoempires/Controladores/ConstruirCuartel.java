@@ -20,8 +20,6 @@ public class ConstruirCuartel implements javafx.event.EventHandler<ActionEvent> 
 
         vistaPrincipal.ofrecerCasilleros(vistaPrincipal.getElMapa());
 
-
-        
     }
 
 
