@@ -33,7 +33,7 @@ public class PlazaCentralTest {
         Posicion pos2 = new Posicion(4, 3);
         mapa.UbicarUnidadEnMapa(pos1, unaPlazaCentral);
 
-        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, pos2);
+        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa);
         assert (unAldeano instanceof Aldeano);
     }
 
@@ -73,48 +73,8 @@ public class PlazaCentralTest {
         Posicion pos2 = new Posicion(4, 3);
         mapa.UbicarUnidadEnMapa(pos1, unaPlazaCentral);
 
-        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, pos2);
+        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa);
         assert (mapa.GetUbicableEn(pos2) instanceof Aldeano);
-    }
-
-    @Test
-    public void test08PlazaCentralNoPuedeCrearAldeanoSiLaPosicionOcupada() {
-        Mapa mapa = new Mapa(20,20);
-        PlazaCentral unaPlazaCentral = new PlazaCentral();
-        Espadachin unEspadachin = new Espadachin();
-
-        Posicion pos1 = new Posicion(1,1);
-        Posicion pos2 = new Posicion (3,2);
-
-        mapa.UbicarUnidadEnMapa(pos1, unaPlazaCentral);
-        mapa.UbicarUnidadEnMapa(pos2, unEspadachin);
-        boolean SeLanzoError = false;
-
-        try{
-            Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, pos2);
-        } catch (UbicacionOcupadaPorOtraUnidad e) {
-            SeLanzoError = true;
-        }
-        assertTrue(SeLanzoError);
-    }
-
-    @Test
-    public void test09PlazaCentralNoPuedeCrearAldeanoFueraDeRango() {
-        Mapa mapa = new Mapa(20,20);
-        PlazaCentral unaPlazaCentral = new PlazaCentral();
-
-        Posicion pos1 = new Posicion(2,3);
-        Posicion pos2 = new Posicion (9,12);
-
-        mapa.UbicarUnidadEnMapa(pos1, unaPlazaCentral);
-        boolean SeLanzoError = false;
-
-        try{
-            Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa, pos2);
-        } catch (PosicionInvalidaException e) {
-            SeLanzoError = true;
-        }
-        assertTrue(SeLanzoError);
     }
 
 }

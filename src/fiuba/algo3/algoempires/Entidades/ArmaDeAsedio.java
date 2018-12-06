@@ -15,7 +15,6 @@ public class ArmaDeAsedio extends Unidad implements Movible {
         this.rangoDeAtaque = 5;
         this.Nombre="ArmaDeAsedio";
 
-
     }
 
     public void actualizarUbicacion(Posicion pos){

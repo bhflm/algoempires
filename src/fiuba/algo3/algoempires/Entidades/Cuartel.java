@@ -1,8 +1,13 @@
 package fiuba.algo3.algoempires.Entidades;
 
+import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
+import fiuba.algo3.algoempires.Excepciones.UbicacionFueraDelMapaException;
+import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
 import fiuba.algo3.algoempires.Mapa;
 import fiuba.algo3.algoempires.Posicion;
 import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
+
+import java.util.Set;
 
 public class Cuartel extends Edificio {
 
@@ -20,27 +25,34 @@ public class Cuartel extends Edificio {
         estado.continuarReparacion(this, 50, unAldeano);
     }
 
-    public Arquero crearArquero(Mapa mapa, Posicion posicion) {
+    public Arquero crearArquero(Mapa mapa) {
         Arquero unArquero = estado.crearArquero();
-        //Chequeo que se cree en alrededor del cuartel
-        int posicionMinima = this.getPosicion().getCoordenadaHorizontal() - 1;
-        int posicionMaxima = this.getPosicion().getCoordenadaHorizontal() + this.dimension;
 
-        if (posicion.getCoordenadaHorizontal() < posicionMinima || posicion.getCoordenadaVertical() > posicionMaxima){
-                throw new PosicionInvalidaException();
+        Set<Posicion> posicionesAdyacentes = this.getPosicionesAdyacentes();
+        for (Posicion pos : posicionesAdyacentes) {
+            try {
+                mapa.UbicarUnidadEnMapa(pos, unArquero);
+                return unArquero;
+            } catch (UbicacionOcupadaPorOtraUnidad | UbicacionFueraDelMapaException e) {
+                continue;
+            }
         }
-        mapa.UbicarUnidadEnMapa(posicion, unArquero);
-        return unArquero;
+        throw new JugadaInvalidaException();
     }
 
-    public Espadachin crearEspadachin(Mapa mapa, Posicion posicion) {
+    public Espadachin crearEspadachin(Mapa mapa) {
         Espadachin unEspadachin = estado.crearEspadachin();
 
-        //Chequeo que se cree en alrededor del cuartel
-        this.chequearPosicion(posicion, this.getPosicion(), this.dimension);
-
-        mapa.UbicarUnidadEnMapa(posicion, unEspadachin);
-        return unEspadachin;
+        Set<Posicion> posicionesAdyacentes = this.getPosicionesAdyacentes();
+        for (Posicion pos : posicionesAdyacentes) {
+            try {
+                mapa.UbicarUnidadEnMapa(pos, unEspadachin);
+                return unEspadachin;
+            } catch (UbicacionOcupadaPorOtraUnidad | UbicacionFueraDelMapaException e) {
+                continue;
+            }
+        }
+        throw new JugadaInvalidaException();
     }
 
     @Override

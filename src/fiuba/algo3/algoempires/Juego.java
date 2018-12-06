@@ -88,7 +88,7 @@ public class Juego {
     public void cambiarTurno() {
         if (!finalizoJuego()) {
             this.cambiarJugadorActual();
-            this.actual.recaudarOro();
+            this.actual.aldeanosTrabajar();
             this.actual.CastilloRealizaAtaqueMasivo(this.actual.elCastilloDelJugador(),this.mapa);
             this.actual.removerUnidadesMuertas(mapa);
             this.actual.removerEdificiosDestruidos();
