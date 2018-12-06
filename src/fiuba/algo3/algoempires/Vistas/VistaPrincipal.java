@@ -139,7 +139,7 @@ public class VistaPrincipal extends BorderPane {
     public void setAcciones() {
 
         this.botonMoverse = new Boton("Moverse A", new AccionRealizarMovimiento(this));
-        this.botonAtacar = new Boton("Atacar", null);
+        this.botonAtacar = new Boton("Atacar", new RealizarAtaque(this));
         this.botonConstruirCuartel = new Boton("Construir Cuartel", new ConstruirCuartel(this));
         this.botonConstruirPC = new Boton("Construir Plaza Central", new ConstruirPlazaCentral(this));
         this.botonReparar = new Boton("Reparar", null);
@@ -147,7 +147,7 @@ public class VistaPrincipal extends BorderPane {
         this.botonCrearArquero = new Boton("Crear Arquero", null);
         this.botonCrearEspadachin = new Boton("Crear Espadachin", null);
         this.botonCrearArmaDeAsedio = new Boton("Crear Arma De Asedio", null);
-        this.botonPasarTurno = new Boton("Terminar Turno", null);
+        this.botonPasarTurno = new Boton("Terminar Turno", new AccionPasarTurno(this));
 
         Pane separador = new Pane();
         separador.setPrefHeight(80);
@@ -222,7 +222,7 @@ public class VistaPrincipal extends BorderPane {
         this.botonCrearArquero.setDisable(true);
         this.botonCrearEspadachin.setDisable(true);
         this.botonCrearArmaDeAsedio.setDisable(true);
-        this.botonPasarTurno.setDisable(true);
+        this.botonPasarTurno.setDisable(false);
 
     }
 
