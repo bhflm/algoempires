@@ -20,7 +20,7 @@ public class Casillero extends Rectangle {
     }
 
     public void printNombre(){
-        System.out.println("Daaaaaaa");
+        System.out.println("Se selecciono el casillero");
     }
 
     public void setUbicable(Ubicable ubicable) {

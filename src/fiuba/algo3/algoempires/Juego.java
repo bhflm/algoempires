@@ -103,7 +103,7 @@ public class Juego {
     }
 
     public boolean finalizoJuego(){
-        return this.actual.perdio();
+            return this.actual.perdio();
     }
 
     public Mapa getmapa() {

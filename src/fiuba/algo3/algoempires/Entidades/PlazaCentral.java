@@ -1,11 +1,8 @@
 package fiuba.algo3.algoempires.Entidades;
 
-import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
-import fiuba.algo3.algoempires.Excepciones.UbicacionFueraDelMapaException;
-import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
+import fiuba.algo3.algoempires.Excepciones.*;
 import fiuba.algo3.algoempires.Mapa;
 import fiuba.algo3.algoempires.Posicion;
-import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -25,7 +22,9 @@ public class PlazaCentral extends Edificio {
 
 
     public Aldeano crearAldeano(Mapa mapa) {
-        Aldeano unAldeano = estado.crearAldeano();
+        Aldeano unAldeano;
+        try{unAldeano= estado.crearAldeano();}
+        catch(EdificioConstruyendoseException e){throw new EdificioConstruyendoseException();}
 
         Set<Posicion> posicionesAdyacentes = this.getPosicionesAdyacentes();
         for(Posicion pos: posicionesAdyacentes){

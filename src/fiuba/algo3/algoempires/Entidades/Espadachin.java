@@ -1,5 +1,6 @@
 package fiuba.algo3.algoempires.Entidades;
 
+import fiuba.algo3.algoempires.Excepciones.AtaqueFueraDeRango;
 import fiuba.algo3.algoempires.Movible;
 import fiuba.algo3.algoempires.Posicion;
 import fiuba.algo3.algoempires.Ubicable;
@@ -27,7 +28,10 @@ public class Espadachin extends Unidad implements Movible {
     public boolean esPisableEnElMapa(){return this.PisableEnElMapa;};
 
     public void atacarA(Ubicable unidadAtacada){
-        unidadAtacada.recibirDanio(this);
+        try{unidadAtacada.recibirDanio(this);}
+        catch(AtaqueFueraDeRango e){
+            throw new AtaqueFueraDeRango();
+        }
 
     }
 
