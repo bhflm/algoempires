@@ -1,11 +1,8 @@
 package fiuba.algo3.algoempires.Entidades;
 
-import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
-import fiuba.algo3.algoempires.Excepciones.UbicacionFueraDelMapaException;
-import fiuba.algo3.algoempires.Excepciones.UbicacionOcupadaPorOtraUnidad;
+import fiuba.algo3.algoempires.Excepciones.*;
 import fiuba.algo3.algoempires.Mapa;
 import fiuba.algo3.algoempires.Posicion;
-import fiuba.algo3.algoempires.Excepciones.PosicionInvalidaException;
 
 import java.util.Set;
 
@@ -26,7 +23,11 @@ public class Cuartel extends Edificio {
     }
 
     public Arquero crearArquero(Mapa mapa) {
-        Arquero unArquero = estado.crearArquero();
+        Arquero unArquero;
+        try{unArquero = estado.crearArquero();}
+        catch(EdificioConstruyendoseException e){
+            throw new EdificioConstruyendoseException();
+        }
 
         Set<Posicion> posicionesAdyacentes = this.getPosicionesAdyacentes();
         for (Posicion pos : posicionesAdyacentes) {
@@ -41,7 +42,11 @@ public class Cuartel extends Edificio {
     }
 
     public Espadachin crearEspadachin(Mapa mapa) {
-        Espadachin unEspadachin = estado.crearEspadachin();
+        Espadachin unEspadachin;
+        try{unEspadachin= estado.crearEspadachin();}
+        catch(EdificioConstruyendoseException e){
+            throw new EdificioConstruyendoseException();
+        }
 
         Set<Posicion> posicionesAdyacentes = this.getPosicionesAdyacentes();
         for (Posicion pos : posicionesAdyacentes) {

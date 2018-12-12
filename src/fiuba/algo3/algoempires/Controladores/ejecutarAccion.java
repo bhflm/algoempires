@@ -4,6 +4,7 @@ import fiuba.algo3.algoempires.*;
 import fiuba.algo3.algoempires.Entidades.*;
 import fiuba.algo3.algoempires.Excepciones.AtaqueFueraDeRango;
 import fiuba.algo3.algoempires.Excepciones.JugadaInvalidaException;
+import fiuba.algo3.algoempires.Excepciones.OroInsuficienteError;
 import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -30,12 +31,17 @@ public class ejecutarAccion implements EventHandler<ActionEvent> {
         boolean elMovimientoEsValido=true;
 
         if (vistaTableroJuegoActual.nombreAccion.equals("ConstruirCuartel")) {
-            jugador.construirCuartel(elJuego, elJuego.getmapa(), (Aldeano) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
-
+            try {
+                jugador.construirCuartel(elJuego, elJuego.getmapa(), (Aldeano) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
+            }
+            catch(OroInsuficienteError e){elMovimientoEsValido=false;}
         }
         else if (vistaTableroJuegoActual.nombreAccion.equals("ConstruirPlazaCentral")) {
-            jugador.construirPlazaCentral(elJuego, elJuego.getmapa(), (Aldeano) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
-        }
+            try {
+                jugador.construirPlazaCentral(elJuego, elJuego.getmapa(), (Aldeano) vistaTableroJuegoActual.getCasilleroSeleccionado().getUbicable(), vistaTableroJuegoActual.getCasilleroOfrecido().getPosicion());
+            }
+            catch(OroInsuficienteError e){elMovimientoEsValido=false;}
+            }
 
         else if(vistaTableroJuegoActual.nombreAccion.equals("RealizarAtaque")){
 

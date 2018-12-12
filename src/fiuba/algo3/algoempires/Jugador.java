@@ -101,7 +101,10 @@ public class Jugador {
         if (this.oro < 25){
             throw new OroInsuficienteError();
         }
-        Aldeano unAldeano = unaPlazaCentral.crearAldeano(mapa);
+        Aldeano unAldeano;
+        try {unAldeano = unaPlazaCentral.crearAldeano(mapa);}
+        catch(EdificioConstruyendoseException e)
+        {throw new EdificioConstruyendoseException();}
         this.agregarUnidad(unAldeano);
         this.oro -= 25;
         unJuego.cambiarTurno();
@@ -111,7 +114,10 @@ public class Jugador {
         if (this.oro < 75){
             throw new OroInsuficienteError();
         }
-        Arquero unArquero = unCuartel.crearArquero(mapa);
+        Arquero unArquero;
+        try{unArquero = unCuartel.crearArquero(mapa);}
+        catch(EdificioConstruyendoseException e)
+        {throw new EdificioConstruyendoseException();}
         this.agregarUnidad(unArquero);
         this.oro -= 75;
         unJuego.cambiarTurno();
@@ -121,7 +127,10 @@ public class Jugador {
         if (this.oro < 50){
             throw new OroInsuficienteError();
         }
-        Espadachin unEspadachin = unCuartel.crearEspadachin(mapa);
+        Espadachin unEspadachin;
+        try{unEspadachin = unCuartel.crearEspadachin(mapa);}
+        catch(EdificioConstruyendoseException e)
+        {throw new EdificioConstruyendoseException();}
         this.agregarUnidad(unEspadachin);
         this.oro -= 50;
         unJuego.cambiarTurno();
