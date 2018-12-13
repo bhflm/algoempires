@@ -12,7 +12,11 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 
 public class RegistradorJugadores extends VBox {
@@ -20,7 +24,9 @@ public class RegistradorJugadores extends VBox {
     private InputUsuario jugadorDos;
     private Boton botonComenzar;
 
-
+    String seleccion = "src/fiuba/algo3/algoempires/Vistas/Sound/intro.mp3";
+    Media sound = new Media(new File(seleccion).toURI().toString());
+    MediaPlayer playSound = new MediaPlayer(sound);
 
     public RegistradorJugadores(Stage ventana){
         this.jugadorUno = new InputUsuario("Primer Jugador");
@@ -43,6 +49,7 @@ public class RegistradorJugadores extends VBox {
         VistaPrincipal vistaPrincipal = new VistaPrincipal();
         Scene algoEmpires = new Scene(vistaPrincipal);
         EmpezarJuego empezar = new EmpezarJuego(ventana, algoEmpires);
+        playSound.play();
         this.botonComenzar=new Boton("EMPEZAR",empezar);
         this.getChildren().addAll(vb,botonComenzar);
 
@@ -53,5 +60,6 @@ public class RegistradorJugadores extends VBox {
         Boton boton = new Boton("EMPEZAR", empezar);
         this.getChildren().add(boton);
     }
+
 
 }
