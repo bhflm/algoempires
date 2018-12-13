@@ -12,8 +12,11 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.awt.*;
+import java.io.File;
 import java.util.HashMap;
 
 public class VistaPrincipal extends BorderPane {
@@ -53,7 +56,6 @@ public class VistaPrincipal extends BorderPane {
     Label labelOro;
     Boton botonConfirmar;
 
-
     public VistaPrincipal() {
         this.casilleroSeleccionado = null;
         this.juegoAlgoEmpires = new Juego();
@@ -67,7 +69,6 @@ public class VistaPrincipal extends BorderPane {
         this.setFondo();
         this.setAcciones();
         this.setMenuInferior();
-
     }
 
     private void setMenuInferior() {

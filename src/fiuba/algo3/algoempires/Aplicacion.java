@@ -4,12 +4,17 @@ import fiuba.algo3.algoempires.Controladores.ImportadorMapa;
 import fiuba.algo3.algoempires.Vistas.RegistradorJugadores;
 import fiuba.algo3.algoempires.Vistas.VistaPrincipal;
 import javafx.application.Application;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+
+import java.io.File;
 
 public class Aplicacion extends Application {
 
     Stage ventana;
+
 
     public static void main(String[] args) {
         launch(args);
@@ -17,7 +22,6 @@ public class Aplicacion extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         ventana = primaryStage;
         ventana.setTitle("AlgoEmpires");
 
